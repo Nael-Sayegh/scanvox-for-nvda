@@ -9,6 +9,10 @@ from logHandler import log
 import config
 import globalVars
 import ui
+try:
+	from gui.settingsDialogs import SettingsPanel
+except ImportError:
+	from gui import SettingsPane
 
 addonHandler.initTranslation()
 
@@ -21,7 +25,7 @@ week= int(time.strftime("%W"))
 
 def updateAvailable():
 	title = _("Update of %s version %s") %(addonInfos["summary"], oversion)
-	msg = _("%s version %s is available. Would you like to update now? You can see the new features by clicking on the help button in the add-on manager.") %(addonInfos["summary"], oversion)
+	msg = _("%s version %s is available. Would you like to update now? You can see the new features by clicking on the help button in the add-on store.") %(addonInfos["summary"], oversion)
 	res = gui.messageBox(msg, title, wx.YES_NO|wx.ICON_ERROR)
 	if res == wx.YES:
 		installupdate()
@@ -62,18 +66,10 @@ def verifUpdate(gesture=False):
 		if gesture:
 			ui.message(_("No update is available."))
 
-def Param(param,message):
-	if not config.conf[addonInfos["name"]][param]:
-		config.conf[addonInfos["name"]][param]= True
-		ui.message(_("%s is enabled.") %(message))
-	else:
-		config.conf[addonInfos["name"]][param] = False
-		ui.message(_("%s is disabled.") %(message))
-
 if not globalVars.appArgs.secure and config.conf[addonInfos["name"]]["autoUpdate"] and (config.conf[addonInfos["name"]]["nbWeek"] != week or config.conf[addonInfos["name"]]["updateEveryStart"]):
 	verifUpdate()
 
-class PanelScanvox(SettingsPanel):
+class ScanvoxPanel(SettingsPanel):
 	title = _("Scanvox for NVDA")
 	
 	def makeSettings(self, settingsSizer):

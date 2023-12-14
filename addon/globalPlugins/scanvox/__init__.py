@@ -11,10 +11,6 @@ import wx
 import config
 from .uti import getDocumentsPath
 from shutil import copy
-try:
-	from gui.settingsDialogs import SettingsPanel
-except ImportError:
-	from gui import SettingsPane
 from logHandler import log
 
 addonHandler.initTranslation()
@@ -25,7 +21,7 @@ confspecs = {
 	"updateEveryStart": "boolean(default=False)",
 }
 
-config.conf.spec["everything"] = confspecs
+config.conf.spec["scanvox"] = confspecs
 
 from . import update_scanvox as update
 
@@ -38,7 +34,6 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	def __init__(self):
 		super(GlobalPlugin, self).__init__()
 		self.createMenu()
-		gui.mainFrame.pref
 		gui.NVDASettingsDialog.categoryClasses.append(update.ScanvoxPanel)
 	
 	def createMenu(self):
@@ -57,7 +52,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 	def terminate(self):
 		gui.mainFrame.sysTrayIcon.toolsMenu.Remove(self.submenu_item)
-		gui.NVDASettingsDialog.categoryClasses.remove(update.PanelScanvox) 
+		gui.NVDASettingsDialog.categoryClasses.remove(update.ScanvoxPanel) 
 		super().terminate()
 	
 class Scanvox(wx.Dialog):
