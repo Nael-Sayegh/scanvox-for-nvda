@@ -32,7 +32,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		gui.mainFrame.popupSettingsDialog(Scanvox)
 	
 	@script(gesture="kb:nvda+alt+s",
-		description=_("Open the Scanvox dialogue"),
+		description=_("Open the Scanvox dialog"),
 		category=_("Scanvox for NVDA")
 	)
 	def script_openScanvoxDialog(self, gesture):
@@ -72,7 +72,7 @@ class Scanvox(wx.Dialog):
 		self.SetSizer(mainSizer)
 	
 	def on_scan(self, evt):
-		ui.message(_("Scanning in progress, please wait"))
+		ui.message(_("Scanning in progress, please wait..."))
 		threading.Thread(target=self.scanThread).start()
 	
 	def on_save(self, evt):
