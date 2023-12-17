@@ -112,21 +112,17 @@ class Scanvox(wx.Dialog):
 		self.Destroy()
 	
 	def on_Enable_Button(self, evt):
-		if not self.open:
+		if not self.open.IsEnabled():
 			self.save.Enable(True)
 			self.open.Enable(True)
 			self.delete.Enable(True)
-		else:
-			self.save.Enable(False)
-			self.open.Enable(False)
-			self.delete.Enable(False)
 
 	def scanThread(self):
 		scan = subprocess.run([exe, "-s"], capture_output=True)
 		result = scan.returncode
 		if result == 0:
-			self.on_Enable_Button(None)
 			core.callLater(0, lambda: ui.message(_("Scan completed")))
+			self.on_Enable_Button(None)
 		elif result == 1003:
 			core.callLater(0, ui.message(_("No OCR matching the language of your system is available")))
 		elif result == 1005:
@@ -137,7 +133,9 @@ class Scanvox(wx.Dialog):
 		result = delete.returncode
 		if result == 0:
 			core.callLater(0, ui.message(_("All the pages have been erased")))
-			self.on_Enable_Button(None)
+			self.save.Enable(False)
+			self.open.Enable(False)
+			self.delete.Enable(False)
 		else:
 			core.callLater(0, ui.message(_("It's impossible to delete the scanned pages")))
 	
