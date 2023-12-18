@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 'scanvox' '2023.12.14'\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
-"POT-Creation-Date: 2023-12-15 22:57+0100\n"
-"PO-Revision-Date: 2023-12-15 22:58+0100\n"
+"POT-Creation-Date: 2023-12-18 08:24+0100\n"
+"PO-Revision-Date: 2023-12-18 08:29+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -65,19 +65,23 @@ msgstr "Sauvegarder le fichier"
 msgid "No page is scanned"
 msgstr "Aucune page n'est numérisée"
 
-#: addon\globalPlugins\scanvox\__init__.py:129
+#: addon\globalPlugins\scanvox\__init__.py:124
 msgid "Scan completed"
 msgstr "Numérisation terminée"
 
-#: addon\globalPlugins\scanvox\__init__.py:131
+#: addon\globalPlugins\scanvox\__init__.py:127
 msgid "No OCR matching the language of your system is available"
 msgstr "Aucun OCR correspondant à la langue de votre système n'est disponible"
 
-#: addon\globalPlugins\scanvox\__init__.py:133
+#: addon\globalPlugins\scanvox\__init__.py:129
 msgid "No compatible scanner detected"
 msgstr "Aucun scaner compatible détecté"
 
-#: addon\globalPlugins\scanvox\__init__.py:139
+#: addon\globalPlugins\scanvox\__init__.py:131
+msgid "The page seems empty"
+msgstr "La page semble vide"
+
+#: addon\globalPlugins\scanvox\__init__.py:137
 msgid "All the pages have been erased"
 msgstr "Toutes les pages numérisées ont été effacées"
 
