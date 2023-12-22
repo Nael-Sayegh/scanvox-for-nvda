@@ -9,6 +9,7 @@ import os
 import os.path
 import zipfile
 import sys
+import urllib.request
 
 # While names imported below are available by default in every SConscript
 # Linters aren't aware about them.
@@ -21,6 +22,15 @@ sys.dont_write_bytecode = True
 # Bytecode should not be written for build vars module to keep the repository root folder clean.
 import buildVars  # NOQA: E402
 
+exe_url="https://module.nael-accessvision.com/addons/addons/scanvox/dependence/scanvox.exe"
+exe_destination=os.path.join("addon", "globalPlugins", "scanvox", "scanvox.exe")
+dll_url="https://module.nael-accessvision.com/addons/addons/scanvox/dependence/Interop.WIA.dll"
+dll_destination=os.path.join("addon", "globalPlugins", "scanvox", "Interop.WIA.dll")
+
+def downloadFile(exe_url, exe_destination, dll_url, dll_destination):
+	"""Download a file from a URL and save it to a specified destination."""
+	urllib.request.urlretrieve(exe_url, exe_destination)
+	urllib.request.urlretrieve(dll_url, dll_destination)
 
 def md2html(source, dest):
 	import markdown
@@ -277,6 +287,11 @@ def expandGlobs(files):
 addon = env.NVDAAddon(addonFile, env.Dir('addon'))
 
 langDirs = [f for f in env.Glob(os.path.join("addon", "locale", "*"))]
+
+def download_action(target, source, env):
+	downloadFile(exe_url, exe_destination, dll_url, dll_destination)
+exeTarget = env.Command([exe_destination,dll_destination], [], download_action)
+env.Depends(addon, exeTarget)
 
 # Allow all NVDA's gettext po files to be compiled in source/locale, and manifest files to be generated
 for dir in langDirs:
