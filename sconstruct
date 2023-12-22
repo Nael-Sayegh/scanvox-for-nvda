@@ -26,11 +26,16 @@ exe_url="https://module.nael-accessvision.com/addons/addons/scanvox/dependence/s
 exe_destination=os.path.join("addon", "globalPlugins", "scanvox", "scanvox.exe")
 dll_url="https://module.nael-accessvision.com/addons/addons/scanvox/dependence/Interop.WIA.dll"
 dll_destination=os.path.join("addon", "globalPlugins", "scanvox", "Interop.WIA.dll")
+lib_url = "https://module.nael-accessvision.com/addons/addons/scanvox/dependence/lib.zip"
+lib_destination=os.path.join("addon", "globalPlugins", "scanvox")
 
-def downloadFile(exe_url, exe_destination, dll_url, dll_destination):
+def downloadFile(exe_url, exe_destination, dll_url, dll_destination, lib_url, lib_destination):
 	"""Download a file from a URL and save it to a specified destination."""
 	urllib.request.urlretrieve(exe_url, exe_destination)
 	urllib.request.urlretrieve(dll_url, dll_destination)
+	urllib.request.urlretrieve(lib_url, os.path.join(os.environ.get('TEMP'), "lib.zip"))
+	with zipfile.ZipFile(os.path.join(os.environ.get('TEMP'), "lib.zip"), 'r') as file_zip:
+		file_zip.extractall(lib_destination)
 
 def md2html(source, dest):
 	import markdown
@@ -288,10 +293,11 @@ addon = env.NVDAAddon(addonFile, env.Dir('addon'))
 
 langDirs = [f for f in env.Glob(os.path.join("addon", "locale", "*"))]
 
-def download_action(target, source, env):
-	downloadFile(exe_url, exe_destination, dll_url, dll_destination)
-exeTarget = env.Command([exe_destination,dll_destination], [], download_action)
-env.Depends(addon, exeTarget)
+if 'pot' not in BUILD_TARGETS:
+	def download_action(target, source, env):
+		downloadFile(exe_url, exe_destination, dll_url, dll_destination, lib_url, lib_destination)
+	exeTarget = env.Command([exe_destination,dll_destination,os.path.join(lib_destination, "lib")], [], download_action)
+	env.Depends(addon, exeTarget)
 
 # Allow all NVDA's gettext po files to be compiled in source/locale, and manifest files to be generated
 for dir in langDirs:

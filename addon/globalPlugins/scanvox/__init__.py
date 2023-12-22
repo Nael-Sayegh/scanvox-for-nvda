@@ -12,6 +12,17 @@ import config
 from .uti import getDocumentsPath
 from shutil import copy
 from logHandler import log
+import sys
+if sys.version_info.major == 3 and sys.version_info.minor == 7:
+	lib = os.path.join(os.path.dirname(__file__), "lib", "3.7")
+elif sys.version_info.major == 3 and sys.version_info.minor == 11:
+	lib = os.path.join(os.path.dirname(__file__), "lib", "3.11")
+else:
+	log.error("Unsupported python version")
+
+sys.path.insert(0, lib)
+from docx import Document
+sys.path.remove(lib)
 
 addonHandler.initTranslation()
 
@@ -89,12 +100,19 @@ class Scanvox(wx.Dialog):
 		threading.Thread(target=self.scanThread).start()
 	
 	def on_save(self, evt):
-		saveDialog = wx.FileDialog(self, message=_("Select the location where you want to save the file"), wildcard=_("Text file: *.txt|*.txt"), name=_("Save the file"), defaultDir=document, style=wx.FD_SAVE|wx.FD_OVERWRITE_PROMPT)
+		saveDialog = wx.FileDialog(self, message=_("Select the location where you want to save the file"), wildcard=_("Text file: *.txt|*.txt|Word document: *.docx|*.docx"), name=_("Save the file"), defaultDir=document, style=wx.FD_SAVE|wx.FD_OVERWRITE_PROMPT)
 		saveDialog.SetFilename("Scanvox.txt")
 		if saveDialog.ShowModal() == wx.ID_OK:
 			path=saveDialog.GetPath()
 			name = saveDialog.GetFilename()
-			copy(txtFile, path)
+			if '.docx' in name:
+				with open(txt, 'r') as file:
+					text=file.read()
+				saveDocx = Document()
+				saveDocx.add_paragraph(text)
+				saveDocx.save(os.path.join(path, name))
+			else:
+				copy(txtFile, path)
 			self.on_Enable_Button(None)
 	
 	def on_open(self, evt):
