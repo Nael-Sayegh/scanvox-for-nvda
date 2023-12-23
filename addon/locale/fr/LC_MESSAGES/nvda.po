@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: 'scanvox' '2023.12.14'\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
 "POT-Creation-Date: 2023-12-22 21:57+0100\n"
-"PO-Revision-Date: 2023-12-22 22:00+0100\n"
+"PO-Revision-Date: 2023-12-23 14:14+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -35,7 +35,7 @@ msgstr "&Numériser"
 
 #: addon\globalPlugins\scanvox\__init__.py:78
 msgid "&Save the scanned pages"
-msgstr "&Sauvegarder les pages numériser"
+msgstr "&Sauvegarder les pages numérisées"
 
 #: addon\globalPlugins\scanvox\__init__.py:82
 msgid "See the result in the &notepad"
@@ -51,11 +51,11 @@ msgstr "Lancement de la numérisation, veuillez patienter..."
 
 #: addon\globalPlugins\scanvox\__init__.py:103
 msgid "Select the location where you want to save the file"
-msgstr "Sélectionnez l'emplacement où vous souhaitez enregistrer le fichier"
+msgstr "Sélectionnez l’emplacement où vous souhaitez enregistrer le fichier"
 
 #: addon\globalPlugins\scanvox\__init__.py:103
 msgid "Text file: *.txt|*.txt|Word document: *.docx|*.docx"
-msgstr "Fichier texte : *.txt|*.txt|Document word : *.docx|*.docx"
+msgstr "Fichier texte’: *.txt|*.txt|Document word’: *.docx|*.docx"
 
 #: addon\globalPlugins\scanvox\__init__.py:103
 msgid "Save the file"
@@ -71,7 +71,7 @@ msgstr "Numérisation terminée"
 
 #: addon\globalPlugins\scanvox\__init__.py:145
 msgid "No OCR matching the language of your system is available"
-msgstr "Aucun OCR correspondant à la langue de votre système n'est disponible"
+msgstr "Aucun OCR correspondant à la langue de votre système n’est disponible"
 
 #: addon\globalPlugins\scanvox\__init__.py:147
 msgid "No compatible scanner detected"
@@ -101,12 +101,12 @@ msgid ""
 "new features by clicking on the help button in the add-on store."
 msgstr ""
 "%s version %s est disponible. Souhaitez-vous mettre à jour maintenant? Vous "
-"pourrez voir les nouvelles fonctionnalitées en cliquant sur aide dans l'add-"
+"pourrez voir les nouvelles fonctionnalitées en cliquant sur aide dans l’add-"
 "on store."
 
 #: addon\globalPlugins\scanvox\update_scanvox.py:67
 msgid "No update is available."
-msgstr "Aucune mise à jour n'est disponible."
+msgstr "Aucune mise à jour n’est disponible."
 
 #. Translator: A checkbox label in the settings interface
 #: addon\globalPlugins\scanvox\update_scanvox.py:81
@@ -126,4 +126,4 @@ msgid ""
 "software. To use it, go to the NVDA tool menu and select Scanvox."
 msgstr ""
 "Cette extension permet de lire des documents papier grâce au logicier "
-"Scanvox. Pour l'utiliser, allez dans le menu outil de NVDA puis Scanvox."
+"Scanvox. Pour l’utiliser, allez dans le menu outil de NVDA puis Scanvox."
