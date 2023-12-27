@@ -25,7 +25,7 @@ addon_info = {
 	# Translators: Long description to be shown for this add-on on add-on information from add-ons manager
 	"addon_description": _("""This extension allows you to read paper documents using the Scanvox software. To use it, go to the NVDA tool menu and select Scanvox."""),
 	# version
-	"addon_version": "2023.12.18",
+	"addon_version": "2023.12.27",
 	# Author(s)
 	"addon_author": "Nael Sayegh <infos@nael-accessvision.com>",
 	# URL for the add-on documentation support
