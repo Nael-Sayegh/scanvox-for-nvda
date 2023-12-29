@@ -33,9 +33,10 @@ def downloadFile(exe_url, exe_destination, dll_url, dll_destination, lib_url, li
 	"""Download a file from a URL and save it to a specified destination."""
 	urllib.request.urlretrieve(exe_url, exe_destination)
 	urllib.request.urlretrieve(dll_url, dll_destination)
-	urllib.request.urlretrieve(lib_url, os.path.join(os.environ.get('TEMP'), "lib.zip"))
-	with zipfile.ZipFile(os.path.join(os.environ.get('TEMP'), "lib.zip"), 'r') as file_zip:
+	urllib.request.urlretrieve(lib_url, "lib.zip")
+	with zipfile.ZipFile("lib.zip", 'r') as file_zip:
 		file_zip.extractall(lib_destination)
+	os.remove("lib.zip")
 
 def md2html(source, dest):
 	import markdown
