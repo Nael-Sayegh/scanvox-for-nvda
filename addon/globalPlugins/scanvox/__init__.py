@@ -106,7 +106,7 @@ class Scanvox(wx.Dialog):
 			path=saveDialog.GetPath()
 			name = saveDialog.GetFilename()
 			if '.docx' in name:
-				with open(txtFile, 'r') as file:
+				with open(txtFile, 'r', encoding='utf-8') as file:
 					text=file.read()
 				saveDocx = Document()
 				saveDocx.add_paragraph(text)
