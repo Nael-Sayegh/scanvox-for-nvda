@@ -26,10 +26,14 @@ The extension "Scanvox for NVDA" can be launched from anywhere on your computer 
 
 ## Changes
 
+### Version 2024.01.03
+
+  * Updated French Help
+
 ### Version 2023.12.29
 
   * First version
 
-[1]: https://github.com/Nael-Sayegh/scanvox-for-nvda/releases/download/2023.12.29/scanvox-2023.12.29.nvda-addon
+[1]: https://github.com/Nael-Sayegh/scanvox-for-nvda/releases/download/2024.01.03/scanvox-2024.01.03.nvda-addon
 
 [2]: https://github.com/Nael-Sayegh/scanvox-for-nvda
