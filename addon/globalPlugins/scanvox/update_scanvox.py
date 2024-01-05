@@ -13,6 +13,7 @@ try:
 	from gui.settingsDialogs import SettingsPanel
 except ImportError:
 	from gui import SettingsPane
+import languageHandler
 
 addonHandler.initTranslation()
 
@@ -25,12 +26,8 @@ week= int(time.strftime("%W"))
 
 def updateAvailable():
 	title = _("Update of %s version %s") %(addonInfos["summary"], oversion)
-	msg = _("%s version %s is available. Would you like to update now? You can see the new features by clicking on the help button in the add-on store.") %(addonInfos["summary"], oversion)
-	res = gui.messageBox(msg, title, wx.YES_NO|wx.ICON_ERROR)
-	if res == wx.YES:
-		installupdate()
-	else:
-		config.conf[addonInfos["name"]]["nbWeek"] = week
+	msg = _("%s version %s is available. Would you like to update now? You can view the changes by clicking on the What's New button and scrolling down to Changes.") %(addonInfos["summary"], oversion)
+	updateDialog(title=title, msg=msg).ShowModal()
 
 def installupdate():
 	temp=os.environ.get('TEMP')
@@ -95,5 +92,45 @@ class ScanvoxPanel(SettingsPanel):
 		verifUpdate(True)
 
 	def onSave(self):
-		config.conf["everything"]["autoUpdate"] = self.autoUpdate.GetValue()
+		config.conf["scanvox"]["autoUpdate"] = self.autoUpdate.GetValue()
+
+class updateDialog(wx.Dialog):
+	def __init__(self, parent=None, title=None, msg=None):
+		super().__init__(parent, title=title)
+		mainSizer = wx.BoxSizer(wx.VERTICAL)
+		sHelper = gui.guiHelper.BoxSizerHelper(self, orientation=wx.VERTICAL)
+		# Translators: message to user to report a new version.
+		text = sHelper.addItem(wx.StaticText(self))
+		text.SetLabel(msg)
+		bHelper = gui.guiHelper.ButtonHelper(wx.HORIZONTAL)
+		# Translators: This is a label of a button appearing
+		yes = bHelper.addButton(self, wx.ID_YES, label=_("&Yes"))
+		yes.Bind(wx.EVT_BUTTON, lambda evt: installupdate())
+		yes.SetFocus()
+		# Translators: This is a label of a button appearing
+		no = bHelper.addButton(self, wx.ID_NO, label=_("&No"))
+		no.Bind(wx.EVT_BUTTON, self.onNo)
+		releaseNotes = bHelper.addButton(self, label=_("Wha&t's new"))
+		releaseNotes.Bind(wx.EVT_BUTTON, self.onReleaseNotes)
+		sHelper.addDialogDismissButtons(bHelper)
+		self.EscapeId = wx.ID_NO
+		mainSizer.Add(
+			sHelper.sizer, border=gui.guiHelper.BORDER_FOR_DIALOGS, flag=wx.ALL)
+		mainSizer.Fit(self)
+		self.SetSizer(mainSizer)
+		self.CentreOnScreen()
+
+	def onNo(self, evt):
+		config.conf[addonInfos["name"]]["nbWeek"] = week
+		self.Destroy()
+
+	def onReleaseNotes(self, evt):
+		url=f"https://module.nael-accessvision.com/addons/addons/{addonInfos['name']}/doc/"
+		remoteLanguage = os.listdir(os.path.join(addon, "locale"))
+		localLanguage = languageHandler.getLanguage()
+		localLanguage= localLanguage.split("_")[0]
+		if localLanguage in remoteLanguage:
+			os.startfile(url+localLanguage+"/readme.html")
+		else:
+			os.startfile(url+"en/readme.html")
 
