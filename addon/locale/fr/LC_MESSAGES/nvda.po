@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 'scanvox' '2023.12.14'\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
-"POT-Creation-Date: 2023-12-22 21:57+0100\n"
-"PO-Revision-Date: 2024-01-03 08:53+0100\n"
+"POT-Creation-Date: 2024-01-07 14:57+0100\n"
+"PO-Revision-Date: 2024-01-07 15:02+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -17,106 +17,116 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 3.3.2\n"
 
-#: addon\globalPlugins\scanvox\__init__.py:58
+#: addon\globalPlugins\scanvox\__init__.py:59
 msgid "Open the Scanvox dialog"
 msgstr "Ouvrir le dialogue de Scanvox"
 
 #. Add-on summary, usually the user visible name of the addon.
 #. Translators: Summary for this add-on
 #. to be shown on installation and add-on information found in Add-ons Manager.
-#: addon\globalPlugins\scanvox\__init__.py:59
-#: addon\globalPlugins\scanvox\update_scanvox.py:73 buildVars.py:23
+#: addon\globalPlugins\scanvox\__init__.py:60
+#: addon\globalPlugins\scanvox\update_scanvox.py:70 buildVars.py:23
 msgid "Scanvox for NVDA"
 msgstr "Scanvox pour NVDA"
 
-#: addon\globalPlugins\scanvox\__init__.py:75
+#: addon\globalPlugins\scanvox\__init__.py:76
 msgid "&Scan"
 msgstr "&Numériser"
 
-#: addon\globalPlugins\scanvox\__init__.py:78
+#: addon\globalPlugins\scanvox\__init__.py:79
 msgid "&Save the scanned pages"
 msgstr "&Sauvegarder les pages numérisées"
 
-#: addon\globalPlugins\scanvox\__init__.py:82
+#: addon\globalPlugins\scanvox\__init__.py:83
 msgid "See the result in the &notepad"
 msgstr "Voir le résultat dans le bloc-&note"
 
-#: addon\globalPlugins\scanvox\__init__.py:85
+#: addon\globalPlugins\scanvox\__init__.py:86
 msgid "&Delete the scanned pages"
 msgstr "&Supprimer les pages numérisées"
 
-#: addon\globalPlugins\scanvox\__init__.py:99
+#: addon\globalPlugins\scanvox\__init__.py:100
 msgid "Scanning in progress, please wait..."
 msgstr "Lancement de la numérisation, veuillez patienter..."
 
-#: addon\globalPlugins\scanvox\__init__.py:103
+#: addon\globalPlugins\scanvox\__init__.py:104
 msgid "Select the location where you want to save the file"
 msgstr "Sélectionnez l’emplacement où vous souhaitez enregistrer le fichier"
 
-#: addon\globalPlugins\scanvox\__init__.py:103
+#: addon\globalPlugins\scanvox\__init__.py:104
 msgid "Text file: *.txt|*.txt|Word document: *.docx|*.docx"
 msgstr "Fichier texte’: *.txt|*.txt|Document word’: *.docx|*.docx"
 
-#: addon\globalPlugins\scanvox\__init__.py:103
+#: addon\globalPlugins\scanvox\__init__.py:104
 msgid "Save the file"
 msgstr "Sauvegarder le fichier"
 
-#: addon\globalPlugins\scanvox\__init__.py:122
+#: addon\globalPlugins\scanvox\__init__.py:123
 msgid "No page is scanned"
 msgstr "Aucune page n'est numérisée"
 
-#: addon\globalPlugins\scanvox\__init__.py:142
-msgid "Scan completed"
-msgstr "Numérisation terminée"
-
-#: addon\globalPlugins\scanvox\__init__.py:145
+#: addon\globalPlugins\scanvox\__init__.py:163
 msgid "No OCR matching the language of your system is available"
 msgstr "Aucun OCR correspondant à la langue de votre système n’est disponible"
 
-#: addon\globalPlugins\scanvox\__init__.py:147
+#: addon\globalPlugins\scanvox\__init__.py:165
 msgid "No compatible scanner detected"
 msgstr "Aucun scaner compatible détecté"
 
-#: addon\globalPlugins\scanvox\__init__.py:149
+#: addon\globalPlugins\scanvox\__init__.py:167
 msgid "The page seems empty"
 msgstr "La page semble vide"
 
-#: addon\globalPlugins\scanvox\__init__.py:155
+#: addon\globalPlugins\scanvox\__init__.py:173
 msgid "All the pages have been erased"
 msgstr "Toutes les pages numérisées ont été effacées"
 
-#: addon\globalPlugins\scanvox\__init__.py:160
+#: addon\globalPlugins\scanvox\__init__.py:178
 msgid "It's impossible to delete the scanned pages"
 msgstr "Impossible de supprimer les pages numérisées"
 
-#: addon\globalPlugins\scanvox\update_scanvox.py:27
+#: addon\globalPlugins\scanvox\update_scanvox.py:28
 #, python-format
 msgid "Update of %s version %s"
 msgstr "Mise à jour de %s version %s"
 
-#: addon\globalPlugins\scanvox\update_scanvox.py:28
+#: addon\globalPlugins\scanvox\update_scanvox.py:29
 #, python-format
 msgid ""
-"%s version %s is available. Would you like to update now? You can see the "
-"new features by clicking on the help button in the add-on store."
+"%s version %s is available. Would you like to update now? You can view the "
+"changes by clicking on the What's New button and scrolling down to Changes."
 msgstr ""
 "%s version %s est disponible. Souhaitez-vous mettre à jour maintenant? Vous "
-"pourrez voir les nouvelles fonctionnalitées en cliquant sur aide dans l’add-"
-"on store."
+"pouvez voir les changements en cliquant sur le bouton quoi de neuf et "
+"descendre jusqu'aux changements."
 
-#: addon\globalPlugins\scanvox\update_scanvox.py:67
+#: addon\globalPlugins\scanvox\update_scanvox.py:64
 msgid "No update is available."
 msgstr "Aucune mise à jour n’est disponible."
 
 #. Translator: A checkbox label in the settings interface
-#: addon\globalPlugins\scanvox\update_scanvox.py:81
+#: addon\globalPlugins\scanvox\update_scanvox.py:78
 msgid "Automatically search for updates"
 msgstr "Rechercher automatiquement les mise à jours"
 
 #. Translator: A button label in the settings panel
-#: addon\globalPlugins\scanvox\update_scanvox.py:89
+#: addon\globalPlugins\scanvox\update_scanvox.py:86
 msgid "Search for an update now"
 msgstr "Rechercher une mise à jour maintenant"
+
+#. Translators: This is a label of a button appearing
+#: addon\globalPlugins\scanvox\update_scanvox.py:107
+msgid "&Yes"
+msgstr "&Oui"
+
+#. Translators: This is a label of a button appearing
+#: addon\globalPlugins\scanvox\update_scanvox.py:111
+msgid "&No"
+msgstr "&Non"
+
+#: addon\globalPlugins\scanvox\update_scanvox.py:113
+msgid "Wha&t's new"
+msgstr "&Quoi de neuf"
 
 #. Add-on description
 #. Translators: Long description to be shown for this add-on on add-on information from add-ons manager
