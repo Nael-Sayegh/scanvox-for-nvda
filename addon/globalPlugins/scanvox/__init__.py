@@ -40,6 +40,7 @@ baseDir = os.path.dirname(__file__)
 exe = os.path.join(baseDir, "scanvox.exe")
 document = getDocumentsPath()
 txtFile = os.path.join(baseDir, "scanvox.txt")
+separator = "********************\n"
 
 class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	def __init__(self):
@@ -139,7 +140,24 @@ class Scanvox(wx.Dialog):
 		scan = subprocess.run([exe, "-s"], capture_output=True)
 		result = scan.returncode
 		if result == 0:
-			core.callLater(0, lambda: ui.message(_("Scan completed")))
+			with open(txtFile, 'a', encoding="utf-8") as writeFile:
+				writeFile.write("\n"+separator)
+			with open(txtFile, 'r', encoding="utf-8") as file:
+				lines = file.readlines()
+			numberPages = 0
+			indexes = []
+			for index, line in enumerate(reversed(lines)):
+				if line == separator:
+					numberPages+=1
+					if numberPages == 2:
+						indexes.append(len(lines) - index)
+						break
+			if numberPages == 1:
+				text = ''.join(lines[0:-2])
+			elif indexes:
+				lastIndex = indexes[-1]
+				text = ''.join(lines[lastIndex:-2])
+			core.callLater(0, lambda: ui.message(text.replace("\n"," ")))
 			self.on_Enable_Button(None)
 		elif result == 1003:
 			core.callLater(0, lambda: ui.message(_("No OCR matching the language of your system is available")))
