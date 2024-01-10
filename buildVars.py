@@ -25,13 +25,13 @@ addon_info = {
 	# Translators: Long description to be shown for this add-on on add-on information from add-ons manager
 	"addon_description": _("""This extension allows you to read paper documents using the Scanvox software. To use it, go to the NVDA tool menu and select Scanvox."""),
 	# version
-	"addon_version": "2024.01.03",
+	"addon_version": "2024.01.10",
 	# Author(s)
 	"addon_author": "Nael Sayegh <infos@nael-accessvision.com>",
 	# URL for the add-on documentation support
 	"addon_url": None,
 	# URL for the add-on repository where the source code can be found
-	"addon_sourceURL": None,
+	"addon_sourceURL": "https://github.com/nael-sayegh/scanvox-for-nvda",
 	# Documentation file name
 	"addon_docFileName": "readme.html",
 	# Minimum NVDA version supported (e.g. "2018.3.0", minor version is optional)
@@ -45,7 +45,9 @@ addon_info = {
 	# Add-on license such as GPL 2
 	"addon_license": None,
 	# URL for the license document the ad-on is licensed under
-	"addon_licenseURL": None,
+	"addon_licenseURL": "GPL v2",
+	# URL for the license document the ad-on is licensed under
+	"addon_licenseURL": "https://www.gnu.org/licenses/gpl-2.0.html",
 }
 
 # Define the python files that are the sources of your add-on.
@@ -56,9 +58,7 @@ addon_info = {
 # pythonSources = ["addon/globalPlugins/*.py"]
 # For more information on SCons Glob expressions please take a look at:
 # https://scons.org/doc/production/HTML/scons-user/apd.html
-pythonSources = ["addon/globalPlugins/scanvox/*.py",
-"addon/globalPlugins/scanvox/scanvox.exe",
-"addon/globalPlugins/scanvox/Interop.WIA.dll"
+pythonSources = ["addon/globalPlugins/scanvox/*.py"
 "addon/*.py"]
 
 # Files that contain strings for translation. Usually your python sources

@@ -16,7 +16,7 @@ Pour utiliser cette extension vous devez avoir un scaner USB connecté à votre 
 
 ## Comment ça marche
 
-Pour utiliser cette extension, allez dans le menu Outils de NVDA, puis sélectionnez Scanvox. Dans cette boîte de dialogue, vous pouvez démarrer un scan en cliquant sur le bouton Numériser. Le scan prend quelques secondes pour démarrer, puis vous entendrez "Numérisation terminée". Appuyez sur ce bouton jusqu'à ce que toutes les pages soient scannées. Une fois terminé, vous pouvez enregistrer le fichier ou l'ouvrir directement dans le Bloc-notes avec les boutons correspondants.
+Pour utiliser cette extension, allez dans le menu Outils de NVDA, puis sélectionnez Scanvox. Dans cette boîte de dialogue, vous pouvez démarrer un scan en cliquant sur le bouton Numériser. Le scan prend quelques secondes pour démarrer, puis vous, à la fin de la numérisation, le texte scané est automatiquement lu. Appuyez sur ce bouton jusqu'à ce que toutes les pages soient scannées. Une fois terminé, vous pouvez enregistrer le fichier ou l'ouvrir directement dans le Bloc-notes avec les boutons correspondants.
 Si vous souhaitez supprimer les pages scannées pour scanner un nouveau document, vous pouvez appuyer sur le bouton pour annuler toutes les pages numérisées.
 Lorsque vous quittez Scanvox, toutes les pages scannées sont effacées.
 
@@ -25,6 +25,12 @@ Lorsque vous quittez Scanvox, toutes les pages scannées sont effacées.
 L'extension "Scanvox pour NVDA" peut être lancée de n'importe où sur votre ordinateur en appuyant sur nvda+alt+s. Ce geste peut être modifié dans la boîte de dialogue des gestes d'entrée.
 
 ## Changements
+
+### Version 2024.01.10
+
+  * Modification du système de mise à jour pour ajouter un bouton "Quoi de neuf" qui ouvre l'aide avec les nouveauté de la version
+  * Ajout de la lecture automatique de la page scanée après la numérisation
+  * Ajout d'un séparateur de pagedans les fichier (20 astérisques) pour permettre de savoir quand on change de page
 
 ### Version 2024.01.03
 
@@ -37,6 +43,6 @@ Copyright ©: 2023 (Nael Sayegh et Nael-Accessvision
 
 <!-- links section -->
 
-[1]: https://github.com/Nael-Sayegh/scanvox-for-nvda/releases/download/2024.01.03/scanvox-2024.01.03.nvda-addon
+[1]: https://github.com/Nael-Sayegh/scanvox-for-nvda/releases/download/2024.01.10/scanvox-2024.01.10.nvda-addon
 
 [2]: https://github.com/Nael-Sayegh/scanvox-for-nvda
