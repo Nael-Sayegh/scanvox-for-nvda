@@ -1,0 +1,141 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 'scanvox' '2023.12.14'\n"
+"Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
+"POT-Creation-Date: 2024-01-07 14:57+0100\n"
+"PO-Revision-Date: 2024-01-14 13:28+0000\n"
+"Last-Translator: Ângelo Abrantes <ampa4374@gmail.com>\n"
+"Language-Team: Equipa portuguesa do NVDA (Ângelo Abrantes e Rui Fontes)\n"
+"Language: pt_PT\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.4.2\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+#: addon\globalPlugins\scanvox\__init__.py:59
+msgid "Open the Scanvox dialog"
+msgstr "Abrir a caixa de diálogo do Scanvox"
+
+#. Add-on summary, usually the user visible name of the addon.
+#. Translators: Summary for this add-on
+#. to be shown on installation and add-on information found in Add-ons Manager.
+#: addon\globalPlugins\scanvox\__init__.py:60
+#: addon\globalPlugins\scanvox\update_scanvox.py:70 buildVars.py:23
+msgid "Scanvox for NVDA"
+msgstr "Scanvox para NVDA"
+
+#: addon\globalPlugins\scanvox\__init__.py:76
+msgid "&Scan"
+msgstr "&Digitalizar"
+
+#: addon\globalPlugins\scanvox\__init__.py:79
+msgid "&Save the scanned pages"
+msgstr "&Guardar as páginas digitalizadas"
+
+#: addon\globalPlugins\scanvox\__init__.py:83
+msgid "See the result in the &notepad"
+msgstr "Ver o resultado no &notepad"
+
+#: addon\globalPlugins\scanvox\__init__.py:86
+msgid "&Delete the scanned pages"
+msgstr "&Apagar as páginas digitalizadas"
+
+#: addon\globalPlugins\scanvox\__init__.py:100
+msgid "Scanning in progress, please wait..."
+msgstr "Digitalização em curso, aguarde, por favor..."
+
+#: addon\globalPlugins\scanvox\__init__.py:104
+msgid "Select the location where you want to save the file"
+msgstr "Seleccione o local onde pretende guardar o ficheiro"
+
+#: addon\globalPlugins\scanvox\__init__.py:104
+msgid "Text file: *.txt|*.txt|Word document: *.docx|*.docx"
+msgstr "Ficheiro de texto: *.txt|*.txt|Documento de texto: *.docx|*.docx"
+
+#: addon\globalPlugins\scanvox\__init__.py:104
+msgid "Save the file"
+msgstr "Guardar o ficheiro"
+
+#: addon\globalPlugins\scanvox\__init__.py:123
+msgid "No page is scanned"
+msgstr "Nenhuma página foi digitalizada"
+
+#: addon\globalPlugins\scanvox\__init__.py:163
+msgid "No OCR matching the language of your system is available"
+msgstr ""
+"Não está disponível nenhum OCR que corresponda ao idioma do seu sistema"
+
+#: addon\globalPlugins\scanvox\__init__.py:165
+msgid "No compatible scanner detected"
+msgstr "Não foi detectado nenhum scanner compatível"
+
+#: addon\globalPlugins\scanvox\__init__.py:167
+msgid "The page seems empty"
+msgstr "A página parece estar vazia"
+
+#: addon\globalPlugins\scanvox\__init__.py:173
+msgid "All the pages have been erased"
+msgstr "Todas as páginas foram apagadas"
+
+#: addon\globalPlugins\scanvox\__init__.py:178
+msgid "It's impossible to delete the scanned pages"
+msgstr "É impossível apagar as páginas digitalizadas"
+
+#: addon\globalPlugins\scanvox\update_scanvox.py:28
+#, python-format
+msgid "Update of %s version %s"
+msgstr "Atualização da versão %s %s"
+
+#: addon\globalPlugins\scanvox\update_scanvox.py:29
+#, python-format
+msgid ""
+"%s version %s is available. Would you like to update now? You can view the "
+"changes by clicking on the What's New button and scrolling down to Changes."
+msgstr ""
+"a versão %s %s está disponível. Gostaria de atualizar agora? Pode ver as "
+"alterações clicando no botão Novidades e deslocando-se para Alterações."
+
+#: addon\globalPlugins\scanvox\update_scanvox.py:64
+msgid "No update is available."
+msgstr "Não existe qualquer atualização disponível."
+
+#. Translator: A checkbox label in the settings interface
+#: addon\globalPlugins\scanvox\update_scanvox.py:78
+msgid "Automatically search for updates"
+msgstr "Procurar automaticamente por actualizações"
+
+#. Translator: A button label in the settings panel
+#: addon\globalPlugins\scanvox\update_scanvox.py:86
+msgid "Search for an update now"
+msgstr "Procurar uma atualização agora"
+
+#. Translators: This is a label of a button appearing
+#: addon\globalPlugins\scanvox\update_scanvox.py:107
+msgid "&Yes"
+msgstr "&Sim"
+
+#. Translators: This is a label of a button appearing
+#: addon\globalPlugins\scanvox\update_scanvox.py:111
+msgid "&No"
+msgstr "&Não"
+
+#: addon\globalPlugins\scanvox\update_scanvox.py:113
+msgid "Wha&t's new"
+msgstr "O que &há de novo"
+
+#. Add-on description
+#. Translators: Long description to be shown for this add-on on add-on information from add-ons manager
+#: buildVars.py:26
+msgid ""
+"This extension allows you to read paper documents using the Scanvox "
+"software. To use it, go to the NVDA tool menu and select Scanvox."
+msgstr ""
+"Esta extensão permite-lhe ler documentos em papel utilizando o software "
+"Scanvox. Para a utilizar, aceda ao menu de ferramentas do NVDA e seleccione "
+"Scanvox."
