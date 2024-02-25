@@ -73,7 +73,12 @@ class Scanvox(wx.Dialog):
 		super().__init__(parent, title="Scanvox")
 		mainSizer = wx.BoxSizer(wx.VERTICAL)
 		sHelper = gui.guiHelper.BoxSizerHelper(self, orientation=wx.VERTICAL)
+		self.contentText = sHelper.addLabeledControl(_("Text:"),
+			wxCtrlClass=wx.TextCtrl,
+			style=wx.TE_MULTILINE|wx.TE_READONLY)
+		self.contentText.SetMinSize((300, 200))
 		self.scan = sHelper.addItem(wx.Button(self, label=_("&Scan")))
+		self.scan.SetFocus()
 		self.scan.Bind(wx.EVT_BUTTON, self.on_scan)
 		self.save = sHelper.addItem(
 			wx.Button(self, label=_("&Save the scanned pages"))
@@ -158,6 +163,8 @@ class Scanvox(wx.Dialog):
 				lastIndex = indexes[-1]
 				text = ''.join(lines[lastIndex:-2])
 			core.callLater(0, lambda: ui.message(text.replace("\n"," ")))
+			self.contentText.AppendText(text+separator)
+			self.contentText.SetInsertionPoint(0)
 			self.on_Enable_Button(None)
 		elif result == 1003:
 			core.callLater(0, lambda: ui.message(_("No OCR matching the language of your system is available")))
