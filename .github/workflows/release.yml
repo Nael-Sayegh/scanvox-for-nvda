@@ -42,3 +42,4 @@ jobs:
         with:
           files: |
             *.nvda-addon
+          body_path: changelog.md

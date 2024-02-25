@@ -8,21 +8,21 @@
 
 # Presentation
 
-This extension uses the Scanvox software to read your paper documents. It was created with the help of the software developer and does not require any additional installation.
+This add-on uses the Scanvox software to read your paper documents. It was created with the help of the software developer and does not require any additional installation.
 
 ## Prerequisites 
 
-To use this extension, you must have a USB scanner connected to your computer that is compatible with TWAIN or WIA, which is the case with most scanners.
+To use this add-on, you must have a USB scanner connected to your computer that is compatible with TWAIN or WIA, which is the case with most scanners.
 
 ## How it works
 
-To use this extension, go to the NVDA Tools menu, then select Scanvox. In this dialog, you can start a scan by clicking on the Scan button. The scan takes a few seconds to start, and then, at the end of the scanning process, the scanned text is automatically read out loud. Press this button until all pages have been scanned. Once finished, you can save the file or open it directly in Notepad using the corresponding buttons.
+To use this add-on, go to the NVDA Tools menu, then select Scanvox. In this dialog, you can start a scan by clicking on the Scan button. The scan takes a few seconds to start, and then, at the end of the scanning process, the scanned text is automatically read out loud. Press this button until all pages have been scanned. Once finished, you can save the file or open it directly in Notepad using the corresponding buttons.
 If you want to delete the scanned pages to scan a new document, you can press the button to cancel all scanned pages.
 When you exit Scanvox, all scanned pages are erased.
 
 ### Keyboard Shortcuts
 
-The extension "Scanvox for NVDA" can be launched from anywhere on your computer by pressing nvda+alt+s. This gesture can be modified in the input gestures dialog.
+The add-on "Scanvox for NVDA" can be launched from anywhere on your computer by pressing nvda+alt+s. This gesture can be modified in the input gestures dialog.
 
 ## Changes
 

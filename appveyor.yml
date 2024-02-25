@@ -1,0 +1,30 @@
+version: '{build}'
+
+branches:
+  only:
+    - main
+
+skip_tags: true
+
+image: Ubuntu2204
+
+environment:
+    PY_PYTHON: 3.11-32
+
+install: 
+    - sudo pip install --upgrade --no-warn-script-location pip
+    - sudo pip install --no-warn-script-location scons markdown 
+    - sudo apt-get install -y gettext
+
+build: off
+build_script:
+    - scons version=$(printenv APPVEYOR_BUILD_NUMBER)
+    
+test: off
+deploy: off
+
+artifacts:
+    - path: '*.nvda-addon'
+
+on_success:
+    - "appveyor PushArtifact *.nvda-addon"
