@@ -162,8 +162,7 @@ class Scanvox(wx.Dialog):
 			elif indexes:
 				lastIndex = indexes[-1]
 				text = ''.join(lines[lastIndex:-2])
-				# Ajouter text à self.contenttext
-				self.contentText.AppendText(text+separator)
+				self.contentText.SetValue(text+separator)
 			core.callLater(0, lambda: ui.message(text.replace("\n"," ")))
 			self.on_Enable_Button(None)
 		elif result == 1003:
