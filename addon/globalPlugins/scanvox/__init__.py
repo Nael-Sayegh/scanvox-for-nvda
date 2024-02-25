@@ -162,8 +162,8 @@ class Scanvox(wx.Dialog):
 			elif indexes:
 				lastIndex = indexes[-1]
 				text = ''.join(lines[lastIndex:-2])
-				self.contentText.SetValue(text+separator)
 			core.callLater(0, lambda: ui.message(text.replace("\n"," ")))
+			self.contentText.SetValue(text+separator)
 			self.on_Enable_Button(None)
 		elif result == 1003:
 			core.callLater(0, lambda: ui.message(_("No OCR matching the language of your system is available")))
