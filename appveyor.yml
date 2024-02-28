@@ -18,7 +18,7 @@ install:
 
 build: off
 build_script:
-    - scons version=$(printenv APPVEYOR_pull_request_number)-$(printenv APPVEYOR_pull_request_head_commit)
+    - scons version=$(printenv APPVEYOR_REPO_COMMIT)-dev
     
 test: off
 deploy: off
