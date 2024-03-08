@@ -70,6 +70,7 @@ class ScanvoxPanel(SettingsPanel):
 	title = _("Scanvox for NVDA")
 	
 	def makeSettings(self, settingsSizer):
+		sHelper = gui.guiHelper.BoxSizerHelper(self, sizer=settingsSizer)
 		generalGroupSizer = wx.StaticBoxSizer(wx.VERTICAL, self, label=_("General"))
 		generalGroupBox = generalGroupSizer.GetStaticBox()
 		generalGroup = gui.guiHelper.BoxSizerHelper(self, sizer=generalGroupSizer)
