@@ -70,17 +70,33 @@ class ScanvoxPanel(SettingsPanel):
 	title = _("Scanvox for NVDA")
 	
 	def makeSettings(self, settingsSizer):
-		sHelper = gui.guiHelper.BoxSizerHelper(self, sizer=settingsSizer)
+		generalGroupSizer = wx.StaticBoxSizer(wx.VERTICAL, self, label=_("General"))
+		generalGroupBox = generalGroupSizer.GetStaticBox()
+		generalGroup = gui.guiHelper.BoxSizerHelper(self, sizer=generalGroupSizer)
+		sHelper.addItem(generalGroup)
 
-		self.autoUpdate = sHelper.addItem(
+		self.automaticalyReadText = generalGroup.addItem(
+			wx.CheckBox(
+				generalGroupBox, 
+				# Translators: Checkbox label in parameter panel
+				label=_("Automatically read the text when the scan is completed")
+			)
+		)
+		self.automaticalyReadText.SetValue(config.conf["scanvox"]["automaticalyReadText"])
+
+		updateGroupSizer = wx.StaticBoxSizer(wx.VERTICAL, self, label=_("Update"))
+		updateGroupBox = updateGroupSizer.GetStaticBox()
+		updateGroup = gui.guiHelper.BoxSizerHelper(self, sizer=settingsSizer)
+		sHelper.addItem(updateGroup)
+		self.autoUpdate = updateGroup.addItem(
 			wx.CheckBox(self,
-			# Translator: A checkbox label in the settings interface
+			# Translators: A checkbox label in the settings interface
 			label=_("Automatically search for updates")
 		)
 		)
 		self.autoUpdate.SetValue(config.conf["scanvox"]["autoUpdate"])
 
-		self.searchUpdate = sHelper.addItem(
+		self.searchUpdate = updateGroup.addItem(
 			wx.Button(self,
 			# Translator: A button label in the settings panel
 			label=_("Search for an update now")
@@ -93,6 +109,7 @@ class ScanvoxPanel(SettingsPanel):
 
 	def onSave(self):
 		config.conf["scanvox"]["autoUpdate"] = self.autoUpdate.GetValue()
+		config.conf["scanvox"]["automaticalyReadText"] = self.automaticalyReadText.GetValue()
 
 class updateDialog(wx.Dialog):
 	def __init__(self, parent=None, title=None, msg=None):

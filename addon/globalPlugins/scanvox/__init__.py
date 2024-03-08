@@ -30,6 +30,7 @@ confspecs = {
 	"nbWeek": "integer(default=60)",
 	"autoUpdate": "boolean(default=True)",
 	"updateEveryStart": "boolean(default=False)",
+	"automaticalyReadText": "boolean(default=False)"
 }
 
 config.conf.spec["scanvox"] = confspecs
@@ -162,7 +163,8 @@ class Scanvox(wx.Dialog):
 			elif indexes:
 				lastIndex = indexes[-1]
 				text = ''.join(lines[lastIndex:-2])
-			core.callLater(0, lambda: ui.message(text.replace("\n"," ")))
+				if config.conf["scanvox"]["automaticalyReadText"]:
+					core.callLater(0, lambda: ui.message(text.replace("\n"," ")))
 			self.contentText.AppendText(text+separator)
 			self.contentText.SetInsertionPoint(0)
 			self.on_Enable_Button(None)
