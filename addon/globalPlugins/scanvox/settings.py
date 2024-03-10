@@ -87,7 +87,7 @@ class ScanvoxPanel(SettingsPanel):
 			wx.CheckBox(
 				generalGroupBox, 
 				# Translators: Checkbox label in parameter panel
-				label=_("Automatically read the text when the scan is completed")
+				label=_("&Automatically read the text when the scan is completed")
 			)
 		)
 		self.automaticalyReadText.SetValue(config.conf["scanvox"]["automaticalyReadText"])
@@ -98,7 +98,7 @@ class ScanvoxPanel(SettingsPanel):
 		updateGroup = gui.guiHelper.BoxSizerHelper(self, sizer=settingsSizer)
 		sHelper.addItem(updateGroup)
 		self.autoUpdate = updateGroup.addItem(
-			wx.CheckBox(self,
+			wx.CheckBox(updateGroupBox,
 			# Translators: A checkbox label in the settings interface
 			label=_("Automatically search for updates")
 		)
@@ -106,7 +106,8 @@ class ScanvoxPanel(SettingsPanel):
 		self.autoUpdate.SetValue(config.conf["scanvox"]["autoUpdate"])
 
 		self.searchUpdate = updateGroup.addItem(
-			wx.Button(self,
+			wx.Button(updateGroupBox, 
+			wx.ID_ANY,
 			# Translators: A button label in the settings panel
 			label=_("Search for an update now")
 		)
