@@ -159,6 +159,12 @@ class Scanvox(wx.Dialog):
 		scan = subprocess.run([exe, "-s"], capture_output=True)
 		result = scan.returncode
 		if result == 0:
+			if not config.conf["scanvox"]["automaticalyReadText"]:
+				core.callLater(0, lambda: ui.message(
+						# Translators: a message that the scan is complete
+						_("Scan complete")
+						)
+				)
 			with open(txtFile, 'a', encoding="utf-8") as writeFile:
 				writeFile.write("\n"+separator)
 			with open(txtFile, 'r', encoding="utf-8") as file:
@@ -176,14 +182,8 @@ class Scanvox(wx.Dialog):
 			elif indexes:
 				lastIndex = indexes[-1]
 				text = ''.join(lines[lastIndex:-2])
-				if config.conf["scanvox"]["automaticalyReadText"]:
-					core.callLater(0, lambda: ui.message(text.replace("\n"," ")))
-				else:
-					core.callLater(0, lambda: ui.message(
-							# Translators: a message that the scan is complete
-							_("Scan complete")
-						)
-					)
+			if config.conf["scanvox"]["automaticalyReadText"]:
+				core.callLater(0, lambda: ui.message(text.replace("\n"," ")))
 			self.contentText.AppendText(text+separator)
 			self.contentText.SetInsertionPoint(0)
 			self.on_Enable_Button(None)
