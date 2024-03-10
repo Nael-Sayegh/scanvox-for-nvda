@@ -95,7 +95,7 @@ class ScanvoxPanel(SettingsPanel):
 		# Translators: A group of settings in the settings panel
 		updateGroupSizer = wx.StaticBoxSizer(wx.VERTICAL, self, label=_("Update"))
 		updateGroupBox = updateGroupSizer.GetStaticBox()
-		updateGroup = gui.guiHelper.BoxSizerHelper(self, sizer=settingsSizer)
+		updateGroup = gui.guiHelper.BoxSizerHelper(self, sizer=updateGroupSizer)
 		sHelper.addItem(updateGroup)
 		self.autoUpdate = updateGroup.addItem(
 			wx.CheckBox(updateGroupBox,
