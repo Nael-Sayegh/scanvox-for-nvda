@@ -35,7 +35,7 @@ confspecs = {
 
 config.conf.spec["scanvox"] = confspecs
 
-from . import settings as settings
+from . import settings
 
 baseDir = os.path.dirname(__file__) 
 exe = os.path.join(baseDir, "scanvox.exe")
