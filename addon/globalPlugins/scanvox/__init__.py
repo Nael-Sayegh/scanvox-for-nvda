@@ -153,7 +153,6 @@ class Scanvox(wx.Dialog):
 	def on_Enable_Button(self, evt):
 		if not self.open.IsEnabled():
 			self.save.Enable(True)
-			self.open.Enable(True)
 			self.delete.Enable(True)
 
 	def scanThread(self):
