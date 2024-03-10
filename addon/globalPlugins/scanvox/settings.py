@@ -107,7 +107,6 @@ class ScanvoxPanel(SettingsPanel):
 
 		self.searchUpdate = updateGroup.addItem(
 			wx.Button(updateGroupBox, 
-			wx.ID_ANY,
 			# Translators: A button label in the settings panel
 			label=_("Search for an update now")
 		)
