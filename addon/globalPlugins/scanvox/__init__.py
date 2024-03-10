@@ -178,6 +178,11 @@ class Scanvox(wx.Dialog):
 				text = ''.join(lines[lastIndex:-2])
 				if config.conf["scanvox"]["automaticalyReadText"]:
 					core.callLater(0, lambda: ui.message(text.replace("\n"," ")))
+			else:
+				ui.message(
+					# Translators: a message that the scan is complete
+					_("Scan complete")
+				)
 			self.contentText.AppendText(text+separator)
 			self.contentText.SetInsertionPoint(0)
 			self.on_Enable_Button(None)
