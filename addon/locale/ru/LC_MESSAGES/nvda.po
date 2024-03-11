@@ -1,0 +1,129 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: 'scanvox' '2024.01.10'\n"
+"POT-Creation-Date: 2024-03-11 15:35+0300\n"
+"PO-Revision-Date: 2024-03-11 15:46+0300\n"
+"Last-Translator: \n"
+"Language-Team: Danil Kostenkov <danilkostenkov38@gmail.com>\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.4.2\n"
+"X-Poedit-Basepath: ../globalPlugins/scanvox\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: __init__.py:61
+msgid "Open the Scanvox dialog"
+msgstr "Открыть диалог Scanvox"
+
+#: __init__.py:63 settings.py:76
+msgid "Scanvox for NVDA"
+msgstr "Scanvox для NVDA"
+
+#: __init__.py:81
+msgid "Text:"
+msgstr "Распознанный текст:"
+
+#: __init__.py:87
+msgid "&Scan"
+msgstr "&Сканировать"
+
+#: __init__.py:94
+msgid "&Save the scanned pages"
+msgstr "&Сохранить отсканированные страницы"
+
+#: __init__.py:101
+msgid "&Delete the scanned pages"
+msgstr "&Удалить отсканированные страницы"
+
+#: __init__.py:117
+msgid "Scanning in progress, please wait..."
+msgstr "Выполняется сканирование, пожалуйста, подождите..."
+
+#: __init__.py:124
+msgid "Select the location where you want to save the file"
+msgstr "Выберите место, где вы хотите сохранить файл"
+
+#: __init__.py:126
+msgid "Text file: *.txt|*.txt|Word document: *.docx|*.docx"
+msgstr "Текстовый файл: *.txt|*.txt|Документ Word: *.docx|*.docx"
+
+#: __init__.py:128
+msgid "Save the file"
+msgstr "Сохранить файл"
+
+#: __init__.py:165
+msgid "Scan complete"
+msgstr "Сканирование завершено"
+
+#: __init__.py:193
+msgid "No OCR matching the language of your system is available"
+msgstr ""
+"Распознавание текста, соответствующее языку вашей системы, недоступно"
+
+#: __init__.py:198
+msgid "No compatible scanner detected"
+msgstr "Совместимый сканер не обнаружен"
+
+#: __init__.py:203
+msgid "The page seems empty"
+msgstr "Похоже, это чистый лист"
+
+#: __init__.py:212
+msgid "All the pages have been erased"
+msgstr "Все отсканированные страницы были удалены"
+
+#: __init__.py:220
+msgid "It's impossible to delete the scanned pages"
+msgstr "Невозможно удалить отсканированные страницы"
+
+#: settings.py:29
+#, python-format
+msgid "Update of %s version %s"
+msgstr "Обновление %s версия %s"
+
+#: settings.py:31
+#, python-format
+msgid ""
+"%s version %s is available. Would you like to update now? You can view the "
+"changes by clicking on the What's New button and scrolling down to Changes."
+msgstr ""
+"%s доступна версия %s. Хотели бы вы обновиться сейчас? Вы сможете увидеть "
+"новые функции, нажав \"справка\" в магазине дополнений."
+
+#: settings.py:68
+msgid "No update is available."
+msgstr "Обновление недоступно."
+
+#: settings.py:81
+msgid "General"
+msgstr "Общее"
+
+#: settings.py:90
+msgid "&Automatically read the text when the scan is completed"
+msgstr "&Автоматически читать текст по завершении сканирования"
+
+#: settings.py:96
+msgid "Update"
+msgstr "Обновление"
+
+#: settings.py:103
+msgid "Automatically search for updates"
+msgstr "Автоматический поиск обновлений"
+
+#: settings.py:111
+msgid "Search for an update now"
+msgstr "Проверить наличие обновлений"
+
+#: settings.py:136
+msgid "&Yes"
+msgstr "&Да"
+
+#: settings.py:144
+msgid "&No"
+msgstr "&Нет"
+
+#: settings.py:149
+msgid "Wha&t's new"
+msgstr "&Что нового"
