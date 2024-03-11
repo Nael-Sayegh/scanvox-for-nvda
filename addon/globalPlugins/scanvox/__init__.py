@@ -30,7 +30,7 @@ confspecs = {
 	"nbWeek": "integer(default=60)",
 	"autoUpdate": "boolean(default=True)",
 	"updateEveryStart": "boolean(default=False)",
-	"automaticalyReadText": "boolean(default=False)"
+	"automaticalyReadText": "boolean(default=True)"
 }
 
 config.conf.spec["scanvox"] = confspecs
