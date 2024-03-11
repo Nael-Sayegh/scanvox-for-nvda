@@ -30,11 +30,12 @@ confspecs = {
 	"nbWeek": "integer(default=60)",
 	"autoUpdate": "boolean(default=True)",
 	"updateEveryStart": "boolean(default=False)",
+	"automaticalyReadText": "boolean(default=True)"
 }
 
 config.conf.spec["scanvox"] = confspecs
 
-from . import update_scanvox as update
+from . import settings
 
 baseDir = os.path.dirname(__file__) 
 exe = os.path.join(baseDir, "scanvox.exe")
@@ -46,7 +47,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	def __init__(self):
 		super(GlobalPlugin, self).__init__()
 		self.createMenu()
-		gui.NVDASettingsDialog.categoryClasses.append(update.ScanvoxPanel)
+		gui.NVDASettingsDialog.categoryClasses.append(settings.ScanvoxPanel)
 	
 	def createMenu(self):
 		self.submenu_item = gui.mainFrame.sysTrayIcon.toolsMenu.Insert(8, wx.ID_ANY, "&Scanvox", "Scanvox")
@@ -56,7 +57,9 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		gui.mainFrame.popupSettingsDialog(Scanvox)
 	
 	@script(gesture="kb:nvda+alt+s",
+		# Translators: this is the description of a command that opens the Scanvox dialog
 		description=_("Open the Scanvox dialog"),
+		# Translators: this is the category for the Scanvox dialog command in the input gestures dialog
 		category=_("Scanvox for NVDA")
 	)
 	def script_openScanvoxDialog(self, gesture):
@@ -64,7 +67,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 	def terminate(self):
 		gui.mainFrame.sysTrayIcon.toolsMenu.Remove(self.submenu_item)
-		gui.NVDASettingsDialog.categoryClasses.remove(update.ScanvoxPanel) 
+		gui.NVDASettingsDialog.categoryClasses.remove(settings.ScanvoxPanel) 
 		super().terminate()
 	
 class Scanvox(wx.Dialog):
@@ -73,22 +76,29 @@ class Scanvox(wx.Dialog):
 		super().__init__(parent, title="Scanvox")
 		mainSizer = wx.BoxSizer(wx.VERTICAL)
 		sHelper = gui.guiHelper.BoxSizerHelper(self, orientation=wx.VERTICAL)
-		self.contentText = sHelper.addLabeledControl(_("Text:"),
+		self.contentText = sHelper.addLabeledControl(
+			# Translators: this is a label for a text control that displays the scanned text
+			_("Text:"),
 			wxCtrlClass=wx.TextCtrl,
 			style=wx.TE_MULTILINE|wx.TE_READONLY)
 		self.contentText.SetMinSize((300, 200))
-		self.scan = sHelper.addItem(wx.Button(self, label=_("&Scan")))
+		self.scan = sHelper.addItem(wx.Button(self, 
+			# Translators: this is the label for a button that starts the scanning process
+			label=_("&Scan"))
+		)
 		self.scan.SetFocus()
 		self.scan.Bind(wx.EVT_BUTTON, self.on_scan)
 		self.save = sHelper.addItem(
-			wx.Button(self, label=_("&Save the scanned pages"))
+			wx.Button(self, 
+				# Translators: this is the label for a button that saves the scanned text
+				label=_("&Save the scanned pages")
+			)
 		)
 		self.save.Bind(wx.EVT_BUTTON, self.on_save)
 		self.save.Enable(False)
-		self.open = sHelper.addItem(wx.Button(self, label=_("See the result in the &notepad")))
-		self.open.Enable(False)
-		self.open.Bind(wx.EVT_BUTTON, self.on_open)
-		self.delete = sHelper.addItem(wx.Button(self, label=_("&Delete the scanned pages")))
+		self.delete = sHelper.addItem(wx.Button(self, 
+			# Translators: label for a button
+			label=_("&Delete the scanned pages")))
 		self.delete.Bind(wx.EVT_BUTTON, self.on_delete)
 		self.delete.Enable(False)
 		bHelper = sHelper.addDialogDismissButtons(gui.guiHelper.ButtonHelper(wx.HORIZONTAL))
@@ -102,11 +112,23 @@ class Scanvox(wx.Dialog):
 		self.SetSizer(mainSizer)
 	
 	def on_scan(self, evt):
-		ui.message(_("Scanning in progress, please wait..."))
+		ui.message(
+			# Translators: a message that is spoken when the scanning process starts
+			_("Scanning in progress, please wait...")
+		)
 		threading.Thread(target=self.scanThread).start()
 	
 	def on_save(self, evt):
-		saveDialog = wx.FileDialog(self, message=_("Select the location where you want to save the file"), wildcard=_("Text file: *.txt|*.txt|Word document: *.docx|*.docx"), name=_("Save the file"), defaultDir=document, style=wx.FD_SAVE|wx.FD_OVERWRITE_PROMPT)
+		saveDialog = wx.FileDialog(self, 
+			# Translators: title of a file dialog
+			message=_("Select the location where you want to save the file"), 
+			# Translators: filter for a file dialog
+			wildcard=_("Text file: *.txt|*.txt|Word document: *.docx|*.docx"), 
+			# Translators: label for a file dialog
+			name=_("Save the file"), 
+			defaultDir=document, 
+			style=wx.FD_SAVE|wx.FD_OVERWRITE_PROMPT
+		)
 		saveDialog.SetFilename("Scanvox.txt")
 		if saveDialog.ShowModal() == wx.ID_OK:
 			path=saveDialog.GetPath()
@@ -121,13 +143,6 @@ class Scanvox(wx.Dialog):
 				copy(txtFile, path)
 			self.on_Enable_Button(None)
 	
-	def on_open(self, evt):
-		open = subprocess.run([exe, "-n"])
-		result = open.returncode
-		if result == 1002:
-			ui.message(_("No page is scanned"))
-			self.on_Enable_Button(None)
-	
 	def on_delete(self, evt):
 		threading.Thread(target=self.deleteThread).start()
 	
@@ -136,15 +151,20 @@ class Scanvox(wx.Dialog):
 		self.Destroy()
 	
 	def on_Enable_Button(self, evt):
-		if not self.open.IsEnabled():
+		if not self.save.IsEnabled():
 			self.save.Enable(True)
-			self.open.Enable(True)
 			self.delete.Enable(True)
 
 	def scanThread(self):
 		scan = subprocess.run([exe, "-s"], capture_output=True)
 		result = scan.returncode
 		if result == 0:
+			if not config.conf["scanvox"]["automaticalyReadText"]:
+				core.callLater(0, lambda: ui.message(
+						# Translators: a message that the scan is complete
+						_("Scan complete")
+						)
+				)
 			with open(txtFile, 'a', encoding="utf-8") as writeFile:
 				writeFile.write("\n"+separator)
 			with open(txtFile, 'r', encoding="utf-8") as file:
@@ -162,24 +182,40 @@ class Scanvox(wx.Dialog):
 			elif indexes:
 				lastIndex = indexes[-1]
 				text = ''.join(lines[lastIndex:-2])
-			core.callLater(0, lambda: ui.message(text.replace("\n"," ")))
+			if config.conf["scanvox"]["automaticalyReadText"]:
+				core.callLater(0, lambda: ui.message(text.replace("\n"," ")))
 			self.contentText.AppendText(text+separator)
 			self.contentText.SetInsertionPoint(0)
 			self.on_Enable_Button(None)
 		elif result == 1003:
-			core.callLater(0, lambda: ui.message(_("No OCR matching the language of your system is available")))
+			core.callLater(0, lambda: ui.message(
+				# Translators: a message that is spoken when the OCR is not available
+				_("No OCR matching the language of your system is available"))
+			)
 		elif result == 1005:
-			core.callLater(0, lambda: ui.message(_("No compatible scanner detected")))
+			core.callLater(0, lambda: ui.message(
+				# Translators: a message that is spoken when no scanner is detected
+				_("No compatible scanner detected"))
+			)
 		elif result == 1006:
-			core.callLater(0, lambda: ui.message(_("The page seems empty")))
+			core.callLater(0, lambda: ui.message(
+				# Translators: a message that is spoken when the page is empty
+				_("The page seems empty"))
+			)
 
 	def deleteThread(self):
 		delete = subprocess.run([exe, "-c"], capture_output=True)
 		result = delete.returncode
 		if result == 0:
-			core.callLater(0, lambda: ui.message(_("All the pages have been erased")))
+			core.callLater(0, lambda: ui.message(
+				# Translators: a message that is spoken when the scanned pages are deleted
+				_("All the pages have been erased"))
+			)
 			self.save.Enable(False)
 			self.open.Enable(False)
 			self.delete.Enable(False)
 		else:
-			core.callLater(0, lambda: ui.message(_("It's impossible to delete the scanned pages")))
+			core.callLater(0, lambda: ui.message(
+				# Translators: a message that is spoken when the scanned pages cannot be deleted
+				_("It's impossible to delete the scanned pages"))
+			)

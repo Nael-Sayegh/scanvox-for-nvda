@@ -16,7 +16,7 @@ To use this add-on, you must have a USB scanner connected to your computer that 
 
 ## How it works
 
-To use this add-on, go to the NVDA Tools menu, then select Scanvox. In this dialog, you can start a scan by clicking on the Scan button. The scan takes a few seconds to start, and then, at the end of the scanning process, the scanned text is automatically read out loud. Press this button until all pages have been scanned. Once finished, you can read the different scanned pages by doing shift+tab from the scanned button or by doing alt+t to access an editing area with the content of all the pages or you can save the file or open it directly in Notepad using the corresponding buttons.
+To use this add-on, go to the NVDA Tools menu, then select Scanvox. In this dialog, you can start a scan by clicking on the Scan button. The scan takes a few seconds to start, and then, at the end of the scanning process, the scanned text is automatically read out loud. You can deactivate automatic playback by going to the NVDA settings menu, then to the scanvox for NVDA category. Press this button until all pages have been scanned. Once finished, you can read the different scanned pages by doing shift+tab from the scanned button or by doing alt+t to access an editing area with the content of all the pages or you can save the file or open it directly in Notepad using the corresponding buttons.
 If you want to delete the scanned pages to scan a new document, you can press the button to cancel all scanned pages.
 When you exit Scanvox, all scanned pages are erased.
 

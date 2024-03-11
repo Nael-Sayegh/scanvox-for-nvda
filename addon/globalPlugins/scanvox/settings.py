@@ -25,7 +25,9 @@ time=datetime.datetime.now()
 week= int(time.strftime("%W"))
 
 def updateAvailable():
+	# Translators: title of a dialog box
 	title = _("Update of %s version %s") %(addonInfos["summary"], oversion)
+	# Translators: message to user to report a new version.
 	msg = _("%s version %s is available. Would you like to update now? You can view the changes by clicking on the What's New button and scrolling down to Changes.") %(addonInfos["summary"], oversion)
 	updateDialog(title=title, msg=msg).ShowModal()
 
@@ -61,28 +63,51 @@ def verifUpdate(gesture=False):
 		wx.CallAfter(updateAvailable)
 	else:
 		if gesture:
-			ui.message(_("No update is available."))
+			ui.message(
+				# Translators: message to user to report that no update is available.
+				_("No update is available.")
+			)
 
 if not globalVars.appArgs.secure and config.conf[addonInfos["name"]]["autoUpdate"] and (config.conf[addonInfos["name"]]["nbWeek"] != week or config.conf[addonInfos["name"]]["updateEveryStart"]):
 	verifUpdate()
 
 class ScanvoxPanel(SettingsPanel):
+	# Translators: title of the settings panel
 	title = _("Scanvox for NVDA")
 	
 	def makeSettings(self, settingsSizer):
 		sHelper = gui.guiHelper.BoxSizerHelper(self, sizer=settingsSizer)
+		# Translators: A group of settings in the settings panel
+		generalGroupSizer = wx.StaticBoxSizer(wx.VERTICAL, self, label=_("General"))
+		generalGroupBox = generalGroupSizer.GetStaticBox()
+		generalGroup = gui.guiHelper.BoxSizerHelper(self, sizer=generalGroupSizer)
+		sHelper.addItem(generalGroup)
 
-		self.autoUpdate = sHelper.addItem(
-			wx.CheckBox(self,
-			# Translator: A checkbox label in the settings interface
+		self.automaticalyReadText = generalGroup.addItem(
+			wx.CheckBox(
+				generalGroupBox, 
+				# Translators: Checkbox label in parameter panel
+				label=_("&Automatically read the text when the scan is completed")
+			)
+		)
+		self.automaticalyReadText.SetValue(config.conf["scanvox"]["automaticalyReadText"])
+
+		# Translators: A group of settings in the settings panel
+		updateGroupSizer = wx.StaticBoxSizer(wx.VERTICAL, self, label=_("Update"))
+		updateGroupBox = updateGroupSizer.GetStaticBox()
+		updateGroup = gui.guiHelper.BoxSizerHelper(self, sizer=updateGroupSizer)
+		sHelper.addItem(updateGroup)
+		self.autoUpdate = updateGroup.addItem(
+			wx.CheckBox(updateGroupBox,
+			# Translators: A checkbox label in the settings interface
 			label=_("Automatically search for updates")
 		)
 		)
 		self.autoUpdate.SetValue(config.conf["scanvox"]["autoUpdate"])
 
-		self.searchUpdate = sHelper.addItem(
-			wx.Button(self,
-			# Translator: A button label in the settings panel
+		self.searchUpdate = updateGroup.addItem(
+			wx.Button(updateGroupBox, 
+			# Translators: A button label in the settings panel
 			label=_("Search for an update now")
 		)
 		)
@@ -93,6 +118,7 @@ class ScanvoxPanel(SettingsPanel):
 
 	def onSave(self):
 		config.conf["scanvox"]["autoUpdate"] = self.autoUpdate.GetValue()
+		config.conf["scanvox"]["automaticalyReadText"] = self.automaticalyReadText.GetValue()
 
 class updateDialog(wx.Dialog):
 	def __init__(self, parent=None, title=None, msg=None):
@@ -104,13 +130,24 @@ class updateDialog(wx.Dialog):
 		text.SetLabel(msg)
 		bHelper = gui.guiHelper.ButtonHelper(wx.HORIZONTAL)
 		# Translators: This is a label of a button appearing
-		yes = bHelper.addButton(self, wx.ID_YES, label=_("&Yes"))
+		yes = bHelper.addButton(self, 
+			wx.ID_YES, 
+			# Translators: label of a button
+			label=_("&Yes")
+		)
 		yes.Bind(wx.EVT_BUTTON, lambda evt: installupdate())
 		yes.SetFocus()
 		# Translators: This is a label of a button appearing
-		no = bHelper.addButton(self, wx.ID_NO, label=_("&No"))
+		no = bHelper.addButton(self, 
+			wx.ID_NO, 
+			# Translators: label of a button
+			label=_("&No")
+		)
 		no.Bind(wx.EVT_BUTTON, self.onNo)
-		releaseNotes = bHelper.addButton(self, label=_("Wha&t's new"))
+		releaseNotes = bHelper.addButton(self, 
+			# Translators: label of a button
+			label=_("Wha&t's new")
+		)
 		releaseNotes.Bind(wx.EVT_BUTTON, self.onReleaseNotes)
 		sHelper.addDialogDismissButtons(bHelper)
 		self.EscapeId = wx.ID_NO
