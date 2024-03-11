@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: 'scanvox' '2023.12.14'\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
 "POT-Creation-Date: 2024-01-07 14:57+0100\n"
-"PO-Revision-Date: 2024-01-12 21:39+0100\n"
+"PO-Revision-Date: 2024-03-11 15:28+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: cs\n"
@@ -75,7 +75,7 @@ msgstr "Není detekován žádný kompatibilní skener"
 
 #: addon\globalPlugins\scanvox\__init__.py:167
 msgid "The page seems empty"
-msgstr "Zdá se, že je stránka prázdná."
+msgstr "Zdá se, že je stránka prázdná"
 
 #: addon\globalPlugins\scanvox\__init__.py:173
 msgid "All the pages have been erased"
@@ -83,7 +83,7 @@ msgstr "Všechny stránky byly smazány"
 
 #: addon\globalPlugins\scanvox\__init__.py:178
 msgid "It's impossible to delete the scanned pages"
-msgstr "Není možné odstranit naskenované stránky."
+msgstr "Není možné odstranit naskenované stránky"
 
 #: addon\globalPlugins\scanvox\update_scanvox.py:28
 #, python-format
@@ -96,7 +96,7 @@ msgid ""
 "%s version %s is available. Would you like to update now? You can view the "
 "changes by clicking on the What's New button and scrolling down to Changes."
 msgstr ""
-"Je dostupnáverze %s %s . Chcete jí nyní stáhnout? Můžete si přečíst změny"
+"Je dostupnáverze %s %s . Chcete jí nyní stáhnout? Můžete si přečíst změny."
 
 #: addon\globalPlugins\scanvox\update_scanvox.py:64
 msgid "No update is available."
@@ -105,12 +105,12 @@ msgstr "Není dostupná žádná aktualizace."
 #. Translator: A checkbox label in the settings interface
 #: addon\globalPlugins\scanvox\update_scanvox.py:78
 msgid "Automatically search for updates"
-msgstr "&Automaticky hledat aktualizace."
+msgstr "Automaticky hledat aktualizace"
 
 #. Translator: A button label in the settings panel
 #: addon\globalPlugins\scanvox\update_scanvox.py:86
 msgid "Search for an update now"
-msgstr "&hledat nyní aktualizaci."
+msgstr "Hledat nyní aktualizaci"
 
 #. Translators: This is a label of a button appearing
 #: addon\globalPlugins\scanvox\update_scanvox.py:107
