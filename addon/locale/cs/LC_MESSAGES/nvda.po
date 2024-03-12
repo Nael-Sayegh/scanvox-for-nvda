@@ -1,14 +1,8 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
 msgid ""
 msgstr ""
-"Project-Id-Version: 'scanvox' '2023.12.14'\n"
-"Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
-"POT-Creation-Date: 2024-01-07 14:57+0100\n"
-"PO-Revision-Date: 2024-03-11 15:28+0300\n"
+"Project-Id-Version: 'scanvox' '2024.01.10'\n"
+"POT-Creation-Date: 2024-03-11 15:35+0300\n"
+"PO-Revision-Date: 2024-03-12 09:40+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: cs\n"
@@ -16,81 +10,79 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 3.4.2\n"
+"X-Poedit-Basepath: ../globalPlugins/scanvox\n"
+"X-Poedit-SearchPath-0: .\n"
 
-#: addon\globalPlugins\scanvox\__init__.py:59
+#: __init__.py:61
 msgid "Open the Scanvox dialog"
 msgstr "Otevře dialogScanvoxu"
 
-#. Add-on summary, usually the user visible name of the addon.
-#. Translators: Summary for this add-on
-#. to be shown on installation and add-on information found in Add-ons Manager.
-#: addon\globalPlugins\scanvox\__init__.py:60
-#: addon\globalPlugins\scanvox\update_scanvox.py:70 buildVars.py:23
+#: __init__.py:63 settings.py:76
 msgid "Scanvox for NVDA"
 msgstr "Scanvox pro NVDA"
 
-#: addon\globalPlugins\scanvox\__init__.py:76
+#: __init__.py:81
+msgid "Text:"
+msgstr "Rozpoznaný text:"
+
+#: __init__.py:87
 msgid "&Scan"
 msgstr "&Skenovat"
 
-#: addon\globalPlugins\scanvox\__init__.py:79
+#: __init__.py:94
 msgid "&Save the scanned pages"
 msgstr "&Uložit Naskenované stránky"
 
-#: addon\globalPlugins\scanvox\__init__.py:83
-msgid "See the result in the &notepad"
-msgstr "&Prohlédnout si výsledek v Poznámkovém bloku"
-
-#: addon\globalPlugins\scanvox\__init__.py:86
+#: __init__.py:101
 msgid "&Delete the scanned pages"
 msgstr "&Odstranit naskenované stránky"
 
-#: addon\globalPlugins\scanvox\__init__.py:100
+#: __init__.py:117
 msgid "Scanning in progress, please wait..."
 msgstr "Skenuji, prosím, čekejte..."
 
-#: addon\globalPlugins\scanvox\__init__.py:104
+#: __init__.py:124
 msgid "Select the location where you want to save the file"
 msgstr "Vyberte umístění, kam chcete soubor uložit"
 
-#: addon\globalPlugins\scanvox\__init__.py:104
+#: __init__.py:126
 msgid "Text file: *.txt|*.txt|Word document: *.docx|*.docx"
 msgstr "Txt soubory’: *.txt|*.txt|Dokument word’: *.docx|*.docx"
 
-#: addon\globalPlugins\scanvox\__init__.py:104
+#: __init__.py:128
 msgid "Save the file"
 msgstr "Uložit soubor"
 
-#: addon\globalPlugins\scanvox\__init__.py:123
-msgid "No page is scanned"
-msgstr "Žádná stránka není naskenovaná"
+#: __init__.py:165
+msgid "Scan complete"
+msgstr "Skenování dokončeno"
 
-#: addon\globalPlugins\scanvox\__init__.py:163
+#: __init__.py:193
 msgid "No OCR matching the language of your system is available"
 msgstr "Není dostupný jazyk v OCR, který používáte na vašem systému"
 
-#: addon\globalPlugins\scanvox\__init__.py:165
+#: __init__.py:198
 msgid "No compatible scanner detected"
 msgstr "Není detekován žádný kompatibilní skener"
 
-#: addon\globalPlugins\scanvox\__init__.py:167
+#: __init__.py:203
 msgid "The page seems empty"
 msgstr "Zdá se, že je stránka prázdná"
 
-#: addon\globalPlugins\scanvox\__init__.py:173
+#: __init__.py:212
 msgid "All the pages have been erased"
 msgstr "Všechny stránky byly smazány"
 
-#: addon\globalPlugins\scanvox\__init__.py:178
+#: __init__.py:220
 msgid "It's impossible to delete the scanned pages"
 msgstr "Není možné odstranit naskenované stránky"
 
-#: addon\globalPlugins\scanvox\update_scanvox.py:28
+#: settings.py:29
 #, python-format
 msgid "Update of %s version %s"
 msgstr "Aktualizace %s verze %s"
 
-#: addon\globalPlugins\scanvox\update_scanvox.py:29
+#: settings.py:31
 #, python-format
 msgid ""
 "%s version %s is available. Would you like to update now? You can view the "
@@ -98,40 +90,38 @@ msgid ""
 msgstr ""
 "Je dostupnáverze %s %s . Chcete jí nyní stáhnout? Můžete si přečíst změny."
 
-#: addon\globalPlugins\scanvox\update_scanvox.py:64
+#: settings.py:68
 msgid "No update is available."
 msgstr "Není dostupná žádná aktualizace."
 
-#. Translator: A checkbox label in the settings interface
-#: addon\globalPlugins\scanvox\update_scanvox.py:78
+#: settings.py:81
+msgid "General"
+msgstr "Celkové"
+
+#: settings.py:90
+msgid "&Automatically read the text when the scan is completed"
+msgstr "&Automaticky číst text po dokončení skenování"
+
+#: settings.py:96
+msgid "Update"
+msgstr "Aktualizace"
+
+#: settings.py:103
 msgid "Automatically search for updates"
 msgstr "Automaticky hledat aktualizace"
 
-#. Translator: A button label in the settings panel
-#: addon\globalPlugins\scanvox\update_scanvox.py:86
+#: settings.py:111
 msgid "Search for an update now"
 msgstr "Hledat nyní aktualizaci"
 
-#. Translators: This is a label of a button appearing
-#: addon\globalPlugins\scanvox\update_scanvox.py:107
+#: settings.py:136
 msgid "&Yes"
 msgstr "&Ano"
 
-#. Translators: This is a label of a button appearing
-#: addon\globalPlugins\scanvox\update_scanvox.py:111
+#: settings.py:144
 msgid "&No"
 msgstr "&Ne"
 
-#: addon\globalPlugins\scanvox\update_scanvox.py:113
+#: settings.py:149
 msgid "Wha&t's new"
 msgstr "&co je nového"
-
-#. Add-on description
-#. Translators: Long description to be shown for this add-on on add-on information from add-ons manager
-#: buildVars.py:26
-msgid ""
-"This extension allows you to read paper documents using the Scanvox "
-"software. To use it, go to the NVDA tool menu and select Scanvox."
-msgstr ""
-"Tento doplněk umožňuje naskenovat dokument pomocí Twain nebo Wia rozhraní "
-"Zapoužití Scanvox softwaru."
