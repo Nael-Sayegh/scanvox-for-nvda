@@ -22,6 +22,8 @@ jobs:
         run: sudo apt-get install gettext
       - name: Generating Addon
         run: scons
+      - name: generating pot file
+        run: scons pot
       - name: get the last tag
         id: get-latest-tag
         run: echo "tag=${GITHUB_REF#refs/*/}" >> $GITHUB_OUTPUT
@@ -42,4 +44,5 @@ jobs:
         with:
           files: |
             *.nvda-addon
+            *.pot
           body_path: changelog.md
