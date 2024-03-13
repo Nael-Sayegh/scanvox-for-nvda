@@ -2,7 +2,7 @@ name: pull_request
 
 on:
   pull_request:
-    types: [opened, synchronize]
+    types: [synchronize]
 
 jobs:
   scons:
@@ -19,14 +19,15 @@ jobs:
           python-version: 3.11
       - name: Install dependencies
         run: pip install scons markdown
-      - name: update pckages
+      - name: update packages
         run: sudo apt-get update
       - name: install gettext
         run: sudo apt-get install gettext
       - name: get commit hash
         run: echo "COMMIT_HASH=$(git rev-parse --short ${{ github.event.pull_request.head.sha }})" >> $GITHUB_ENV
       - name: build with hash of commit
-        run: scons version=$COMMIT_HASH
+        run: |
+        scons version=$COMMIT_HASH 2> build_error.log
       - name: upload artifacts
         uses: actions/upload-artifact@v4
         id: artifact-url
@@ -38,9 +39,20 @@ jobs:
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            github.rest.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: `Addon built successfully. [Download here](${{ steps.artifact-url.outputs.artifact-url }})`
-            })  
+            const fs = require('fs');
+            if (fs.existsSync('build_error.log')) {
+              const errorMessage = fs.readFileSync('build_error.log', 'utf8');
+              github.rest.issues.createComment({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body: `Addon build failed with error:\n ${errorMessage}`
+              });
+            } else {
+              github.rest.issues.createComment({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body: `Addon built successfully. [Download here](${{ steps.artifact-url.outputs.artifact-url }})`
+              });
+            }
