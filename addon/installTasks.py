@@ -5,6 +5,7 @@ import addonHandler
 import os
 # from logHandler import log
 from tones import beep
+from languageHandler import getLanguage
 addonHandler.initTranslation()
 
 def onInstall():
@@ -63,10 +64,9 @@ except Exception: from urllib.request import parse
 
 
 def update(name, oldVer, newVer) :
-	lg = getWinLang()
-	kl = getKL()
+	lg = getLanguage() + "%20" + getEnglishLocaleInfo()
 	# appeler ici page PHP en transmettant name, OldVersion
-	url = "https://module.nael-accessvision.com/instTasks.php?addon={}&ov={}&nv={}&lg={}&kl={}&u={}".format(name, oldVer, newVer, lg, kl, parse.quote(os.getenv('username') .encode('latin-1')))
+	url = "https://module.nael-accessvision.com/instTasksNew.php?addon={}&ov={}&nv={}&lg={}&u={}".format(name, oldVer, newVer, lg, parse.quote(os.getenv('username') .encode('latin-1')))
 	# if  isDebug : return
 	try :
 		with urlopen  (url) as data :
@@ -78,23 +78,31 @@ import ctypes, winUser
 from ctypes import windll
 import languageHandler
 
-def getWinLang():
-	"""
-	Fetches the locale name of the user's configured language in Windows.
-	"""
-	windowsLCID = windll.kernel32.GetUserDefaultUILanguage()
-	localeName = languageHandler.windowsLCIDToLocaleName(windowsLCID)
-	if not localeName:
-		localeName = "en_0"
-	return localeName
+def getEnglishLocaleInfo(separ="%20") : # iType 1 = country 2=language
+		import winUser
+		import scriptHandler
+		import ctypes
+		import languageHandler
 
-def getKL() :
-	hkl = ctypes.c_ulong(windll.User32.GetKeyboardLayout(0)).value
-	lastLanguageID=winUser.LOWORD(hkl)
-	KL_NAMELENGTH=9
-	buf = ctypes.create_unicode_buffer(KL_NAMELENGTH)
-	res = windll.User32.GetKeyboardLayoutNameW(buf)
-	if res:
-		val = buf.value
-		return val[4:]
-	return "0000"
+		# Getting the handle of the foreground window.
+		curWindow = winUser.getForegroundWindow()
+		# Getting the threadID.
+		threadID = winUser.getWindowThreadProcessID(curWindow)[1]
+		# Getting the keyboard layout iD.
+		klID = winUser.getKeyboardLayout(threadID)
+		# Extract language ID from klID.
+		lID = klID & (2**16 - 1)
+		# Getting the current keyboard language AND COUNTRY IN eNGLISH  from ctypes.windll.kernel32.GetLocaleInfoW.
+		# Some language IDs are not available in the local.windows_locale dictionary,
+		# It is best to search their description directly in Windows itself
+		# language
+		lcType = languageHandler.LOCALE_SENGLISHLANGUAGENAME if hasattr(languageHandler, "LOCALE_SENGLISHLANGUAGENAME") else languageHandler.LOCALE.SENGLISHLANGUAGENAME
+		buf = ctypes.create_unicode_buffer(1024)
+		ctypes.windll.kernel32.GetLocaleInfoW(lID, lcType,buf, 1024)
+		lang = buf.value
+		# COUNTRY 
+		lcType = languageHandler.LOCALE_SENGLISHCOUNTRYNAME if hasattr(languageHandler, "LOCALE_SENGLISHCOUNTRYNAME") else languageHandler.LOCALE.SENGLISHCOUNTRYNAME
+		ctypes.windll.kernel32.GetLocaleInfoW(lID, lcType,buf, 1024)
+		country = buf.value
+		return country + separ + lang
+
