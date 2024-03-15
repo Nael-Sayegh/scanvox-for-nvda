@@ -9,3 +9,6 @@ manifest.ini
 *.nvda-addon
 .sconsign.dblite
 /[0-9]*.[0-9]*.[0-9]*.json
+addon/globalPlugins/scanvox/*.exe
+addon/globalPlugins/scanvox/*.dll
+addon/globalPlugins/scanvox/lib
