@@ -1,11 +1,5 @@
 # coding:utf-8
 
-def getIA2Attr (obj,attribute_value=False,attribute_name ="id"):
-	r= hasattr (obj,"IA2Attributes") and attribute_name in obj.IA2Attributes.keys ()
-	if not r :return False
-	r =obj.IA2Attributes[attribute_name]
-	return r if not attribute_value  else r ==attribute_value
-
 def getDocumentsPath() :
 	import ctypes.wintypes
 	CSIDL_PERSONAL = 5       # My Documents
