@@ -9,38 +9,58 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Check out source repository
+      - name: Checkout source repository
         uses: actions/checkout@v4
         with:
           ref: ${{ github.event.pull_request.head.sha }}
+          
       - name: Set up Python 3.11
         uses: actions/setup-python@v4
         with:
           python-version: 3.11
+          
       - name: Install dependencies
         run: pip install scons markdown
-      - name: update pckages
+        
+      - name: update packages
         run: sudo apt-get update
+        
       - name: install gettext
         run: sudo apt-get install gettext
+
       - name: get commit hash
         run: echo "COMMIT_HASH=$(git rev-parse --short ${{ github.event.pull_request.head.sha }})" >> $GITHUB_ENV
+        
       - name: build with hash of commit
-        run: scons version=$COMMIT_HASH
+        run: scons version=$COMMIT_HASH 2> build_error.log        
+        
       - name: upload artifacts
         uses: actions/upload-artifact@v4
-        id: artifact-url
+        id: artifactURL
+        if: success()
         with:
           name: build-artifact
           path: ./*.nvda-addon
+          
       - name: comment on pull request
         uses: actions/github-script@v5
+        if: always()
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
+            const fs = require('fs');
+            let body;
+            
+            if (fs.existsSync('build_error.log') && fs.statSync('build_error.log').size > 2) {
+              const errorMessage = fs.readFileSync('build_error.log', 'utf8');
+              body = `Addon build failed with error:\n ${errorMessage}`;
+            } else if (${{steps.artifactURL}}) {
+              body = `Addon built successfully. [Download here](${{steps.artifactURL.outputs.artifact-url}})`;
+            }
+            
             github.rest.issues.createComment({
               issue_number: context.issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: `Addon built successfully. [Download here](${{ steps.artifact-url.outputs.artifact-url }})`
-            })  
+              body: body
+            });
