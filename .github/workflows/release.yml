@@ -1,4 +1,4 @@
-name: scons
+name: release
 on: 
   push:
     tags: 
@@ -18,6 +18,8 @@ jobs:
         run: pip install scons
       - name: install markdown
         run: pip install markdown
+      - name: Update packages
+        run: sudo apt-get update
       - name: Install gettext
         run: sudo apt-get install gettext
       - name: Generating Addon
