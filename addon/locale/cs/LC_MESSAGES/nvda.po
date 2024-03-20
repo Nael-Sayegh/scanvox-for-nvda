@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: 'scanvox' '2023.12.14'\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
 "POT-Creation-Date: 2024-03-13 14:58+0100\n"
-"PO-Revision-Date: 2024-03-16 16:57+0100\n"
+"PO-Revision-Date: 2024-03-20 18:58+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.3.2\n"
+"X-Generator: Poedit 3.4.2\n"
 
 #. Translators: this is the description of a command that opens the Scanvox dialog
 #: addon\globalPlugins\scanvox\__init__.py:61
@@ -35,7 +35,7 @@ msgstr "Scanvox pro NVDA"
 #. Translators: this is a label for a text control that displays the scanned text
 #: addon\globalPlugins\scanvox\__init__.py:81
 msgid "Text:"
-msgstr "Text"
+msgstr "Text:"
 
 #. Translators: this is the label for a button that starts the scanning process
 #: addon\globalPlugins\scanvox\__init__.py:87
