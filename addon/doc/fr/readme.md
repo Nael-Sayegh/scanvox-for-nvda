@@ -47,10 +47,10 @@ L'extension "Scanvox pour NVDA" peut être lancée de n'importe où sur votre or
 ### Version 2023.12.29
   * Première version
 
-Copyright ©: 2023 (Nael Sayegh et Nael-Accessvision
+Copyright ©: 2024 (Nael Sayegh et Nael-Accessvision
 
 <!-- links section -->
 
-[1]: https://github.com/Nael-Sayegh/scanvox-for-nvda/releases/download/2024.01.10/scanvox-2024.01.10.nvda-addon
+[1]: https://github.com/Nael-Sayegh/scanvox-for-nvda/releases/download/2024.03.20/scanvox-2024.03.20.nvda-addon
 
 [2]: https://github.com/Nael-Sayegh/scanvox-for-nvda
