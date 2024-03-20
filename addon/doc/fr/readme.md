@@ -26,6 +26,14 @@ L'extension "Scanvox pour NVDA" peut être lancée de n'importe où sur votre or
 
 ## Changements
 
+### Version 2024.03.20
+
+  * Ajout de la traduction tchèque
+  * Ajout de la traduction portugaise
+  * Ajout d'une zone d'édition avant le bouton de numérisation permettant de lire immédiatement le texte qui vient d'être numérisé
+  * Ajout d'un paramètre pour désactiver / activer la lecture automatique d'un document, rendez-vous dans le menu des paramètres de NVDA puis Scanvox pour NVDA
+  * Ajout de la traduction russe
+
 ### Version 2024.01.10
 
   * Modification du système de mise à jour pour ajouter un bouton "Quoi de neuf" qui ouvre l'aide avec les nouveauté de la version
@@ -39,10 +47,10 @@ L'extension "Scanvox pour NVDA" peut être lancée de n'importe où sur votre or
 ### Version 2023.12.29
   * Première version
 
-Copyright ©: 2023 (Nael Sayegh et Nael-Accessvision
+Copyright ©: 2024 (Nael Sayegh et Nael-Accessvision
 
 <!-- links section -->
 
-[1]: https://github.com/Nael-Sayegh/scanvox-for-nvda/releases/download/2024.01.10/scanvox-2024.01.10.nvda-addon
+[1]: https://github.com/Nael-Sayegh/scanvox-for-nvda/releases/download/2024.03.20/scanvox-2024.03.20.nvda-addon
 
 [2]: https://github.com/Nael-Sayegh/scanvox-for-nvda
