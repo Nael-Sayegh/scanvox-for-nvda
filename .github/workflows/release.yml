@@ -1,4 +1,4 @@
-name: scons
+name: release
 on: 
   push:
     tags: 
@@ -9,15 +9,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out source repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Set up Python environment
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
-          python-version: 3.11
+          python-version: 3.9
       - name: Install scons
         run: pip install scons
       - name: install markdown
         run: pip install markdown
+      - name: Update packages
+        run: sudo apt-get update
       - name: Install gettext
         run: sudo apt-get install gettext
       - name: Generating Addon
@@ -38,7 +40,7 @@ jobs:
           sftp_only: true
           password: ${{ secrets.MDP_SFTP }}
       - name: add file in release
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:

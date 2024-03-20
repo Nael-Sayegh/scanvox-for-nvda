@@ -40,7 +40,7 @@
 
   * Первая версия
 
-[1]: https://github.com/Nael-Sayegh/scanvox-for-nvda/releases/download/2024.01.10/scanvox-2024.01.10.nvda-addon
+[1]: https://github.com/Nael-Sayegh/scanvox-for-nvda/releases/download/2024.03.20/scanvox-2024.03.20.nvda-addon
 
 [2]: https://github.com/Nael-Sayegh/scanvox-for-nvda
 

@@ -24,6 +24,14 @@ Doplněk lze spustit kdekoli klávesovou zkratkou inzert +alt +s.
 
 ## Změny
 
+### Verze 2024.03.20
+
+  * Přidán český překlad včetně dokumentace
+  *  Přidán Portugalský překlad
+  *  Přidáno víceřádkové editační pole jen pro čtení před tlačítko skenovat, zde je možné číst již naskenovaný text
+  *Přidána možnost zapnout / vypnout automatické čtení textu po skenování jde nastavit v nastavení  NVDA / kategorie Scanvox
+  * Přidán ruský překlad
+
 ### Verze 2024.01.10
 
   *Přidáno tlačítko co je nového
@@ -39,6 +47,6 @@ Nové funkce
 
   * První verze
 
-[1]: https://github.com/Nael-Sayegh/scanvox-for-nvda/releases/download/2024.01.10/scanvox-2024.01.10.nvda-addon
+[1]: https://github.com/Nael-Sayegh/scanvox-for-nvda/releases/download/2024.03.20/scanvox-2024.03.20.nvda-addon
 
 [2]: https://github.com/Nael-Sayegh/scanvox-for-nvda
