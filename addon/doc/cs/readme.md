@@ -24,7 +24,7 @@ Doplněk lze spustit kdekoli klávesovou zkratkou inzert +alt +s.
 
 ## Změny
 
-## Co je nového?
+### Verze 2024.03.20
 
   * Přidán český překlad včetně dokumentace
   *  Přidán Portugalský překlad
