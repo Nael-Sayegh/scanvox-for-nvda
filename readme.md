@@ -26,6 +26,14 @@ The add-on "Scanvox for NVDA" can be launched from anywhere on your computer by 
 
 ## Changes
 
+### Version 2024.03.20
+
+  * Addition of Czech translation
+  * Addition of Portuguese translation
+  * Addition of an editing area before the scan button allowing to immediately read the text that has just been scanned
+  * Add a parameter to disable / enable automatic reading of a document, go to the NVDA settings menu then Scanvox for NVDA
+  * Addition of Russian translation
+
 ### Version 2024.01.10
 
   * Update system modification to add a "What's New" button that opens the help with the new features of the version
@@ -40,6 +48,6 @@ The add-on "Scanvox for NVDA" can be launched from anywhere on your computer by 
 
   * First version
 
-[1]: https://github.com/Nael-Sayegh/scanvox-for-nvda/releases/download/2024.01.10/scanvox-2024.01.10.nvda-addon
+[1]: https://github.com/Nael-Sayegh/scanvox-for-nvda/releases/download/2024.03.20/scanvox-2024.03.20.nvda-addon
 
 [2]: https://github.com/Nael-Sayegh/scanvox-for-nvda
