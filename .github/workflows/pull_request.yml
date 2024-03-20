@@ -3,6 +3,8 @@ name: pull_request
 on:
   pull_request:
     types: [opened, synchronize]
+    unlabeled:
+      - 'notForAddon'
 
 jobs:
   scons:
@@ -14,10 +16,10 @@ jobs:
         with:
           ref: ${{ github.event.pull_request.head.sha }}
           
-      - name: Set up Python 3.11
-        uses: actions/setup-python@v4
+      - name: Set up Python 3.9
+        uses: actions/setup-python@v5
         with:
-          python-version: 3.11
+          python-version: 3.9
           
       - name: Install dependencies
         run: pip install scons markdown
@@ -43,7 +45,11 @@ jobs:
           path: ./*.nvda-addon
           
       - name: comment on pull request
+<<<<<<< HEAD
         uses: actions/github-script@v5
+=======
+        uses: actions/github-script@v7
+>>>>>>> main
         if: always()
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
