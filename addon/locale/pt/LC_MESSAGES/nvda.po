@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 'scanvox' '2024.01.10'\n"
 "POT-Creation-Date: 2024-03-11 15:35+0300\n"
-"PO-Revision-Date: 2024-03-12 10:08+0300\n"
+"PO-Revision-Date: 2024-03-22 13:12+0300\n"
 "Last-Translator: Ângelo Abrantes <ampa4374@gmail.com>\n"
 "Language-Team: Equipa portuguesa do NVDA (Ângelo Abrantes e Rui Fontes)\n"
 "Language: pt_PT\n"
@@ -129,3 +129,14 @@ msgstr "&Não"
 #: settings.py:149
 msgid "Wha&t's new"
 msgstr "O que &há de novo"
+
+#. Add-on description
+#. Translators: Long description to be shown for this add-on on add-on information from add-ons manager
+#: buildVars.py:26
+msgid ""
+"This extension allows you to read paper documents using the Scanvox "
+"software. To use it, go to the NVDA tool menu and select Scanvox."
+msgstr ""
+"Esta extensão permite-lhe ler documentos em papel utilizando o software "
+"Scanvox. Para usá-lo, vá para o menu de ferramentas NVDA e selecione "
+"Scanvox."
