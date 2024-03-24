@@ -1,4 +1,4 @@
-name: scons
+name: release
 on: 
   push:
     tags: 

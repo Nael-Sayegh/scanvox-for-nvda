@@ -1,4 +1,5 @@
-name: scons
+name: Upload file for update
+
 on: 
   push:
     tags: 
