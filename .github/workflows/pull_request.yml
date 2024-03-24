@@ -1,9 +1,5 @@
 name: pull_request
 
-permissions:
-  pull-requests: write
-
-
 on:
   workflow_call:
 
