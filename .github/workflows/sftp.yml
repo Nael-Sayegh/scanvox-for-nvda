@@ -1,4 +1,4 @@
-name: Upload file for update
+name: scons
 on: 
   push:
     tags: 
@@ -6,58 +6,5 @@ on:
 
 jobs:
   scons: 
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out source repository
-        uses: actions/checkout@v4
-      - name: Set up Python environment
-        uses: actions/setup-python@v5
-        with:
-          python-version: 3.9
-      - name: Install scons
-        run: pip install scons
-      - name: install markdown
-        run: pip install markdown
-      - name: Update packages
-        run: sudo apt-get update
-      - name: Install gettext
-        run: sudo apt-get install gettext
-      - name: Generating Addon
-        run: scons
-      - name: rename the nvda-addon file
-        run: mv ./*.nvda-addon ./scanvox.nvda-addon
-      - name: get the last tag
-        id: get-latest-tag
-        run: echo "tag=${GITHUB_REF#refs/*/}" >> $GITHUB_OUTPUT
-      - name: Create a file with the version number
-        run: touch version_scanvox.txt && echo '${{ steps.get-latest-tag.outputs.tag }}' >> version_scanvox.txt
-      - name: Upload the nvda add-on 
-        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
-        with:
-          username: ${{ secrets.USER_SFTP }}
-          server: ${{ secrets.HOST_SFTP }}
-          port: ${{ secrets.PORT_SFTP }}
-          local_path: './*.nvda-addon'
-          remote_path: '/var/www/nvda/addons/addons/scanvox'
-          sftp_only: true
-          password: ${{ secrets.MDP_SFTP }}
-      - name: upload the version file
-        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
-        with:
-          username: ${{ secrets.USER_SFTP }}
-          server: ${{ secrets.HOST_SFTP }}
-          port: ${{ secrets.PORT_SFTP }}
-          local_path: './version_scanvox.txt'
-          remote_path: '/var/www/nvda/addons/addons/scanvox'
-          sftp_only: true
-          password: ${{ secrets.MDP_SFTP }}
-      - name: upload the documentation
-        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
-        with:
-          username: ${{ secrets.USER_SFTP }}
-          server: ${{ secrets.HOST_SFTP }}
-          port: ${{ secrets.PORT_SFTP }}
-          local_path: './addon/doc'
-          remote_path: '/var/www/nvda/addons/addons/scanvox'
-          sftp_only: true
-          password: ${{ secrets.MDP_SFTP }}
+    uses: Nael-Sayegh/github-action/.github/workflows/sftp.yml@main
+    secrets: inherit
