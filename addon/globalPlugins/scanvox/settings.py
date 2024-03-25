@@ -3,7 +3,6 @@ import gui
 import wx
 from logHandler import log
 import config
-import globalVars
 import ui
 try:
 	from gui.settingsDialogs import SettingsPanel
