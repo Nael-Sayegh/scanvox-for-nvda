@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 'scanvox' '2023.12.14'\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
-"POT-Creation-Date: 2024-03-13 14:58+0100\n"
-"PO-Revision-Date: 2024-03-22 13:35+0300\n"
+"POT-Creation-Date: 2024-03-26 14:44+0100\n"
+"PO-Revision-Date: 2024-03-26 14:45+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: cs\n"
@@ -28,7 +28,7 @@ msgstr "Otevře dialogScanvoxu"
 #. Translators: Summary for this add-on
 #. to be shown on installation and add-on information found in Add-ons Manager.
 #: addon\globalPlugins\scanvox\__init__.py:63
-#: addon\globalPlugins\scanvox\settings.py:76 buildVars.py:23
+#: addon\globalPlugins\scanvox\settings.py:18 buildVars.py:23
 msgid "Scanvox for NVDA"
 msgstr "Scanvox pro NVDA"
 
@@ -102,14 +102,39 @@ msgstr "Všechny stránky byly smazány"
 msgid "It's impossible to delete the scanned pages"
 msgstr "Není možné odstranit naskenované stránky"
 
+#. Translators: A group of settings in the settings panel
+#: addon\globalPlugins\scanvox\settings.py:23
+msgid "General"
+msgstr "Obecné"
+
+#. Translators: Checkbox label in parameter panel
+#: addon\globalPlugins\scanvox\settings.py:32
+msgid "&Automatically read the text when the scan is completed"
+msgstr "&Automaticky číst text když je skenování dokončeno"
+
+#. Translators: A group of settings in the settings panel
+#: addon\globalPlugins\scanvox\settings.py:38
+msgid "Update"
+msgstr "Aktualizace"
+
+#. Translators: A checkbox label in the settings interface
+#: addon\globalPlugins\scanvox\settings.py:45
+msgid "Automatically search for updates"
+msgstr "Automaticky hledat aktualizace"
+
+#. Translators: A button label in the settings panel
+#: addon\globalPlugins\scanvox\settings.py:53
+msgid "Search for an update now"
+msgstr "Hledat nyní aktualizaci"
+
 #. Translators: title of a dialog box
-#: addon\globalPlugins\scanvox\settings.py:29
+#: addon\globalPlugins\scanvox\update.py:24
 #, python-format
 msgid "Update of %s version %s"
 msgstr "Aktualizace %s verze %s"
 
 #. Translators: message to user to report a new version.
-#: addon\globalPlugins\scanvox\settings.py:31
+#: addon\globalPlugins\scanvox\update.py:26
 #, python-format
 msgid ""
 "%s version %s is available. Would you like to update now? You can view the "
@@ -118,47 +143,22 @@ msgstr ""
 "Je dostupnáverze %s %s . Chcete jí nyní stáhnout? Můžete si přečíst změny."
 
 #. Translators: message to user to report that no update is available.
-#: addon\globalPlugins\scanvox\settings.py:68
+#: addon\globalPlugins\scanvox\update.py:62
 msgid "No update is available."
 msgstr "Není dostupná žádná aktualizace."
 
-#. Translators: A group of settings in the settings panel
-#: addon\globalPlugins\scanvox\settings.py:81
-msgid "General"
-msgstr "Obecné"
-
-#. Translators: Checkbox label in parameter panel
-#: addon\globalPlugins\scanvox\settings.py:90
-msgid "&Automatically read the text when the scan is completed"
-msgstr "&Automaticky číst text když je skenování dokončeno"
-
-#. Translators: A group of settings in the settings panel
-#: addon\globalPlugins\scanvox\settings.py:96
-msgid "Update"
-msgstr "Aktualizace"
-
-#. Translators: A checkbox label in the settings interface
-#: addon\globalPlugins\scanvox\settings.py:103
-msgid "Automatically search for updates"
-msgstr "Automaticky hledat aktualizace"
-
-#. Translators: A button label in the settings panel
-#: addon\globalPlugins\scanvox\settings.py:111
-msgid "Search for an update now"
-msgstr "Hledat nyní aktualizaci"
-
 #. Translators: label of a button
-#: addon\globalPlugins\scanvox\settings.py:136
+#: addon\globalPlugins\scanvox\update.py:81
 msgid "&Yes"
 msgstr "&Ano"
 
 #. Translators: label of a button
-#: addon\globalPlugins\scanvox\settings.py:144
+#: addon\globalPlugins\scanvox\update.py:89
 msgid "&No"
 msgstr "&Ne"
 
 #. Translators: label of a button
-#: addon\globalPlugins\scanvox\settings.py:149
+#: addon\globalPlugins\scanvox\update.py:94
 msgid "Wha&t's new"
 msgstr "&co je nového"
 
