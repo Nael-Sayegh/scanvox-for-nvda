@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: 'scanvox' '2023.12.14'\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
 "POT-Creation-Date: 2024-03-26 14:44+0100\n"
-"PO-Revision-Date: 2024-03-26 14:44+0100\n"
+"PO-Revision-Date: 2024-03-29 11:08+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -110,7 +110,7 @@ msgstr "Général"
 #. Translators: Checkbox label in parameter panel
 #: addon\globalPlugins\scanvox\settings.py:32
 msgid "&Automatically read the text when the scan is completed"
-msgstr "Lire &automatiquement le texte quand la la numérisation est terminée"
+msgstr "Lire &automatiquement le texte quand la numérisation est terminée"
 
 #. Translators: A group of settings in the settings panel
 #: addon\globalPlugins\scanvox\settings.py:38
