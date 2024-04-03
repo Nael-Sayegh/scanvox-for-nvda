@@ -116,7 +116,8 @@ class Scanvox(wx.Dialog):
 			# Translators: a message that is spoken when the scanning process starts
 			_("Scanning in progress, please wait...")
 		)
-		threading.Thread(target=self.scanThread).start()
+		result=Thread(target=scan).start()
+		log.info(result)
 	
 	def on_save(self, evt):
 		saveDialog = wx.FileDialog(self, 
@@ -155,7 +156,11 @@ class Scanvox(wx.Dialog):
 			self.save.Enable(True)
 			self.delete.Enable(True)
 
-	def scanThread(self):
+class Thread(threading.Thread):
+	def __import__(self, target):
+		super(Thread, self).__init__(target=target)
+	
+	def scan(self):
 		scan = subprocess.run([exe, "-s"], capture_output=True)
 		result = scan.returncode
 		if result == 0:
@@ -202,8 +207,9 @@ class Scanvox(wx.Dialog):
 				# Translators: a message that is spoken when the page is empty
 				_("The page seems empty"))
 			)
+	return result
 
-	def deleteThread(self):
+	def delete(self):
 		delete = subprocess.run([exe, "-c"], capture_output=True)
 		result = delete.returncode
 		if result == 0:
