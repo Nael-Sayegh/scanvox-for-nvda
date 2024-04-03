@@ -207,7 +207,7 @@ class Thread(threading.Thread):
 				# Translators: a message that is spoken when the page is empty
 				_("The page seems empty"))
 			)
-	return result
+		return result
 
 	def delete(self):
 		delete = subprocess.run([exe, "-c"], capture_output=True)
