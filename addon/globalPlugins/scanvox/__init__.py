@@ -116,7 +116,7 @@ class Scanvox(wx.Dialog):
 			# Translators: a message that is spoken when the scanning process starts
 			_("Scanning in progress, please wait...")
 		)
-		result=Thread(target=scan).start()
+		result=Thread(target='scan').start()
 		log.info(result)
 	
 	def on_save(self, evt):
