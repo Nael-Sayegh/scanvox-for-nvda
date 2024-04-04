@@ -11,6 +11,7 @@ import wx
 import config
 from .uti import getDocumentsPath
 from shutil import copy
+import queue
 from logHandler import log
 import sys
 if sys.version_info.major == 3 and sys.version_info.minor == 7:
@@ -116,8 +117,8 @@ class Scanvox(wx.Dialog):
 			# Translators: a message that is spoken when the scanning process starts
 			_("Scanning in progress, please wait...")
 		)
-		result=Thread('scan', self).start()
-		log.info(result)
+		self.pos = 0
+		Thread('scan', self).start()
 	
 	def on_save(self, evt):
 		saveDialog = wx.FileDialog(self, 
@@ -195,7 +196,13 @@ class Thread(threading.Thread):
 			if config.conf["scanvox"]["automaticalyReadText"]:
 				core.callLater(0, lambda: ui.message(text.replace("\n"," ")))
 			self.ScanvoxClass.contentText.AppendText(text+separator)
-			self.ScanvoxClass.contentText.SetInsertionPoint(0)
+			if self.ScanvoxClass.pos != 0:
+				pos=self.ScanvoxClass.contentText.find(separator)
+				self.ScanvoxClass.contentText.SetInsertionPoint(pos+1)
+				self.ScanvoxClass.pos = pos
+			else:
+				self.ScanvoxClass.contentText.SetInsertionPoint(0)
+				self.ScanvoxClass.pos += 1
 			self.ScanvoxClass.on_Enable_Button(None)
 		elif result == 1003:
 			core.callLater(0, lambda: ui.message(
