@@ -11,7 +11,6 @@ import wx
 import config
 from .uti import getDocumentsPath
 from shutil import copy
-import queue
 from logHandler import log
 import sys
 if sys.version_info.major == 3 and sys.version_info.minor == 7:
@@ -197,7 +196,7 @@ class Thread(threading.Thread):
 				core.callLater(0, lambda: ui.message(text.replace("\n"," ")))
 			self.ScanvoxClass.contentText.AppendText(text+separator)
 			if self.ScanvoxClass.pos != 0:
-				pos=self.ScanvoxClass.contentText.find(separator)
+				pos=self.ScanvoxClass.contentText.find(separator, self.ScanvoxClass.pos)
 				self.ScanvoxClass.contentText.SetInsertionPoint(pos+1)
 				self.ScanvoxClass.pos = pos
 			else:
@@ -219,7 +218,6 @@ class Thread(threading.Thread):
 				# Translators: a message that is spoken when the page is empty
 				_("The page seems empty"))
 			)
-		return result
 
 	def delete(self):
 		delete = subprocess.run([exe, "-c"], capture_output=True)
