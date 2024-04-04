@@ -116,7 +116,7 @@ class Scanvox(wx.Dialog):
 			# Translators: a message that is spoken when the scanning process starts
 			_("Scanning in progress, please wait...")
 		)
-		result=Thread(target='scan').start()
+		result=Thread('scan', self).start()
 		log.info(result)
 	
 	def on_save(self, evt):
@@ -157,9 +157,14 @@ class Scanvox(wx.Dialog):
 			self.delete.Enable(True)
 
 class Thread(threading.Thread):
-	def __import__(self, target):
-		super(Thread, self).__init__(target=target)
+	def __init__(self, function, ScanvoxClass):
+		super(Thread, self).__init__(function=function)
+		self.function = function
+		self.ScanvoxClass = ScanvoxClass
 	
+	def run(self):
+		self.function()
+
 	def scan(self):
 		scan = subprocess.run([exe, "-s"], capture_output=True)
 		result = scan.returncode
@@ -189,9 +194,9 @@ class Thread(threading.Thread):
 				text = ''.join(lines[lastIndex:-2])
 			if config.conf["scanvox"]["automaticalyReadText"]:
 				core.callLater(0, lambda: ui.message(text.replace("\n"," ")))
-			self.contentText.AppendText(text+separator)
-			self.contentText.SetInsertionPoint(0)
-			self.on_Enable_Button(None)
+			self.ScanvoxClass.contentText.AppendText(text+separator)
+			self.ScanvoxClass.contentText.SetInsertionPoint(0)
+			self.ScanvoxClass.on_Enable_Button(None)
 		elif result == 1003:
 			core.callLater(0, lambda: ui.message(
 				# Translators: a message that is spoken when the OCR is not available
@@ -217,10 +222,9 @@ class Thread(threading.Thread):
 				# Translators: a message that is spoken when the scanned pages are deleted
 				_("All the pages have been erased"))
 			)
-			self.contentText.Clear()
-			self.save.Enable(False)
-			self.open.Enable(False)
-			self.delete.Enable(False)
+			self.ScanvoxClass.contentText.Clear()
+			self.ScanvoxClass.save.Enable(False)
+			self.ScanvoxClass.delete.Enable(False)
 		else:
 			core.callLater(0, lambda: ui.message(
 				# Translators: a message that is spoken when the scanned pages cannot be deleted
