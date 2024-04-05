@@ -159,7 +159,6 @@ class Scanvox(wx.Dialog):
 class Thread(threading.Thread):
 	def __init__(self, function, ScanvoxClass):
 		super(Thread, self).__init__(function=function)
-		self.function = function
 		self.ScanvoxClass = ScanvoxClass
 	
 	def run(self):
