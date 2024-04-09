@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 'scanvox' '2023.12.14'\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
-"POT-Creation-Date: 2024-03-13 14:58+0100\n"
-"PO-Revision-Date: 2024-03-22 13:55+0100\n"
+"POT-Creation-Date: 2024-03-26 14:44+0100\n"
+"PO-Revision-Date: 2024-03-29 11:08+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -28,7 +28,7 @@ msgstr "Ouvrir le dialogue de Scanvox"
 #. Translators: Summary for this add-on
 #. to be shown on installation and add-on information found in Add-ons Manager.
 #: addon\globalPlugins\scanvox\__init__.py:63
-#: addon\globalPlugins\scanvox\settings.py:76 buildVars.py:23
+#: addon\globalPlugins\scanvox\settings.py:18 buildVars.py:23
 msgid "Scanvox for NVDA"
 msgstr "Scanvox pour NVDA"
 
@@ -102,14 +102,39 @@ msgstr "Toutes les pages numérisées ont été effacées"
 msgid "It's impossible to delete the scanned pages"
 msgstr "Impossible de supprimer les pages numérisées"
 
+#. Translators: A group of settings in the settings panel
+#: addon\globalPlugins\scanvox\settings.py:23
+msgid "General"
+msgstr "Général"
+
+#. Translators: Checkbox label in parameter panel
+#: addon\globalPlugins\scanvox\settings.py:32
+msgid "&Automatically read the text when the scan is completed"
+msgstr "Lire &automatiquement le texte quand la numérisation est terminée"
+
+#. Translators: A group of settings in the settings panel
+#: addon\globalPlugins\scanvox\settings.py:38
+msgid "Update"
+msgstr "Mise à jour"
+
+#. Translators: A checkbox label in the settings interface
+#: addon\globalPlugins\scanvox\settings.py:45
+msgid "Automatically search for updates"
+msgstr "Rechercher automatiquement les mise à jours"
+
+#. Translators: A button label in the settings panel
+#: addon\globalPlugins\scanvox\settings.py:53
+msgid "Search for an update now"
+msgstr "Rechercher une mise à jour maintenant"
+
 #. Translators: title of a dialog box
-#: addon\globalPlugins\scanvox\settings.py:29
+#: addon\globalPlugins\scanvox\update.py:24
 #, python-format
 msgid "Update of %s version %s"
 msgstr "Mise à jour de %s version %s"
 
 #. Translators: message to user to report a new version.
-#: addon\globalPlugins\scanvox\settings.py:31
+#: addon\globalPlugins\scanvox\update.py:26
 #, python-format
 msgid ""
 "%s version %s is available. Would you like to update now? You can view the "
@@ -120,47 +145,22 @@ msgstr ""
 "descendre jusqu'aux changements."
 
 #. Translators: message to user to report that no update is available.
-#: addon\globalPlugins\scanvox\settings.py:68
+#: addon\globalPlugins\scanvox\update.py:62
 msgid "No update is available."
 msgstr "Aucune mise à jour n’est disponible."
 
-#. Translators: A group of settings in the settings panel
-#: addon\globalPlugins\scanvox\settings.py:81
-msgid "General"
-msgstr "Général"
-
-#. Translators: Checkbox label in parameter panel
-#: addon\globalPlugins\scanvox\settings.py:90
-msgid "&Automatically read the text when the scan is completed"
-msgstr "Lire &automatiquement le texte quand la la numérisation est terminée"
-
-#. Translators: A group of settings in the settings panel
-#: addon\globalPlugins\scanvox\settings.py:96
-msgid "Update"
-msgstr "Mise à jour"
-
-#. Translators: A checkbox label in the settings interface
-#: addon\globalPlugins\scanvox\settings.py:103
-msgid "Automatically search for updates"
-msgstr "Rechercher automatiquement les mise à jours"
-
-#. Translators: A button label in the settings panel
-#: addon\globalPlugins\scanvox\settings.py:111
-msgid "Search for an update now"
-msgstr "Rechercher une mise à jour maintenant"
-
 #. Translators: label of a button
-#: addon\globalPlugins\scanvox\settings.py:136
+#: addon\globalPlugins\scanvox\update.py:81
 msgid "&Yes"
 msgstr "&Oui"
 
 #. Translators: label of a button
-#: addon\globalPlugins\scanvox\settings.py:144
+#: addon\globalPlugins\scanvox\update.py:89
 msgid "&No"
 msgstr "&Non"
 
 #. Translators: label of a button
-#: addon\globalPlugins\scanvox\settings.py:149
+#: addon\globalPlugins\scanvox\update.py:94
 msgid "Wha&t's new"
 msgstr "&Quoi de neuf"
 
