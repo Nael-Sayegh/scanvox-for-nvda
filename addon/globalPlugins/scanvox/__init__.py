@@ -222,7 +222,7 @@ class Thread(threading.Thread):
 			log.info(pos)
 			self.ScanvoxClass.contentText.AppendText(text + separator)
 			if pos != -1:
-				self.ScanvoxClass.contentText.SetInsertionPoint(pos + 1)
+				self.ScanvoxClass.contentText.SetInsertionPoint(pos)
 			else:
 				self.ScanvoxClass.contentText.SetInsertionPoint(0)
 			self.ScanvoxClass.on_Enable_Button(None)
@@ -231,9 +231,7 @@ class Thread(threading.Thread):
 				0,
 				lambda: ui.message(
 					# Translators: a message that is spoken when the OCR is not available
-					_(
-						"No OCR matching the language of your system is available"
-					)
+					_("No OCR matching the language of your system is available")
 				),
 			)
 		elif result == 1005:
