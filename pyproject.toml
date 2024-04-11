@@ -13,3 +13,4 @@ skip-magic-trailing-comma = true
 
 [tool.ruff.lint]
 ignore-init-module-imports = true
+ignore = ["F821"]
