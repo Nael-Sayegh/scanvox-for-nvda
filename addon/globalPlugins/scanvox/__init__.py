@@ -116,8 +116,7 @@ class Scanvox(wx.Dialog):
 			# Translators: a message that is spoken when the scanning process starts
 			_("Scanning in progress, please wait...")
 		)
-		self.pos = 0
-		Thread('scan', self).start()
+		Thread(function='scan', ScanvoxClass=self).start()
 	
 	def on_save(self, evt):
 		saveDialog = wx.FileDialog(self, 
@@ -145,7 +144,7 @@ class Scanvox(wx.Dialog):
 			self.on_Enable_Button(None)
 	
 	def on_delete(self, evt):
-		threading.Thread(target=self.deleteThread).start()
+		Thread(function='delete', ScanvoxClass=self).start()
 	
 	def on_close(self, evt):
 		subprocess.run([exe, "-c"])
@@ -158,8 +157,9 @@ class Scanvox(wx.Dialog):
 
 class Thread(threading.Thread):
 	def __init__(self, function, ScanvoxClass):
-		super(Thread, self).__init__(function=function)
+		super(Thread, self).__init__()
 		self.ScanvoxClass = ScanvoxClass
+		self.function = getattr(self, function)
 	
 	def run(self):
 		self.function()
@@ -193,14 +193,13 @@ class Thread(threading.Thread):
 				text = ''.join(lines[lastIndex:-2])
 			if config.conf["scanvox"]["automaticalyReadText"]:
 				core.callLater(0, lambda: ui.message(text.replace("\n"," ")))
+			value = self.ScanvoxClass.contentText.GetValue()
+			pos=value.rfind(separator)
 			self.ScanvoxClass.contentText.AppendText(text+separator)
-			if self.ScanvoxClass.pos != 0:
-				pos=self.ScanvoxClass.contentText.find(separator, self.ScanvoxClass.pos)
+			if pos != -1:
 				self.ScanvoxClass.contentText.SetInsertionPoint(pos+1)
-				self.ScanvoxClass.pos = pos
 			else:
 				self.ScanvoxClass.contentText.SetInsertionPoint(0)
-				self.ScanvoxClass.pos += 1
 			self.ScanvoxClass.on_Enable_Button(None)
 		elif result == 1003:
 			core.callLater(0, lambda: ui.message(
