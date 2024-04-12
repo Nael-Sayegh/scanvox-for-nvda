@@ -279,9 +279,8 @@ class Text:
 		self.control = control
 		self.text = text
 
-
-def setText(self, text):
-	self.text = text
+	def setText(self, text):
+		self.text = text
 
 	def addText(self, text):
 		if self.text is None:
