@@ -287,7 +287,7 @@ class Text:
 			return
 		self.control.SetInsertionPointEnd()
 		self.start = self.control.GetInsertionPoint()
-		self.control.AppendText(text + separator)
+		self.control.AppendText(self.text + separator)
 		self.end = self.control.GetInsertionPoint()
 		self.getText()
 
