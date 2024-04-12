@@ -219,8 +219,8 @@ class Thread(threading.Thread):
 				text = ''.join(lines[lastIndex:-2])
 			if config.conf["scanvox"]["automaticalyReadText"]:
 				core.callLater(0, lambda: ui.message(text.replace("\n", "")))
-			self.manageText.setText(text)
-			self.manageText.addText()
+			self.textInstance.setText(text)
+			self.textInstance.addText()
 			self.ScanvoxClass.on_Enable_Button(None)
 		elif result == 1003:
 			core.callLater(
