@@ -282,7 +282,7 @@ class Text:
 	def setText(self, text):
 		self.text = text
 
-	def addText(self, text):
+	def addText(self):
 		if self.text is None:
 			return
 		self.control.SetInsertionPointEnd()
