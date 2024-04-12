@@ -295,4 +295,4 @@ class Text:
 		if self.start == 0:
 			self.control.SetInsertionPoint(0)
 		else:
-			self.control.SetInsertionPoint(self.start - len(separator))
+			self.control.SetInsertionPoint(self.start + 1)
