@@ -92,6 +92,7 @@ class Scanvox(wx.Dialog):
 			style=wx.TE_MULTILINE | wx.TE_READONLY,
 		)
 		self.contentText.SetMinSize((300, 200))
+		self.manageText = Text(self.contentText)
 		self.scan = sHelper.addItem(
 			wx.Button(
 				self,
@@ -136,7 +137,7 @@ class Scanvox(wx.Dialog):
 			# Translators: a message that is spoken when the scanning process starts
 			_("Scanning in progress, please wait...")
 		)
-		Thread(function='scan', ScanvoxClass=self).start()
+		Thread(function='scan', ScanvoxClass=self, textInstance=self.manageText).start()
 
 	def on_save(self, evt):
 		saveDialog = wx.FileDialog(
@@ -178,10 +179,11 @@ class Scanvox(wx.Dialog):
 
 
 class Thread(threading.Thread):
-	def __init__(self, function, ScanvoxClass):
+	def __init__(self, function, ScanvoxClass, textInstance=None):
 		super(Thread, self).__init__()
 		self.ScanvoxClass = ScanvoxClass
 		self.function = getattr(self, function)
+		self.textInstance = textInstance
 
 	def run(self):
 		self.function()
@@ -217,14 +219,8 @@ class Thread(threading.Thread):
 				text = ''.join(lines[lastIndex:-2])
 			if config.conf["scanvox"]["automaticalyReadText"]:
 				core.callLater(0, lambda: ui.message(text.replace("\n", " ")))
-			value = self.ScanvoxClass.contentText.GetValue()
-			pos = value.rfind(separator)
-			log.info(pos)
-			self.ScanvoxClass.contentText.AppendText(text + separator)
-			if pos != -1:
-				self.ScanvoxClass.contentText.SetInsertionPoint(pos)
-			else:
-				self.ScanvoxClass.contentText.SetInsertionPoint(0)
+			self.manageText.setText(text)
+			self.manageText.addText()
 			self.ScanvoxClass.on_Enable_Button(None)
 		elif result == 1003:
 			core.callLater(
@@ -273,3 +269,31 @@ class Thread(threading.Thread):
 					_("It's impossible to delete the scanned pages")
 				),
 			)
+
+
+class Text:
+	start = 0
+	end = 0
+
+	def __init__(self, control, text=None):
+		self.control = control
+		self.text = text
+
+
+def setText(self, text):
+	self.text = text
+
+	def addText(self, text):
+		if self.text is None:
+			return
+		self.control.SetInsertionPointEnd()
+		self.start = self.control.GetInsertionPoint()
+		self.control.AppendText(text + separator)
+		self.end = self.control.GetInsertionPoint()
+		self.getText()
+
+	def getText(self):
+		if self.start == 0:
+			self.control.SetInsertionPoint(0)
+		else:
+			self.control.SetInsertionPoint(self.start - len(separator))
