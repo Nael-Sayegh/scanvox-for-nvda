@@ -286,6 +286,7 @@ class Thread(threading.Thread):
 class Text:
 	start = 0
 	end = 0
+	page = 0
 
 	def __init__(self, control, text=None):
 		self.control = control
@@ -299,7 +300,7 @@ class Text:
 			return
 		self.control.SetInsertionPointEnd()
 		self.start = self.control.GetInsertionPoint()
-		self.control.AppendText(self.text + separator)
+		self.control.AppendText(_("Page") + " " + self.page + self.text + separator)
 		self.end = self.control.GetInsertionPoint()
 		self.getText()
 
