@@ -3,6 +3,7 @@ src = ["addon"]
 respect-gitignore = true
 unsafe-fixes = false
 target-version = "py311"
+extend-exclude = [".github/", "*.json", "*.ini", "LICENSE", "*.css", "*.po", ".vscode/", "*.md", "site_scons/"]
 
 [tool.ruff.format]
 indent-style = "tab"
