@@ -211,6 +211,7 @@ class Scanvox(wx.Dialog):
 				# Translators: a message that is spoken when the scanned pages are deleted
 				_("All the pages have been erased"))
 			)
+			self.contentText.Clear()
 			self.save.Enable(False)
 			self.open.Enable(False)
 			self.delete.Enable(False)
