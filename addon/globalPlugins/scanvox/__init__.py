@@ -300,7 +300,7 @@ class Text:
 			return
 		self.control.SetInsertionPointEnd()
 		self.start = self.control.GetInsertionPoint()
-		self.control.AppendText(_("Page") + " " + self.page + self.text + separator)
+		self.control.AppendText(f"{_("Page")} {self.page}" + self.text + separator)
 		self.end = self.control.GetInsertionPoint()
 		self.getText()
 
