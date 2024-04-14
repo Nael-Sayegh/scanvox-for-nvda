@@ -10,7 +10,7 @@
 
 This add-on uses the Scanvox software to read your paper documents. It was created with the help of the software developer and does not require any additional installation.
 
-## Prerequisites 
+## Prerequisites
 
 To use this add-on, you must have a USB scanner connected to your computer that is compatible with TWAIN or WIA, which is the case with most scanners.
 

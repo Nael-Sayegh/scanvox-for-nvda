@@ -10,7 +10,7 @@
 
 Tento doplněk využívá Scanvox software pro skenování dokumentů ze skeneru s rozhraním Twain a Wia. Program byl vytvořen s pomocí vývojáře softwaru Scanvox, nevyžaduje se žádná speciální instalace, pouze ovladače ke skeneru.
 
-## Požadavky 
+## Požadavky
 
 Doplněk vyžaduje USB skener připojený k počítači  a nainstalované ovladače, program umí skenovat přes TWAIN nebo WIA rozhraní, která se používají s většinou skenerů.
 

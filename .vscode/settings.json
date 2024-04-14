@@ -10,7 +10,7 @@
     "python.autoComplete.extraPaths": [
         "../nvda/source",
         "../nvda/miscDeps/python"
-        ],	
+        ],
     "files.insertFinalNewline": true,
     "files.trimFinalNewlines": true,
     "editor.insertSpaces": false,

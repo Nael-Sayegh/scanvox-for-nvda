@@ -23,7 +23,9 @@ addon_info = {
 	"addon_summary": _("Scanvox for NVDA"),
 	# Add-on description
 	# Translators: Long description to be shown for this add-on on add-on information from add-ons manager
-	"addon_description": _("""This extension allows you to read paper documents using the Scanvox software. To use it, go to the NVDA tool menu and select Scanvox."""),
+	"addon_description": _(
+		"""This extension allows you to read paper documents using the Scanvox software. To use it, go to the NVDA tool menu and select Scanvox."""
+	),
 	# version
 	"addon_version": "2024.03.22",
 	# Author(s)
@@ -58,8 +60,7 @@ addon_info = {
 # pythonSources = ["addon/globalPlugins/*.py"]
 # For more information on SCons Glob expressions please take a look at:
 # https://scons.org/doc/production/HTML/scons-user/apd.html
-pythonSources = ["addon/globalPlugins/scanvox/*.py",
-"addon/*.py"]
+pythonSources = ["addon/globalPlugins/scanvox/*.py", "addon/*.py"]
 
 # Files that contain strings for translation. Usually your python sources
 i18nSources = pythonSources + ["buildVars.py"]
