@@ -12,6 +12,9 @@ import config
 from .uti import getDocumentsPath
 from shutil import copy
 from logHandler import log
+from .settings import ScanvoxPanel
+from . import update
+import globalVars
 import sys
 
 if sys.version_info.major == 3 and sys.version_info.minor == 7:
@@ -37,7 +40,6 @@ confspecs = {
 
 config.conf.spec["scanvox"] = confspecs
 
-from . import settings
 
 baseDir = os.path.dirname(__file__)
 exe = os.path.join(baseDir, "scanvox.exe")
@@ -45,12 +47,22 @@ document = getDocumentsPath()
 txtFile = os.path.join(baseDir, "scanvox.txt")
 separator = "********************\n"
 
+if (
+	not globalVars.appArgs.secure
+	and config.conf[update.addonInfos["name"]]["autoUpdate"]
+	and (
+		config.conf[update.addonInfos["name"]]["nbWeek"] != update.week
+		or config.conf[update.addonInfos["name"]]["updateEveryStart"]
+	)
+):
+	update.verifUpdate()
+
 
 class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	def __init__(self):
 		super(GlobalPlugin, self).__init__()
 		self.createMenu()
-		gui.NVDASettingsDialog.categoryClasses.append(settings.ScanvoxPanel)
+		gui.NVDASettingsDialog.categoryClasses.append(ScanvoxPanel)
 
 	def createMenu(self):
 		self.submenu_item = gui.mainFrame.sysTrayIcon.toolsMenu.Insert(
@@ -75,7 +87,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 	def terminate(self):
 		gui.mainFrame.sysTrayIcon.toolsMenu.Remove(self.submenu_item)
-		gui.NVDASettingsDialog.categoryClasses.remove(settings.ScanvoxPanel)
+		gui.NVDASettingsDialog.categoryClasses.remove(ScanvoxPanel)
 		super().terminate()
 
 
