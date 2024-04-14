@@ -8,8 +8,6 @@ ci:
     autoupdate_schedule: weekly
     skip:
       - "ruff"
-      - "poetry-lock"
-      - "poetry-install"
 default_language_version:
   python: python3.11
 default_stages:
