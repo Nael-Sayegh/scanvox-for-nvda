@@ -301,6 +301,7 @@ class Text:
 		self.control.SetInsertionPointEnd()
 		self.start = self.control.GetInsertionPoint()
 		self.control.AppendText(
+			# Translators: this is the text that is added to the scanned text
 			_("Page ") + str(self.page) + "\n" + self.text + separator
 		)
 		self.end = self.control.GetInsertionPoint()
