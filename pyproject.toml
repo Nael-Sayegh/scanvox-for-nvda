@@ -1,7 +1,6 @@
 [tool.ruff]
 src = ["addon"]
 respect-gitignore = true
-line-length = 80
 unsafe-fixes = false
 target-version = "py311"
 
