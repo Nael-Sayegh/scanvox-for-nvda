@@ -5,3 +5,4 @@
   * French translation correction
   * Fixed a bug that did not delete the content of the editing area when pressing the delete button
   * Automatically place the cursor at the beginning of the scanned page in the editing area.
+  * Addition of page number at the top of each scanned page in the editing area
