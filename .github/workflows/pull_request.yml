@@ -1,8 +1,13 @@
 name: pull_request
 
+permissions:
+  pull-requests: write
+
+
 on:
-  pull_request_target:
-    types: [opened, synchronize]
+  issue_comment:
+    types: [created]
+
 
 jobs:
   scons:
