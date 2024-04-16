@@ -1,13 +1,13 @@
-#ci:
-    #autofix_commit_msg: |
-        #style(pre-commit.ci): auto fixes from pre-commit hooks
-#
-        #for more information, see https://pre-commit.ci
-    #autoupdate_branch: ''
-    #autoupdate_commit_msg: 'ci(deps): pre-commit autoupdate'
-    #autoupdate_schedule: weekly
-    #skip:
-      #- "ruff"
+ci:
+    autofix_commit_msg: |
+        style(pre-commit.ci): auto fixes from pre-commit hooks
+
+        for more information, see https://pre-commit.ci
+    autoupdate_branch: ''
+    autoupdate_commit_msg: 'ci(deps): pre-commit autoupdate'
+    autoupdate_schedule: weekly
+    skip:
+      - "ruff"
 defaultk_language_version:
   python: python3.11
 default_stages:
@@ -26,11 +26,14 @@ repos:
       - id: check-merge-conflict
       - id: check-ast
       - id: end-of-file-fixer
+        exclude: '(^.+\.(md|txt|css)$)|(^LICENSE$)|(^(.github|\.vscode|addon/doc|addon/locale)/)'
       - id: mixed-line-ending
+        exclude: '(^.+\.(md|txt|css)$)|(^LICENSE$)|(^(.github|\.vscode|addon/doc|addon/locale)/)'
         args:
           - "--fix=lf"
       - id: check-toml
       - id: trailing-whitespace
+        exclude: '(^.+\.(md|txt|css)$)|(^LICENSE$)|(^(.github|\.vscode|addon/doc|addon/locale)/)'
       - id: check-case-conflict
       - id: check-yaml
 
