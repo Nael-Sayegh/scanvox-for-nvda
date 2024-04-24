@@ -8,7 +8,7 @@ ci:
     autoupdate_schedule: weekly
     skip:
       - "ruff"
-defaultk_language_version:
+default_language_version:
   python: python3.11
 default_stages:
   - "pre-commit"

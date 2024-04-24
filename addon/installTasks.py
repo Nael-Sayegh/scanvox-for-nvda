@@ -3,9 +3,9 @@
 
 import addonHandler
 import os
+import winUser
 
 # from logHandler import log
-from tones import beep
 from languageHandler import getLanguage
 
 addonHandler.initTranslation()
@@ -34,12 +34,12 @@ def getNewAddonInfo(installPth):
 		return "none", "0.0.0"
 
 	n = v = "none"
-	for l in lines:
-		if l.startswith("name"):
-			n = l.split("=")[1]
+	for line in lines:
+		if line.startswith("name"):
+			n = line.split("=")[1]
 			n = n.strip()
-		if l.startswith("version"):
-			v = l.split("=")[1]
+		if line.startswith("version"):
+			v = line.split("=")[1]
 			return n, v.strip()
 
 	return "none", "20aa.mm.dd"
@@ -57,7 +57,7 @@ def getOldVersion(addName, installPth):
 		for a in addonHandler.getAvailableAddons():
 			if a.name == addName:
 				return a.version
-	except:
+	except Exception:
 		pass
 
 	return "2099.01.01"
@@ -67,10 +67,6 @@ try:
 	from urllib import urlopen
 except Exception:
 	from urllib.request import urlopen
-try:
-	from urllib import Request
-except Exception:
-	from urllib.request import Request
 try:
 	from urllib import parse
 except Exception:
@@ -86,19 +82,12 @@ def update(name, oldVer, newVer):
 	# if  isDebug : return
 	try:
 		with urlopen(url) as data:
-			data = data.read()
-	except:
+			data = None
+	except Exception:
 		pass
 
 
-import ctypes, winUser
-from ctypes import windll
-import languageHandler
-
-
-def getEnglishLocaleInfo(separ="%20"):  # iType 1 = country 2=language
-	import winUser
-	import scriptHandler
+def getEnglishLocaleInfo(space="%20"):  # iType 1 = country 2=language
 	import ctypes
 	import languageHandler
 
@@ -130,4 +119,5 @@ def getEnglishLocaleInfo(separ="%20"):  # iType 1 = country 2=language
 	)
 	ctypes.windll.kernel32.GetLocaleInfoW(lID, lcType, buf, 1024)
 	country = buf.value
-	return country + separ + lang
+	country = country + " " + lang
+	return country.replace(" ", space)
