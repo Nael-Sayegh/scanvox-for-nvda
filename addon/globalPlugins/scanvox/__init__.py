@@ -65,8 +65,8 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		gui.NVDASettingsDialog.categoryClasses.append(ScanvoxPanel)
 
 	def createMenu(self):
-		self.submenu_item = gui.mainFrame.sysTrayIcon.toolsMenu.Insert(
-			8, wx.ID_ANY, "&Scanvox", "Scanvox"
+		self.submenu_item = gui.mainFrame.sysTrayIcon.menu.Insert(
+			2, wx.ID_ANY, "&Scanvox", "Scanvox"
 		)
 		gui.mainFrame.sysTrayIcon.Bind(
 			wx.EVT_MENU, self.displayDialog, self.submenu_item
@@ -86,7 +86,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		self.displayDialog(None)
 
 	def terminate(self):
-		gui.mainFrame.sysTrayIcon.toolsMenu.Remove(self.submenu_item)
+		gui.mainFrame.sysTrayIcon.menu.Remove(self.submenu_item)
 		gui.NVDASettingsDialog.categoryClasses.remove(ScanvoxPanel)
 		super().terminate()
 
