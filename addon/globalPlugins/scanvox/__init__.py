@@ -66,7 +66,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 	def createMenu(self):
 		self.submenu_item = gui.mainFrame.sysTrayIcon.menu.Insert(
-			1, wx.ID_ANY, "&Scanvox", "Scanvox"
+			2, wx.ID_ANY, "&Scanvox", "Scanvox"
 		)
 		gui.mainFrame.sysTrayIcon.Bind(
 			wx.EVT_MENU, self.displayDialog, self.submenu_item
