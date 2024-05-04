@@ -26,6 +26,16 @@ L'extension "Scanvox pour NVDA" peut être lancée de n'importe où sur votre or
 
 ## Changements
 
+### Version 2024.05.04
+
+  * Amélioration du système de mise à jour
+  * Mise à jour de la traduction russe
+  * Correction de la traduction française
+  * Correction d'un bug qui ne supprimait pas le contenu de la zone d'édition lors de l'appui sur le bouton de suppression
+  * Placement automatique du curseur au début de la page scannée dans la zone d'édition.
+  * Ajout du numéro de page en haut de chaque page scannée dans la zone d'édition
+  * Déplacement du menu Scanvox du menu outils vers le menu principal
+
 ### Version 2024.03.20
 
   * Ajout de la traduction tchèque
