@@ -36,7 +36,7 @@ confspecs = {
 	"autoUpdate": "boolean(default=True)",
 	"updateEveryStart": "boolean(default=False)",
 	"automaticalyReadText": "boolean(default=True)",
-	"chanel": "string(default=0)",
+	"chanel": "integer(default=0)",
 }
 
 config.conf.spec["scanvox"] = confspecs
