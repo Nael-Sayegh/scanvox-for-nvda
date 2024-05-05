@@ -1,0 +1,73 @@
+name: Prerelease
+on: 
+  push:
+    tags: 
+      - '*d'
+
+jobs:
+  scons: 
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source repository
+        uses: actions/checkout@v4
+      - name: Set up Python environment
+        uses: actions/setup-python@v5
+        with:
+          python-version: 3.11
+      - name: Install scons
+        run: pip install scons
+      - name: install markdown
+        run: pip install markdown
+      - name: Update packages
+        run: sudo apt-get update
+      - name: Install gettext
+        run: sudo apt-get install gettext
+      - name: get the last tag
+        id: get-latest-tag
+        run: echo "tag=${GITHUB_REF#refs/*/}" >> $GITHUB_OUTPUT
+      - name: Generating Addon
+        run: scons version=${{ steps.get-latest-tag.outputs.tag }}
+      - name: generating pot file
+        run: scons pot
+      - name: Create a file with the version number
+        run: touch version.txt && echo '${{ steps.get-latest-tag.outputs.tag }}' >> version.txt
+      - name: Upload the nvda add-on 
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
+        with:
+          username: ${{ secrets.USER_SFTP }}
+          server: ${{ secrets.HOST_SFTP }}
+          port: ${{ secrets.PORT_SFTP }}
+          local_path: './*.nvda-addon'
+          remote_path: ${{ secrets.REMOTE_SFTP }}/dev
+          sftp_only: true
+          password: ${{ secrets.MDP_SFTP }}
+      - name: Upload version's file
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
+        with:
+          username: ${{ secrets.USER_SFTP }}
+          server: ${{ secrets.HOST_SFTP }}
+          port: ${{ secrets.PORT_SFTP }}
+          local_path: './version.txt'
+          remote_path: ${{ secrets.REMOTE_DEV_SFTP }}/dev
+          sftp_only: true
+          password: ${{ secrets.MDP_SFTP }}
+      - name: upload the english documentation
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
+        with:
+          username: ${{ secrets.USER_SFTP }}
+          server: ${{ secrets.HOST_SFTP }}
+          port: ${{ secrets.PORT_SFTP }}
+          local_path: './addon/doc/en'
+          remote_path: ${{ secrets.REMOTE_SFTP }}/dev/doc
+          sftp_only: true
+          password: ${{ secrets.MDP_SFTP }}
+      - name: add file in release
+        uses: softprops/action-gh-release@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          files: |
+            *.nvda-addon
+            *.pot
+          body_path: changelog.md
+          prerelease: true
