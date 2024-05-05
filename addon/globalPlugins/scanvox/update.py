@@ -126,12 +126,13 @@ class updateDialog(wx.Dialog):
 	def onReleaseNotes(self, evt):
 		if config.conf[addonInfos["name"]]["chanel"] == 0:
 			url = f"https://module.nael-accessvision.com/addons/addons/{addonInfos['name']}/doc/"
+			remoteLanguage = os.listdir(os.path.join(addon, "locale"))
+			localLanguage = languageHandler.getLanguage()
+			localLanguage = localLanguage.split("_")[0]
+			if localLanguage in remoteLanguage:
+				os.startfile(url + localLanguage + "/readme.html")
+			else:
+				os.startfile(url + "en/readme.html")
 		elif config.conf[addonInfos["name"]]["chanel"] == 1:
-			url = f"https://module.nael-accessvision.com/addons/addons/{addonInfos['name']}/dev/doc/"
-		remoteLanguage = os.listdir(os.path.join(addon, "locale"))
-		localLanguage = languageHandler.getLanguage()
-		localLanguage = localLanguage.split("_")[0]
-		if localLanguage in remoteLanguage:
-			os.startfile(url + localLanguage + "/readme.html")
-		else:
-			os.startfile(url + "en/readme.html")
+			url = f"https://module.nael-accessvision.com/addons/addons/{addonInfos['name']}/dev/doc/readme.html"
+			os.startfile(url)
