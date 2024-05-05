@@ -48,7 +48,7 @@ jobs:
           server: ${{ secrets.HOST_SFTP }}
           port: ${{ secrets.PORT_SFTP }}
           local_path: './version.txt'
-          remote_path: ${{ secrets.REMOTE_DEV_SFTP }}/dev
+          remote_path: ${{ secrets.REMOTE_SFTP }}/dev
           sftp_only: true
           password: ${{ secrets.MDP_SFTP }}
       - name: upload the english documentation
