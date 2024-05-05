@@ -3,7 +3,7 @@ name: Upload file for update
 on: 
   push:
     tags-ignore: 
-      - '*dev'
+      - '*d'
 
 jobs:
   scons: 
