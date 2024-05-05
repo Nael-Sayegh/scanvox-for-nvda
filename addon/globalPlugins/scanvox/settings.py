@@ -1,9 +1,9 @@
 import addonHandler
 import gui
 import wx
-from logHandler import log
+
+# from logHandler import log
 import config
-import ui
 
 try:
 	from gui.settingsDialogs import SettingsPanel
@@ -43,6 +43,26 @@ class ScanvoxPanel(SettingsPanel):
 		updateGroupBox = updateGroupSizer.GetStaticBox()
 		updateGroup = gui.guiHelper.BoxSizerHelper(self, sizer=updateGroupSizer)
 		sHelper.addItem(updateGroup)
+		chanel = (
+			# Translators: a choice in the settings panel
+			(0, _("Stable")),
+			# Translators: a choice in the settings panel
+			(1, _("Dev")),
+		)
+		listChoice = [name for (setting, name) in chanel]
+
+		self.chanel = updateGroup.addLabeledControl(
+			# Translators: A label in the settings interface
+			_("&Chanel:"),
+			wx.Choice,
+			choices=listChoice,
+		)
+		for index, (setting, name) in enumerate(chanel):
+			if setting == config.conf[addonInfos['name']]["chanel"]:
+				self.chanel.SetSelection(index)
+				break
+			else:
+				self.chanel.SetSelection(0)
 		self.autoUpdate = updateGroup.addItem(
 			wx.CheckBox(
 				updateGroupBox,
@@ -65,6 +85,7 @@ class ScanvoxPanel(SettingsPanel):
 		update.verifUpdate(True)
 
 	def onSave(self):
+		config.conf[addonInfos['name']]["chanel"] = self.chanel.GetSelection()
 		config.conf[addonInfos['name']]["autoUpdate"] = self.autoUpdate.GetValue()
 		config.conf[addonInfos['name']]["automaticalyReadText"] = (
 			self.automaticalyReadText.GetValue()
