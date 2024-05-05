@@ -54,11 +54,18 @@ def installupdate():
 def verifUpdate(gesture=False):
 	global oversion
 	version = addonInfos["version"]
-	rversion = urllib.request.urlopen(
-		"https://module.nael-accessvision.com/addons/addons/"
-		+ addonInfos["name"]
-		+ "/version.txt"
-	)
+	if config.conf[addonInfos["name"]]["chanel"] == 0:
+		rversion = urllib.request.urlopen(
+			"https://module.nael-accessvision.com/addons/addons/"
+			+ addonInfos["name"]
+			+ "/version.txt"
+		)
+	elif config.conf[addonInfos["name"]]["chanel"] == 1:
+		rversion = urllib.request.urlopen(
+			"https://module.nael-accessvision.com/addons/addons/"
+			+ addonInfos["name"]
+			+ "/dev/version.txt"
+		)
 	tversion = rversion.read().decode()
 	oversion = tversion.replace("\n", "")
 	if version != oversion:
@@ -117,7 +124,10 @@ class updateDialog(wx.Dialog):
 		self.Destroy()
 
 	def onReleaseNotes(self, evt):
-		url = f"https://module.nael-accessvision.com/addons/addons/{addonInfos['name']}/doc/"
+		if config.conf[addonInfos["name"]]["chanel"] == 0:
+			url = f"https://module.nael-accessvision.com/addons/addons/{addonInfos['name']}/doc/"
+		elif config.conf[addonInfos["name"]]["chanel"] == 1:
+			url = f"https://module.nael-accessvision.com/addons/addons/{addonInfos['name']}/dev/doc/"
 		remoteLanguage = os.listdir(os.path.join(addon, "locale"))
 		localLanguage = languageHandler.getLanguage()
 		localLanguage = localLanguage.split("_")[0]
