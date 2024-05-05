@@ -1,8 +1,6 @@
 import addonHandler
 import gui
 import wx
-
-# from logHandler import log
 import config
 
 try:
