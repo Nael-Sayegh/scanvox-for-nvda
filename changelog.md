@@ -2,3 +2,4 @@
 
   * Addition of a dev update channel for translators and testing new features
   * Adding Turkish translation
+  * When saving a Word document, each page is added as a new page in the file.
