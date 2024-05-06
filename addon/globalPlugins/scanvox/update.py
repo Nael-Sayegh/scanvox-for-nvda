@@ -55,17 +55,23 @@ def verifUpdate(gesture=False):
 	global oversion
 	version = addonInfos["version"]
 	if config.conf[addonInfos["name"]]["chanel"] == 0:
-		rversion = urllib.request.urlopen(
-			"https://module.nael-accessvision.com/addons/addons/"
-			+ addonInfos["name"]
-			+ "/version.txt"
-		)
+		try:
+			rversion = urllib.request.urlopen(
+				"https://module.nael-accessvision.com/addons/addons/"
+				+ addonInfos["name"]
+				+ "/version.txt"
+			)
+		except urllib.error.HTTPError:
+			return
 	elif config.conf[addonInfos["name"]]["chanel"] == 1:
-		rversion = urllib.request.urlopen(
-			"https://module.nael-accessvision.com/addons/addons/"
-			+ addonInfos["name"]
-			+ "/dev/version.txt"
-		)
+		try:
+			rversion = urllib.request.urlopen(
+				"https://module.nael-accessvision.com/addons/addons/"
+				+ addonInfos["name"]
+				+ "/dev/version.txt"
+			)
+		except urllib.error.HTTPError:
+			return
 	tversion = rversion.read().decode()
 	oversion = tversion.replace("\n", "")
 	if version != oversion:
