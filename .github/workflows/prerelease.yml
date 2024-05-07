@@ -28,7 +28,7 @@ jobs:
       - name: Generating Addon
         run: |
           TAG=${{ steps.get-latest-tag.outputs.tag}}
-          scons version=${TAG%?}}
+          scons version=${TAG%?}
       - name: generating pot file
         run: scons pot
       - name: Create a file with the version number
