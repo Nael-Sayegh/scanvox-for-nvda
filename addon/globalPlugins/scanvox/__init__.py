@@ -174,8 +174,11 @@ class Scanvox(wx.Dialog):
 			if '.docx' in name:
 				with open(txtFile, 'r', encoding='utf-8') as file:
 					text = file.read()
+				sections = text.split(f"\n{separator}")
 				saveDocx = Document()
-				saveDocx.add_paragraph(text)
+				for section in sections:
+					saveDocx.add_paragraph(section)
+					saveDocx.add_page_break()
 				saveDocx.save(path)
 			else:
 				copy(txtFile, path)
