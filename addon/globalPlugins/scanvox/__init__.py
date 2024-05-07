@@ -64,6 +64,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		super(GlobalPlugin, self).__init__()
 		self.createMenu()
 		gui.NVDASettingsDialog.categoryClasses.append(ScanvoxPanel)
+		log.info("Scanvox for NVDA initialized")
 
 	def createMenu(self):
 		self.submenu_item = gui.mainFrame.sysTrayIcon.menu.Insert(
