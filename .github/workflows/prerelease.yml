@@ -32,7 +32,9 @@ jobs:
       - name: generating pot file
         run: scons pot
       - name: Create a file with the version number
-        run: touch version.txt && echo '${{ steps.get-latest-tag.outputs.tag }}' >> version.txt
+        run: |
+          TAG=${{ steps.get-latest-tag.outputs.tag }}
+          touch version.txt && echo '${TAG%?}' >> version.txt
       - name: Upload the nvda add-on 
         uses: wlixcc/SFTP-Deploy-Action@v1.2.4
         with:
