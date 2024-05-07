@@ -26,7 +26,9 @@ jobs:
         id: get-latest-tag
         run: echo "tag=${GITHUB_REF#refs/*/}" >> $GITHUB_OUTPUT
       - name: Generating Addon
-        run: scons version=${{ steps.get-latest-tag.outputs.tag }}
+        run: |
+          TAG=${{ steps.get-latest-tag.outputs.tag}}
+          scons version=${TAG%?}}
       - name: generating pot file
         run: scons pot
       - name: Create a file with the version number
