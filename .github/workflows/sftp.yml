@@ -2,8 +2,8 @@ name: Upload file for update
 
 on: 
   push:
-    tags: 
-      - '*'
+    tags-ignore: 
+      - '*d'
 
 jobs:
   scons: 

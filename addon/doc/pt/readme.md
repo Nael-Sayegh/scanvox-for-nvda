@@ -26,6 +26,16 @@ O extra "Scanvox for NVDA" pode ser iniciado de qualquer lugar do seu computador
 
 ## Alterações
 
+### Versão 2024.05.04
+
+  * Melhoria do sistema de atualização
+  * Atualização da tradução em russo
+  * Correção da tradução em francês
+  * Corrigido um bug que não excluía o conteúdo da área de edição ao pressionar o botão de excluir
+  * Colocação automática do cursor no início da página escaneada na área de edição.
+  * Adição de número de página no topo de cada página escaneada na área de edição
+  * Movendo o menu Scanvox do menu de ferramentas para o menu principal
+
 ### Versão 2024.01.10
 
   * Atualizada a modificação do sistema para adicionar um botão "Novidades" que abre a ajuda com os novos recursos da versão
@@ -40,6 +50,6 @@ O extra "Scanvox for NVDA" pode ser iniciado de qualquer lugar do seu computador
 
   * Primeira versão
 
-[1]: https://github.com/Nael-Sayegh/scanvox-for-nvda/releases/download/2024.03.20/scanvox-2024.03.20.nvda-addon
+[1]: https://github.com/Nael-Sayegh/scanvox-for-nvda/releases/download/2024.05.04/scanvox-2024.05.04.nvda-addon
 
 [2]: https://github.com/Nael-Sayegh/scanvox-for-nvda

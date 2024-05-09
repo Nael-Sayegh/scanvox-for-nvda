@@ -26,6 +26,16 @@ The add-on "Scanvox for NVDA" can be launched from anywhere on your computer by 
 
 ## Changes
 
+### Version 2024.05.04
+
+  * Improvement of the update system
+  * Updating the Russian translation
+  * French translation correction
+  * Fixed a bug that did not delete the content of the editing area when pressing the delete button
+  * Automatically place the cursor at the beginning of the scanned page in the editing area.
+  * Addition of page number at the top of each scanned page in the editing area
+  * Moving the Scanvox menu from the tool menu to the main menu
+
 ### Version 2024.03.20
 
   * Addition of Czech translation
@@ -48,6 +58,6 @@ The add-on "Scanvox for NVDA" can be launched from anywhere on your computer by 
 
   * First version
 
-[1]: https://github.com/Nael-Sayegh/scanvox-for-nvda/releases/download/2024.03.20/scanvox-2024.03.20.nvda-addon
+[1]: https://github.com/Nael-Sayegh/scanvox-for-nvda/releases/download/2024.05.04/scanvox-2024.05.04.nvda-addon
 
 [2]: https://github.com/Nael-Sayegh/scanvox-for-nvda

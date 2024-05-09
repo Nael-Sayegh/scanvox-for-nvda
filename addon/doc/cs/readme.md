@@ -24,6 +24,16 @@ Doplněk lze spustit kdekoli klávesovou zkratkou inzert +alt +s.
 
 ## Změny
 
+### Verze 2024.05.04
+
+  * Vylepšení systému aktualizací
+  * Aktualizace ruského překladu
+  * Oprava francouzského překladu
+  * Opravena chyba, kdy po stisku tlačítka smazat nebyl smazán obsah oblasti pro editaci
+  * Automatické umístění kurzoru na začátek skenované stránky v oblasti pro editaci.
+  * Přidání čísla stránky na vrch každé skenované stránky v oblasti pro editaci
+  * Přesun menu Scanvox z nástrojového menu do hlavního menu
+
 ### Verze 2024.03.20
 
   * Přidán český překlad včetně dokumentace
@@ -47,6 +57,6 @@ Nové funkce
 
   * První verze
 
-[1]: https://github.com/Nael-Sayegh/scanvox-for-nvda/releases/download/2024.03.20/scanvox-2024.03.20.nvda-addon
+[1]: https://github.com/Nael-Sayegh/scanvox-for-nvda/releases/download/2024.05.04/scanvox-2024.05.04.nvda-addon
 
 [2]: https://github.com/Nael-Sayegh/scanvox-for-nvda

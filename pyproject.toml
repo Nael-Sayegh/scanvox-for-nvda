@@ -1,0 +1,19 @@
+[tool.ruff]
+src = ["addon"]
+respect-gitignore = true
+unsafe-fixes = false
+target-version = "py311"
+extend-exclude = [".github/", "*.json", "*.ini", "LICENSE", "*.css", "*.po", ".vscode/", "*.md", "site_scons/", "buildVars.py"]
+builtins = ["_"]
+
+[tool.ruff.format]
+indent-style = "tab"
+line-ending = "lf"
+quote-style = "preserve"
+skip-magic-trailing-comma = true
+
+[tool.ruff.lint]
+ignore-init-module-imports = true
+
+[tool.ruff.lint.extend-per-file-ignores]
+"installTasks.py" = ["F841"]
