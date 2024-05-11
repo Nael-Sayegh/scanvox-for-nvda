@@ -32,6 +32,13 @@ Bu hareket, girdi hareketleri iletişim kutusunda değiştirilebilir.
 
 ## Değişiklikler
 
+### Sürüm 2024.05.07
+
+  * Yeni özelliklerin test edilebilmesi ve Çevirmenler için bir Geliştirici kanalı eklendi.
+  * Türkçe dil desteği eklendi.
+  * Bir Word belgesini kaydederken, her sayfa dosyaya yeni bir sayfa olarak eklenir.
+  * Scanvox'un yüklendiğini belirtmek için NVDA günlüğüne bir mesaj eklendi.
+
 ### Sürüm 2024.05.04
 
   * Güncelleme sistemi iyileştirildi.
