@@ -6,19 +6,19 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 'scanvox'\n"
-"Report-Msgid-Bugs-To: nvda-translations@groups.io\n"
-"POT-Creation-Date: 2024-05-07 13:42+0000\n"
-"PO-Revision-Date: 2024-05-07 17:51+0300\n"
+"Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
+"POT-Creation-Date: 2024-05-13 08:18+0200\n"
+"PO-Revision-Date: 2024-05-13 13:10+0300\n"
 "Last-Translator: Umut KORKMAZ <umutkork@gmail.com>\n"
 "Language-Team: Umut KORKMAZ <umutkork@gmail.com>\n"
 "Language: tr_TR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.4.2\n"
+"X-Generator: Poedit 3.4.4\n"
 
 #. Translators: this is the description of a command that opens the Scanvox dialog
-#: addon/globalPlugins/scanvox/__init__.py:85
+#: addon\globalPlugins\scanvox\__init__.py:85
 msgid "Open the Scanvox dialog"
 msgstr "Scanvox iletişim kutusunu açar"
 
@@ -27,133 +27,133 @@ msgstr "Scanvox iletişim kutusunu açar"
 #. Add-on summary, usually the user visible name of the addon.
 #. Translators: Summary for this add-on
 #. to be shown on installation and add-on information found in Add-ons Manager.
-#: addon/globalPlugins/scanvox/__init__.py:87
-#: addon/globalPlugins/scanvox/settings.py:18 buildVars.py:23
+#: addon\globalPlugins\scanvox\__init__.py:87
+#: addon\globalPlugins\scanvox\settings.py:18 buildVars.py:23
 msgid "Scanvox for NVDA"
 msgstr "NVDA için Scanvox"
 
 #. Translators: this is a label for a text control that displays the scanned text
-#: addon/globalPlugins/scanvox/__init__.py:106
+#: addon\globalPlugins\scanvox\__init__.py:106
 msgid "Text:"
 msgstr "Metin:"
 
 #. Translators: this is the label for a button that starts the scanning process
-#: addon/globalPlugins/scanvox/__init__.py:116
+#: addon\globalPlugins\scanvox\__init__.py:116
 msgid "&Scan"
 msgstr "&Tara"
 
 #. Translators: this is the label for a button that saves the scanned text
-#: addon/globalPlugins/scanvox/__init__.py:125
+#: addon\globalPlugins\scanvox\__init__.py:125
 msgid "&Save the scanned pages"
 msgstr "Taranan &sayfaları kaydet"
 
 #. Translators: label for a button
-#: addon/globalPlugins/scanvox/__init__.py:134
+#: addon\globalPlugins\scanvox\__init__.py:134
 msgid "&Delete the scanned pages"
 msgstr "Taranan &sayfaları sil"
 
 #. Translators: a message that is spoken when the scanning process starts
-#: addon/globalPlugins/scanvox/__init__.py:154
+#: addon\globalPlugins\scanvox\__init__.py:154
 msgid "Scanning in progress, please wait..."
 msgstr "Tarama devam ediyor, lütfen bekleyin..."
 
 #. Translators: title of a file dialog
-#: addon/globalPlugins/scanvox/__init__.py:162
+#: addon\globalPlugins\scanvox\__init__.py:162
 msgid "Select the location where you want to save the file"
 msgstr "Dosyayı kaydetmek istediğiniz konumu seçin"
 
 #. Translators: filter for a file dialog
-#: addon/globalPlugins/scanvox/__init__.py:164
+#: addon\globalPlugins\scanvox\__init__.py:164
 msgid "Text file: *.txt|*.txt|Word document: *.docx|*.docx"
 msgstr "Metin dosyası: *.txt|*.txt|Word belgesi: *.docx|*.docx"
 
 #. Translators: label for a file dialog
-#: addon/globalPlugins/scanvox/__init__.py:166
+#: addon\globalPlugins\scanvox\__init__.py:166
 msgid "Save the file"
 msgstr "Dosya 'yı kaydet"
 
 #. Translators: a message that the scan is complete
-#: addon/globalPlugins/scanvox/__init__.py:219
+#: addon\globalPlugins\scanvox\__init__.py:219
 msgid "Scan complete"
 msgstr "Tarama tamamlandı"
 
 #. Translators: a message that is spoken when the OCR is not available
-#: addon/globalPlugins/scanvox/__init__.py:249
+#: addon\globalPlugins\scanvox\__init__.py:249
 msgid "No OCR matching the language of your system is available"
 msgstr "Sisteminizin diliyle eşleşen OCR mevcut değil"
 
 #. Translators: a message that is spoken when no scanner is detected
-#: addon/globalPlugins/scanvox/__init__.py:257
+#: addon\globalPlugins\scanvox\__init__.py:257
 msgid "No compatible scanner detected"
 msgstr "Uyumlu tarayıcı bulunamadı"
 
 #. Translators: a message that is spoken when the page is empty
-#: addon/globalPlugins/scanvox/__init__.py:265
+#: addon\globalPlugins\scanvox\__init__.py:265
 msgid "The page seems empty"
 msgstr "Sayfa boş görünüyor"
 
 #. Translators: a message that is spoken when the scanned pages are deleted
-#: addon/globalPlugins/scanvox/__init__.py:277
+#: addon\globalPlugins\scanvox\__init__.py:277
 msgid "All the pages have been erased"
 msgstr "Tüm sayfalar silindi"
 
 #. Translators: a message that is spoken when the scanned pages cannot be deleted
-#: addon/globalPlugins/scanvox/__init__.py:288
+#: addon\globalPlugins\scanvox\__init__.py:288
 msgid "It's impossible to delete the scanned pages"
 msgstr "Taranan sayfalar silinemiyor"
 
 #. Translators: this is the text that is added to the scanned text
-#: addon/globalPlugins/scanvox/__init__.py:312
+#: addon\globalPlugins\scanvox\__init__.py:312
 msgid "Page "
 msgstr "Sayfa "
 
 #. Translators: A group of settings in the settings panel
-#: addon/globalPlugins/scanvox/settings.py:23
+#: addon\globalPlugins\scanvox\settings.py:23
 msgid "General"
 msgstr "Genel"
 
 #. Translators: Checkbox label in parameter panel
-#: addon/globalPlugins/scanvox/settings.py:32
+#: addon\globalPlugins\scanvox\settings.py:32
 msgid "&Automatically read the text when the scan is completed"
 msgstr "T&arama tamamlandığında metni otomatik olarak oku"
 
 #. Translators: A group of settings in the settings panel
-#: addon/globalPlugins/scanvox/settings.py:40
+#: addon\globalPlugins\scanvox\settings.py:40
 msgid "Update"
 msgstr "Güncelle"
 
 #. Translators: a choice in the settings panel
-#: addon/globalPlugins/scanvox/settings.py:46
+#: addon\globalPlugins\scanvox\settings.py:46
 msgid "Stable"
 msgstr "Kararlı"
 
 #. Translators: a choice in the settings panel
-#: addon/globalPlugins/scanvox/settings.py:48
+#: addon\globalPlugins\scanvox\settings.py:48
 msgid "Dev"
 msgstr "Geliştirici"
 
 #. Translators: A label in the settings interface
-#: addon/globalPlugins/scanvox/settings.py:54
+#: addon\globalPlugins\scanvox\settings.py:54
 msgid "&Chanel:"
 msgstr "&Kanal:"
 
 #. Translators: A checkbox label in the settings interface
-#: addon/globalPlugins/scanvox/settings.py:68
+#: addon\globalPlugins\scanvox\settings.py:68
 msgid "Automatically search for updates"
 msgstr "Güncellemeleri otomatik olarak denetle"
 
 #. Translators: A button label in the settings panel
-#: addon/globalPlugins/scanvox/settings.py:77
+#: addon\globalPlugins\scanvox\settings.py:77
 msgid "Search for an update now"
 msgstr "Şimdi Güncellemeleri denetle"
 
 #. Translators: title of a dialog box
-#: addon/globalPlugins/scanvox/update.py:24
+#: addon\globalPlugins\scanvox\update.py:24
 #, python-format
 msgid "Update of %s version %s"
 msgstr "%s sürümü %s güncelleniyor"
 
-#: addon/globalPlugins/scanvox/update.py:27
+#: addon\globalPlugins\scanvox\update.py:27
 #, python-format
 msgid ""
 "%s version %s is available. Would you like to update now? You can view the "
@@ -164,32 +164,35 @@ msgstr ""
 "görüntüleyebilirsiniz."
 
 #. Translators: message to user to report that no update is available.
-#: addon/globalPlugins/scanvox/update.py:83
+#: addon\globalPlugins\scanvox\update.py:83
 msgid "No update is available."
 msgstr "Güncelleme mevcut değil."
 
 #. Translators: label of a button
-#: addon/globalPlugins/scanvox/update.py:101
+#: addon\globalPlugins\scanvox\update.py:101
 msgid "&Yes"
 msgstr "&Evet"
 
 #. Translators: label of a button
-#: addon/globalPlugins/scanvox/update.py:110
+#: addon\globalPlugins\scanvox\update.py:110
 msgid "&No"
 msgstr "&Hayır"
 
 #. Translators: label of a button
-#: addon/globalPlugins/scanvox/update.py:116
+#: addon\globalPlugins\scanvox\update.py:116
 msgid "Wha&t's new"
 msgstr "Ye&nilikler"
 
 #: buildVars.py:27
+#| msgid ""
+#| "This extension allows you to read paper documents using the Scanvox "
+#| "software. To use it, go to the NVDA tool menu and select Scanvox."
 msgid ""
 "This extension allows you to read paper documents using the Scanvox "
-"software. To use it, go to the NVDA tool menu and select Scanvox."
+"software. To use it, go to the NVDA menu and select Scanvox."
 msgstr ""
 "Bu eklenti, Scanvox yazılımını kullanarak kağıt belgeleri okumanıza imkan "
-"verir. Kullanmak için NVDA araçlar menüsüne gidin ve Scanvox'u seçin."
+"verir. Kullanmak için NVDA menüsüne gidin ve Scanvox'u seçin."
 
 #~ msgid "See the result in the &notepad"
 #~ msgstr "Taranan belgeleri &not defterinde aç"
