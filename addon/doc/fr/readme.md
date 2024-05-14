@@ -26,6 +26,14 @@ L'extension "Scanvox pour NVDA" peut être lancée de n'importe où sur votre or
 
 ## Changements
 
+### Version 2024.06.15
+
+  * Ajout d'un canal de mise à jour de développement pour les traducteurs et le test de nouvelles fonctionnalités
+  * Ajout de la traduction turque
+  * Lors de l'enregistrement d'un document Word, chaque page est ajoutée comme une nouvelle page dans le fichier.
+  * Ajout d'un message dans le journal NVDA pour indiquer que Scanvox est chargé
+  * Documentation mise à jour
+
 ### Version 2024.05.04
 
   * Amélioration du système de mise à jour
