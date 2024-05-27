@@ -16,13 +16,20 @@ Doplněk vyžaduje USB skener připojený k počítači  a nainstalované ovlada
 
 ## Použití doplňku
 
-Doplněk se používá jednoduše stiskněte nvdaklávesu +n, najděte nástroje a zde položku ScanVox. Zde je tlačítko skenovat. po stisknutí enteru začne skenování a poté se začne automaticky číst text. Můžete naskenovat i více stránek a poté text uložit do formátu Word .docx nebo txt souboru. Pokud text neuložíte, text se po uzavření okna vymaže.
+Doplněk se používá jednoduše stiskněte nvdaklávesu +n, najděte položku ScanVox. Zde je tlačítko skenovat a editační pole jen pro čtení, do kterého přibývá naskenovaný text. po stisknutí enteru začne skenování a poté se začne automaticky číst text. Můžete naskenovat i více stránek a poté text uložit do formátu Word .docx nebo txt souboru. Pokud text neuložíte, text se po uzavření okna vymaže.
 
 ### Klávesové zkratky
 
 Doplněk lze spustit kdekoli klávesovou zkratkou inzert +alt +s.
 
 ## Změny
+
+### Verze 2024.06.01
+
+  * Přidána možnost výběru aktualizace z vývojového kanálu
+  * Přidán turecký překlad
+  * Při uložení do dokumentu aplikace Word se každá naskenovaná stránka uloží na novou samostatnou stránku v souboru
+  * Do výpisu logu v NVDA přidána informace, že ScanVox je spuštěn
 
 ### Verze 2024.05.04
 

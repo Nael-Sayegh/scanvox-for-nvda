@@ -26,7 +26,7 @@ The add-on "Scanvox for NVDA" can be launched from anywhere on your computer by 
 
 ## Changes
 
-### Version 2024.05.07
+### Version 2024.06.01
 
   * Addition of a dev update channel for translators and testing new features
   * Adding Turkish translation

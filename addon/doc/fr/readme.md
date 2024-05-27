@@ -26,7 +26,7 @@ L'extension "Scanvox pour NVDA" peut être lancée de n'importe où sur votre or
 
 ## Changements
 
-### Version 2024.05.04
+### Version 2024.06.01
 
   * Amélioration du système de mise à jour
   * Mise à jour de la traduction russe
