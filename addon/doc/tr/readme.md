@@ -33,7 +33,6 @@ Bu hareket, girdi hareketleri iletişim kutusunda değiştirilebilir.
 ## Değişiklikler
 
 ### Sürüm 2024.06.01
-
   * Yeni özelliklerin test edilebilmesi ve Çevirmenler için bir Geliştirici kanalı eklendi.
   * Türkçe dil desteği eklendi.
   * Bir Word belgesini kaydederken, her sayfa dosyaya yeni bir sayfa olarak eklenir.
