@@ -64,6 +64,6 @@ Nové funkce
 
   * První verze
 
-[1]: https://github.com/Nael-Sayegh/scanvox-for-nvda/releases/download/2024.05.04/scanvox-2024.05.04.nvda-addon
+[1]: https://github.com/Nael-Sayegh/scanvox-for-nvda/releases/download/2024.06.01/scanvox-2024.06.01.nvda-addon
 
 [2]: https://github.com/Nael-Sayegh/scanvox-for-nvda
