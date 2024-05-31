@@ -32,6 +32,12 @@ Bu hareket, girdi hareketleri iletişim kutusunda değiştirilebilir.
 
 ## Değişiklikler
 
+### Sürüm 2024.06.01
+  * Yeni özelliklerin test edilebilmesi ve Çevirmenler için bir Geliştirici kanalı eklendi.
+  * Türkçe dil desteği eklendi.
+  * Bir Word belgesini kaydederken, her sayfa dosyaya yeni bir sayfa olarak eklenir.
+  * Scanvox'un yüklendiğini belirtmek için NVDA günlüğüne bir mesaj eklendi.
+
 ### Sürüm 2024.05.04
 
   * Güncelleme sistemi iyileştirildi.
@@ -64,6 +70,6 @@ Bu hareket, girdi hareketleri iletişim kutusunda değiştirilebilir.
 
   * İlk sürüm.
 
-[1]: https://github.com/Nael-Sayegh/scanvox-for-nvda/releases/download/2024.05.04/scanvox-2024.05.04.nvda-addon
+[1]: https://github.com/Nael-Sayegh/scanvox-for-nvda/releases/download/2024.06.01/scanvox-2024.06.01.nvda-addon
 
 [2]: https://github.com/Nael-Sayegh/scanvox-for-nvda
