@@ -6,19 +6,19 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: 'scanvox' '2023.12.14'\n"
-"Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
-"POT-Creation-Date: 2024-05-04 11:46+0200\n"
-"PO-Revision-Date: 2024-05-04 11:48+0200\n"
+"Report-Msgid-Bugs-To: nvda-translations@groups.io\n"
+"POT-Creation-Date: 2024-05-07 13:42+0000\n"
+"PO-Revision-Date: 2024-05-13 12:24+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.4.2\n"
+"X-Generator: Poedit 3.4.4\n"
 
 #. Translators: this is the description of a command that opens the Scanvox dialog
-#: addon\globalPlugins\scanvox\__init__.py:81
+#: addon/globalPlugins/scanvox/__init__.py:85
 msgid "Open the Scanvox dialog"
 msgstr "Otevře dialogScanvoxu"
 
@@ -27,118 +27,133 @@ msgstr "Otevře dialogScanvoxu"
 #. Add-on summary, usually the user visible name of the addon.
 #. Translators: Summary for this add-on
 #. to be shown on installation and add-on information found in Add-ons Manager.
-#: addon\globalPlugins\scanvox\__init__.py:83
-#: addon\globalPlugins\scanvox\settings.py:20 buildVars.py:23
+#: addon/globalPlugins/scanvox/__init__.py:87
+#: addon/globalPlugins/scanvox/settings.py:18 buildVars.py:23
 msgid "Scanvox for NVDA"
 msgstr "Scanvox pro NVDA"
 
 #. Translators: this is a label for a text control that displays the scanned text
-#: addon\globalPlugins\scanvox\__init__.py:102
+#: addon/globalPlugins/scanvox/__init__.py:106
 msgid "Text:"
 msgstr "Text:"
 
 #. Translators: this is the label for a button that starts the scanning process
-#: addon\globalPlugins\scanvox\__init__.py:112
+#: addon/globalPlugins/scanvox/__init__.py:116
 msgid "&Scan"
 msgstr "&Skenovat"
 
 #. Translators: this is the label for a button that saves the scanned text
-#: addon\globalPlugins\scanvox\__init__.py:121
+#: addon/globalPlugins/scanvox/__init__.py:125
 msgid "&Save the scanned pages"
 msgstr "&Uložit Naskenované stránky"
 
 #. Translators: label for a button
-#: addon\globalPlugins\scanvox\__init__.py:130
+#: addon/globalPlugins/scanvox/__init__.py:134
 msgid "&Delete the scanned pages"
 msgstr "&Odstranit naskenované stránky"
 
 #. Translators: a message that is spoken when the scanning process starts
-#: addon\globalPlugins\scanvox\__init__.py:150
+#: addon/globalPlugins/scanvox/__init__.py:154
 msgid "Scanning in progress, please wait..."
 msgstr "Skenuji, prosím, čekejte..."
 
 #. Translators: title of a file dialog
-#: addon\globalPlugins\scanvox\__init__.py:158
+#: addon/globalPlugins/scanvox/__init__.py:162
 msgid "Select the location where you want to save the file"
 msgstr "Vyberte umístění, kam chcete soubor uložit"
 
 #. Translators: filter for a file dialog
-#: addon\globalPlugins\scanvox\__init__.py:160
+#: addon/globalPlugins/scanvox/__init__.py:164
 msgid "Text file: *.txt|*.txt|Word document: *.docx|*.docx"
 msgstr "Txt soubory’: *.txt|*.txt|Dokument word’: *.docx|*.docx"
 
 #. Translators: label for a file dialog
-#: addon\globalPlugins\scanvox\__init__.py:162
+#: addon/globalPlugins/scanvox/__init__.py:166
 msgid "Save the file"
 msgstr "Uložit soubor"
 
 #. Translators: a message that the scan is complete
-#: addon\globalPlugins\scanvox\__init__.py:212
+#: addon/globalPlugins/scanvox/__init__.py:219
 msgid "Scan complete"
 msgstr "Skenování dokončeno"
 
 #. Translators: a message that is spoken when the OCR is not available
-#: addon\globalPlugins\scanvox\__init__.py:242
+#: addon/globalPlugins/scanvox/__init__.py:249
 msgid "No OCR matching the language of your system is available"
 msgstr "Není dostupný jazyk v OCR, který používáte na vašem systému"
 
 #. Translators: a message that is spoken when no scanner is detected
-#: addon\globalPlugins\scanvox\__init__.py:250
+#: addon/globalPlugins/scanvox/__init__.py:257
 msgid "No compatible scanner detected"
 msgstr "Není detekován žádný kompatibilní skener"
 
 #. Translators: a message that is spoken when the page is empty
-#: addon\globalPlugins\scanvox\__init__.py:258
+#: addon/globalPlugins/scanvox/__init__.py:265
 msgid "The page seems empty"
 msgstr "Zdá se, že je stránka prázdná"
 
 #. Translators: a message that is spoken when the scanned pages are deleted
-#: addon\globalPlugins\scanvox\__init__.py:270
+#: addon/globalPlugins/scanvox/__init__.py:277
 msgid "All the pages have been erased"
 msgstr "Všechny stránky byly smazány"
 
 #. Translators: a message that is spoken when the scanned pages cannot be deleted
-#: addon\globalPlugins\scanvox\__init__.py:281
+#: addon/globalPlugins/scanvox/__init__.py:288
 msgid "It's impossible to delete the scanned pages"
 msgstr "Není možné odstranit naskenované stránky"
 
 #. Translators: this is the text that is added to the scanned text
-#: addon\globalPlugins\scanvox\__init__.py:305
+#: addon/globalPlugins/scanvox/__init__.py:312
 msgid "Page "
 msgstr "Stránka "
 
 #. Translators: A group of settings in the settings panel
-#: addon\globalPlugins\scanvox\settings.py:25
+#: addon/globalPlugins/scanvox/settings.py:23
 msgid "General"
 msgstr "Obecné"
 
 #. Translators: Checkbox label in parameter panel
-#: addon\globalPlugins\scanvox\settings.py:34
+#: addon/globalPlugins/scanvox/settings.py:32
 msgid "&Automatically read the text when the scan is completed"
-msgstr "&Automaticky číst text když je skenování dokončeno"
+msgstr "Automaticky číst &text když je skenování dokončeno"
 
 #. Translators: A group of settings in the settings panel
-#: addon\globalPlugins\scanvox\settings.py:42
+#: addon/globalPlugins/scanvox/settings.py:40
 msgid "Update"
 msgstr "Aktualizace"
 
+#. Translators: a choice in the settings panel
+#: addon/globalPlugins/scanvox/settings.py:46
+msgid "Stable"
+msgstr "Stabilní"
+
+#. Translators: a choice in the settings panel
+#: addon/globalPlugins/scanvox/settings.py:48
+msgid "Dev"
+msgstr "Vývojový"
+
+#. Translators: A label in the settings interface
+#: addon/globalPlugins/scanvox/settings.py:54
+msgid "&Chanel:"
+msgstr "&Kanál:"
+
 #. Translators: A checkbox label in the settings interface
-#: addon\globalPlugins\scanvox\settings.py:50
+#: addon/globalPlugins/scanvox/settings.py:68
 msgid "Automatically search for updates"
-msgstr "Automaticky hledat aktualizace"
+msgstr "&Automaticky hledat aktualizace"
 
 #. Translators: A button label in the settings panel
-#: addon\globalPlugins\scanvox\settings.py:59
+#: addon/globalPlugins/scanvox/settings.py:77
 msgid "Search for an update now"
-msgstr "Hledat nyní aktualizaci"
+msgstr "&Hledat nyní aktualizaci"
 
 #. Translators: title of a dialog box
-#: addon\globalPlugins\scanvox\update.py:24
+#: addon/globalPlugins/scanvox/update.py:24
 #, python-format
 msgid "Update of %s version %s"
 msgstr "Aktualizace %s verze %s"
 
-#: addon\globalPlugins\scanvox\update.py:27
+#: addon/globalPlugins/scanvox/update.py:27
 #, python-format
 msgid ""
 "%s version %s is available. Would you like to update now? You can view the "
@@ -147,22 +162,22 @@ msgstr ""
 "Je dostupnáverze %s %s . Chcete jí nyní stáhnout? Můžete si přečíst změny."
 
 #. Translators: message to user to report that no update is available.
-#: addon\globalPlugins\scanvox\update.py:70
+#: addon/globalPlugins/scanvox/update.py:83
 msgid "No update is available."
 msgstr "Není dostupná žádná aktualizace."
 
 #. Translators: label of a button
-#: addon\globalPlugins\scanvox\update.py:88
+#: addon/globalPlugins/scanvox/update.py:101
 msgid "&Yes"
 msgstr "&Ano"
 
 #. Translators: label of a button
-#: addon\globalPlugins\scanvox\update.py:97
+#: addon/globalPlugins/scanvox/update.py:110
 msgid "&No"
 msgstr "&Ne"
 
 #. Translators: label of a button
-#: addon\globalPlugins\scanvox\update.py:103
+#: addon/globalPlugins/scanvox/update.py:116
 msgid "Wha&t's new"
 msgstr "&co je nového"
 
