@@ -185,7 +185,9 @@ class Scanvox(wx.Dialog):
 			self.on_Enable_Button(None)
 
 	def on_delete(self, evt):
-		Thread(function='delete', ScanvoxClass=self).start()
+		Thread(
+			function='delete', ScanvoxClass=self, textInstance=self.manageText
+		).start()
 
 	def on_close(self, evt):
 		subprocess.run([exe, "-c"])
