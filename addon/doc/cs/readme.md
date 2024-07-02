@@ -24,6 +24,10 @@ Doplněk lze spustit kdekoli klávesovou zkratkou inzert +alt +s.
 
 ## Změny
 
+### Verze 2024.07.02
+
+  * Opraven problém, kdy čísla stránek pokračovala ve zvyšování po kliknutí na smazání
+
 ### Verze 2024.06.01
 
   * Přidána možnost výběru aktualizace z vývojového kanálu
@@ -64,6 +68,6 @@ Nové funkce
 
   * První verze
 
-[1]: https://github.com/Nael-Sayegh/scanvox-for-nvda/releases/download/2024.06.01/scanvox-2024.06.01.nvda-addon
+[1]: https://github.com/Nael-Sayegh/scanvox-for-nvda/releases/download/2024.07.02/scanvox-2024.07.02.nvda-addon
 
 [2]: https://github.com/Nael-Sayegh/scanvox-for-nvda

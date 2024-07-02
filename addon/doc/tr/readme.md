@@ -32,6 +32,10 @@ Bu hareket, girdi hareketleri iletişim kutusunda değiştirilebilir.
 
 ## Değişiklikler
 
+### Sürüm 2024.07.02
+
+  * Sayfa numaralarının sil'e tıkladıktan sonra artmaya devam ettiği bir sorun düzeltildi
+
 ### Sürüm 2024.06.01
   * Yeni özelliklerin test edilebilmesi ve Çevirmenler için bir Geliştirici kanalı eklendi.
   * Türkçe dil desteği eklendi.
@@ -70,6 +74,6 @@ Bu hareket, girdi hareketleri iletişim kutusunda değiştirilebilir.
 
   * İlk sürüm.
 
-[1]: https://github.com/Nael-Sayegh/scanvox-for-nvda/releases/download/2024.06.01/scanvox-2024.06.01.nvda-addon
+[1]: https://github.com/Nael-Sayegh/scanvox-for-nvda/releases/download/2024.07.02/scanvox-2024.07.02.nvda-addon
 
 [2]: https://github.com/Nael-Sayegh/scanvox-for-nvda
