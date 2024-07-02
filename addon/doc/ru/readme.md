@@ -26,6 +26,10 @@
 
 ## Изменения
 
+### Версия 2024.07.02
+
+  * Исправлена проблема, из-за которой номера страниц продолжали увеличиваться после нажатия на удаление
+
 ### Версия 2024.05.04
 
   * Улучшение системы обновления
@@ -58,7 +62,7 @@
 
   * Первая версия
 
-[1]: https://github.com/Nael-Sayegh/scanvox-for-nvda/releases/download/2024.05.04/scanvox-2024.05.04.nvda-addon
+[1]: https://github.com/Nael-Sayegh/scanvox-for-nvda/releases/download/2024.07.02/scanvox-2024.07.02.nvda-addon
 
 [2]: https://github.com/Nael-Sayegh/scanvox-for-nvda
 
