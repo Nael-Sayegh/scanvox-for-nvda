@@ -3,7 +3,7 @@ ci:
         style(pre-commit.ci): auto fixes from pre-commit hooks
 
         for more information, see https://pre-commit.ci
-    autoupdate_branch: ''
+    autoupdate_branch: 'dev'
     autoupdate_commit_msg: 'ci(deps): pre-commit autoupdate'
     autoupdate_schedule: weekly
     skip:
