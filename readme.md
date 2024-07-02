@@ -26,6 +26,10 @@ The add-on "Scanvox for NVDA" can be launched from anywhere on your computer by 
 
 ## Changes
 
+### Version 2024.07.02
+
+  * Fixed an issue where page numbers continued to increase after clicking delete.
+
 ### Version 2024.06.01
 
   * Addition of a dev update channel for translators and testing new features
@@ -66,6 +70,6 @@ The add-on "Scanvox for NVDA" can be launched from anywhere on your computer by 
 
   * First version
 
-[1]: https://github.com/Nael-Sayegh/scanvox-for-nvda/releases/download/2024.06.01/scanvox-2024.06.01.nvda-addon
+[1]: https://github.com/Nael-Sayegh/scanvox-for-nvda/releases/download/2024.07.02/scanvox-2024.07.02.nvda-addon
 
 [2]: https://github.com/Nael-Sayegh/scanvox-for-nvda

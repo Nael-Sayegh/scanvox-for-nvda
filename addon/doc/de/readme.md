@@ -30,6 +30,10 @@ Das Add-on „Scanvox for NVDA“ kann von überall auf Ihrem Computer durch Dr�
 
 ## Änderungen
 
+### Version 2024.07.02
+
+  * Ein Problem wurde behoben, bei dem die Seitenzahlen weiterhin anstiegen, nachdem auf Löschen geklickt wurde
+
 ### Version 2024.05.07
 
   * Hinzufügung eines Entwickler-Update-Kanals für Übersetzer und zum Testen neuer Funktionen
@@ -69,6 +73,6 @@ Das Add-on „Scanvox for NVDA“ kann von überall auf Ihrem Computer durch Dr�
 
   * Erste Version
 
-[1]: https://github.com/Nael-Sayegh/scanvox-for-nvda/releases/download/2024.06.01/scanvox-2024.06.01.nvda-addon
+[1]: https://github.com/Nael-Sayegh/scanvox-for-nvda/releases/download/2024.07.02/scanvox-2024.07.02.nvda-addon
 
 [2]: https://github.com/Nael-Sayegh/scanvox-for-nvda
