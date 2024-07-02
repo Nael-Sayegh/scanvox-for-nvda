@@ -280,9 +280,9 @@ class Thread(threading.Thread):
 			self.ScanvoxClass.contentText.Clear()
 			self.ScanvoxClass.save.Enable(False)
 			self.ScanvoxClass.delete.Enable(False)
-			self.manageText.page = 1
-			self.manageText.start = 0
-			self.manageText.end = 0
+			self.textInstance.page = 1
+			self.textInstance.start = 0
+			self.textInstance.end = 0
 		else:
 			core.callLater(
 				0,
