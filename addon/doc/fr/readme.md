@@ -26,6 +26,10 @@ L'extension "Scanvox pour NVDA" peut être lancée de n'importe où sur votre or
 
 ## Changements
 
+### Version 2024.07.02
+
+  * Correction d'un problème où le numéro de page continuait à augmenter après avoir cliquer sur supprimer
+
 ### Version 2024.06.01
 
   * Ajout d'un canal de mise à jour de développement pour les traducteurs et le test de nouvelles fonctionnalités
@@ -69,6 +73,6 @@ Copyright ©: 2024 (Nael Sayegh et Nael-Accessvision
 
 <!-- links section -->
 
-[1]: https://github.com/Nael-Sayegh/scanvox-for-nvda/releases/download/2024.06.01/scanvox-2024.06.01.nvda-addon
+[1]: https://github.com/Nael-Sayegh/scanvox-for-nvda/releases/download/2024.07.02/scanvox-2024.07.02.nvda-addon
 
 [2]: https://github.com/Nael-Sayegh/scanvox-for-nvda
