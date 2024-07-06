@@ -362,5 +362,5 @@ class Text:
 		for page in reversed(self.start):
 			if pos > page:
 				self.control.SetInsertionPoint(page)
-				speakMessage(self.control.convPosToText.range(page, page + 5))
+				speakMessage(self.control.contentText.range(page, page + 5))
 				break
