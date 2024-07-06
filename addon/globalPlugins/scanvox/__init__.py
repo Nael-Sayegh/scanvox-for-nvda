@@ -96,6 +96,9 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 
 class Scanvox(wx.Dialog):
+	accelEntries = []
+	accelEntries.append((wx.acccel_cttrl + wx.ACCEL_SHIFT, wx.WXK_UP))
+
 	def __init__(self, parent=None):
 		subprocess.run([exe, "-c"])
 		super().__init__(parent, title="Scanvox")
@@ -143,10 +146,10 @@ class Scanvox(wx.Dialog):
 		self.closeBtn.Bind(wx.EVT_BUTTON, self.on_close)
 		self.SetEscapeId(wx.ID_CLOSE)
 		self.SetDefaultItem(self.closeBtn)
-
 		mainSizer.Add(sHelper.sizer, border=10, flag=wx.ALL)
 		mainSizer.Fit(self)
 		self.SetSizer(mainSizer)
+		self.addshortcut()
 
 	def on_scan(self, evt):
 		ui.message(
@@ -197,6 +200,28 @@ class Scanvox(wx.Dialog):
 		if not self.save.IsEnabled():
 			self.save.Enable(True)
 			self.delete.Enable(True)
+
+	def addEntry(self, accelEntries, modifiers, key, func):
+		id = wx.Window.NewControlId()
+		self.Bind(wx.EVT_MENU, func, id=id)
+		accelEntries.append((modifiers, key, id))
+
+	def addShortcuts(self):
+		accelEntries = []
+		self.addEntry(
+			accelEntries,
+			wx.ACCEL_CTRL + wx.ACCEL_SHIFT,
+			wx.WXK_UP,
+			lambda evt: self.manageText.nextPage,
+		)
+		self.addEntry(
+			accelEntries,
+			wx.ACCEL_CTRL + wx.ACCEL_SHIFT,
+			wx.WXK_DOWN,
+			lambda evt: self.manageText.nextPag,
+		)
+		accelTable = wx.AcceleratorTable(accelEntries)
+		self.contentText.SetAcceleratorTable(accelTable)
 
 
 class Thread(threading.Thread):
@@ -326,14 +351,14 @@ class Text:
 		else:
 			self.control.SetInsertionPoint(self.start[-1])
 
-	def nextPage(self):
+	def nextPage(self, evt):
 		pos = self.control.GetInsertionPoint()
 		for page in self.start:
 			if pos < page:
 				self.control.SetInsertionPoint(page)
 				break
 
-	def previousPage(self):
+	def previousPage(self, evt):
 		pos = self.control.GetInsertionPoint()
 		for page in self.start:
 			if pos > page:
