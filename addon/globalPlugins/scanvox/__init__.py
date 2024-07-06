@@ -296,7 +296,7 @@ class Thread(threading.Thread):
 
 
 class Text:
-	start = 0
+	start = []
 	end = 0
 	page = 1
 
@@ -311,7 +311,7 @@ class Text:
 		if self.text is None:
 			return
 		self.control.SetInsertionPointEnd()
-		self.start = self.control.GetInsertionPoint()
+		self.start.append(self.control.GetInsertionPoint())
 		self.control.AppendText(
 			# Translators: this is the text that is added to the scanned text
 			_("Page ") + str(self.page) + "\n" + self.text + separator
@@ -321,7 +321,21 @@ class Text:
 		self.page += 1
 
 	def getText(self):
-		if self.start == 0:
+		if not self.start:
 			self.control.SetInsertionPoint(0)
 		else:
-			self.control.SetInsertionPoint(self.start)
+			self.control.SetInsertionPoint(self.start[-1])
+
+	def nextPage(self):
+		pos = self.control.GetInsertionPoint()
+		for page in self.start:
+			if pos < page:
+				self.control.SetInsertionPoint(page)
+				break
+
+	def previousPage(self):
+		pos = self.control.GetInsertionPoint()
+		for page in self.start:
+			if pos > page:
+				self.control.SetInsertionPoint(page)
+				break
