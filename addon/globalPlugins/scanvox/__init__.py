@@ -215,7 +215,7 @@ class Scanvox(wx.Dialog):
 			accelEntries,
 			wx.ACCEL_CTRL + wx.ACCEL_SHIFT,
 			wx.WXK_DOWN,
-			lambda evt: self.manageText.nextPag,
+			lambda evt: self.manageText.nextPage,
 		)
 		accelTable = wx.AcceleratorTable(accelEntries)
 		self.contentText.SetAcceleratorTable(accelTable)
