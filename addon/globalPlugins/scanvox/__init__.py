@@ -351,13 +351,20 @@ class Text:
 
 	def nextPage(self, evt):
 		pos = self.control.GetInsertionPoint()
+		moved = False
 		for page in self.start:
 			if pos < page:
 				self.control.SetInsertionPoint(page)
 				core.callLater(
 					0, lambda: speakMessage(self.control.GetRange(page, page + 6))
 				)
+				moved = True
 				break
+			if not moved:
+				ui.message(
+					# Translators: a message that is spoken when the last page is reached
+					_("End")
+				)
 
 	def previousPage(self, evt):
 		pos = self.control.GetInsertionPoint()
