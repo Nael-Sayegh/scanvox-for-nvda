@@ -118,6 +118,15 @@ class Scanvox(wx.Dialog):
 		)
 		self.scan.SetFocus()
 		self.scan.Bind(wx.EVT_BUTTON, self.on_scan)
+		self.deletePage = sHelper.addItem(
+			wx.Button(
+				self,
+				# Translators: this is the label for a button that deletes the last page scanned
+				label=_("Delete the last page scanned"),
+			)
+		)
+		self.deletePage.Bind(wx.EVT_BUTTON, lambda evt: self.manageText.deletePage())
+		self.deletePage.Enable(False)
 		self.save = sHelper.addItem(
 			wx.Button(
 				self,
@@ -195,6 +204,7 @@ class Scanvox(wx.Dialog):
 
 	def on_Enable_Button(self, evt):
 		if not self.save.IsEnabled():
+			self.deletePage.Enable(True)
 			self.save.Enable(True)
 			self.delete.Enable(True)
 
@@ -280,6 +290,7 @@ class Thread(threading.Thread):
 				),
 			)
 			self.ScanvoxClass.contentText.Clear()
+			self.ScanvoxClass.deletePage.Enable(False)
 			self.ScanvoxClass.save.Enable(False)
 			self.ScanvoxClass.delete.Enable(False)
 			self.textInstance.page = 1
