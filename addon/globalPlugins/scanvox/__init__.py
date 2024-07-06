@@ -296,8 +296,8 @@ class Thread(threading.Thread):
 
 
 class Text:
-	start = 0
-	end = 0
+	start = []
+	end = []
 	page = 1
 
 	def __init__(self, control, text=None):
@@ -325,3 +325,7 @@ class Text:
 			self.control.SetInsertionPoint(0)
 		else:
 			self.control.SetInsertionPoint(self.start)
+
+	def deletePage(self, n):
+		self.control.remove(self.start, self.end)
+		self.page -= 1
