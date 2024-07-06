@@ -149,7 +149,7 @@ class Scanvox(wx.Dialog):
 		mainSizer.Add(sHelper.sizer, border=10, flag=wx.ALL)
 		mainSizer.Fit(self)
 		self.SetSizer(mainSizer)
-		self.addshortcut()
+		self.addShortcuts()
 
 	def on_scan(self, evt):
 		ui.message(
