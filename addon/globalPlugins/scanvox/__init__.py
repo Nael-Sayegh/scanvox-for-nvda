@@ -16,6 +16,7 @@ from .settings import ScanvoxPanel
 from . import update
 import globalVars
 import sys
+from speech import speakMessage
 
 if sys.version_info.major == 3 and sys.version_info.minor == 7:
 	lib = os.path.join(os.path.dirname(__file__), "lib", "3.7")
@@ -209,13 +210,13 @@ class Scanvox(wx.Dialog):
 			accelEntries,
 			wx.ACCEL_CTRL + wx.ACCEL_SHIFT,
 			wx.WXK_UP,
-			lambda evt: self.manageText.nextPage,
+			self.manageText.previousPage,
 		)
 		self.addEntry(
 			accelEntries,
 			wx.ACCEL_CTRL + wx.ACCEL_SHIFT,
 			wx.WXK_DOWN,
-			lambda evt: self.manageText.nextPage,
+			self.manageText.nextPage,
 		)
 		accelTable = wx.AcceleratorTable(accelEntries)
 		self.contentText.SetAcceleratorTable(accelTable)
@@ -353,11 +354,13 @@ class Text:
 		for page in self.start:
 			if pos < page:
 				self.control.SetInsertionPoint(page)
+				speakMessage(self.control.convPosToText.range(page, page + 5))
 				break
 
 	def previousPage(self, evt):
 		pos = self.control.GetInsertionPoint()
-		for page in self.start:
+		for page in reversed(self.start):
 			if pos > page:
 				self.control.SetInsertionPoint(page)
+				speakMessage(self.control.convPosToText.range(page, page + 5))
 				break
