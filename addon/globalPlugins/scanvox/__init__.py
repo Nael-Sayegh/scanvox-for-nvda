@@ -96,9 +96,6 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 
 class Scanvox(wx.Dialog):
-	accelEntries = []
-	accelEntries.append((wx.ACCEL_CTRL + wx.ACCEL_SHIFT, wx.WXK_UP))
-
 	def __init__(self, parent=None):
 		subprocess.run([exe, "-c"])
 		super().__init__(parent, title="Scanvox")
