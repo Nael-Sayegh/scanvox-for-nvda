@@ -372,14 +372,14 @@ class Text:
 				)
 				moved = True
 				break
-			if not moved:
-				core.callLater(
-					0,
-					lambda: ui.message(
-						# Translators: a message that is spoken when the last page is reached
-						_("End")
-					),
-				)
+		if not moved:
+			core.callLater(
+				0,
+				lambda: ui.message(
+					# Translators: a message that is spoken when the last page is reached
+					_("End")
+				),
+			)
 
 	def nextPageWithDown(self, evt):
 		pos = self.control.GetInsertionPoint()
@@ -389,14 +389,14 @@ class Text:
 				self.control.SetInsertionPoint(page)
 				moved = True
 				break
-			if not moved:
-				core.callLater(
-					0,
-					lambda: ui.message(
-						# Translators: a message that is spoken when the last page is reached
-						_("End")
-					),
-				)
+		if not moved:
+			core.callLater(
+				0,
+				lambda: ui.message(
+					# Translators: a message that is spoken when the last page is reached
+					_("End")
+				),
+			)
 
 	def previousPage(self, evt):
 		pos = self.control.GetInsertionPoint()
