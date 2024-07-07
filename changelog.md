@@ -1,3 +1,3 @@
 ## What's new?
 
-  * Fixed an issue where page numbers continued to increase after clicking delete.
+  * In the editing area, you can now use the previous and next page keys or ctrl+shift+up arrow and ctrl+shift+down arrow to quickly move from one page to another.
