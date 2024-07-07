@@ -219,10 +219,10 @@ class Scanvox(wx.Dialog):
 			self.manageText.nextPage,
 		)
 		self.addEntry(
-			accelEntries, wx.ACCEL_NORMAL, wx.WXK_PAGEDOWN, self.manageText.previousPage
+			accelEntries, wx.ACCEL_NORMAL, wx.WXK_PAGEUP, self.manageText.previousPage
 		)
 		self.addEntry(
-			accelEntries, wx.ACCEL_NORMAL, wx.WXK_PAGEUP, self.manageText.nextPage
+			accelEntries, wx.ACCEL_NORMAL, wx.WXK_PAGEDOWN, self.manageText.nextPage
 		)
 		accelTable = wx.AcceleratorTable(accelEntries)
 		self.contentText.SetAcceleratorTable(accelTable)
