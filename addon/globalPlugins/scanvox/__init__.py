@@ -361,7 +361,7 @@ class Text:
 		for page in self.start:
 			if pos < page:
 				self.control.SetInsertionPoint(page)
-				if not evt.keyEvent.pageUp:
+				if not evt.getkeycode() == wx.WXK_PAGEUP:
 					core.callLater(
 						0, lambda: speakMessage(self.control.GetRange(page, page + 6))
 					)
@@ -381,7 +381,7 @@ class Text:
 		for page in reversed(self.start):
 			if pos > page:
 				self.control.SetInsertionPoint(page)
-				if evt.keyEvent.pageDown:
+				if not evt.getkeycode() == wx.WXK_PAGEDOWN:
 					core.callLater(
 						0, lambda: speakMessage(self.control.GetRange(page, page + 6))
 					)
