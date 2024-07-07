@@ -219,10 +219,16 @@ class Scanvox(wx.Dialog):
 			self.manageText.nextPage,
 		)
 		self.addEntry(
-			accelEntries, wx.ACCEL_NORMAL, wx.WXK_PAGEUP, self.manageText.previousPage
+			accelEntries,
+			wx.ACCEL_NORMAL,
+			wx.WXK_PAGEUP,
+			self.manageText.previousPage(upDownKey=True),
 		)
 		self.addEntry(
-			accelEntries, wx.ACCEL_NORMAL, wx.WXK_PAGEDOWN, self.manageText.nextPage
+			accelEntries,
+			wx.ACCEL_NORMAL,
+			wx.WXK_PAGEDOWN,
+			self.manageText.nextPage(upDownKey=True),
 		)
 		accelTable = wx.AcceleratorTable(accelEntries)
 		self.contentText.SetAcceleratorTable(accelTable)
@@ -355,13 +361,13 @@ class Text:
 		else:
 			self.control.SetInsertionPoint(self.start[-1])
 
-	def nextPage(self, evt):
+	def nextPage(self, evt, upDownKey=False):
 		pos = self.control.GetInsertionPoint()
 		moved = False
 		for page in self.start:
 			if pos < page:
 				self.control.SetInsertionPoint(page)
-				if not evt.GetKeyCode() == wx.WXK_PAGEUP:
+				if not upDownKey:
 					core.callLater(
 						0, lambda: speakMessage(self.control.GetRange(page, page + 6))
 					)
@@ -376,12 +382,12 @@ class Text:
 					),
 				)
 
-	def previousPage(self, evt):
+	def previousPage(self, evt, upDownKey=False):
 		pos = self.control.GetInsertionPoint()
 		for page in reversed(self.start):
 			if pos > page:
 				self.control.SetInsertionPoint(page)
-				if not evt.GetKeyCode() == wx.WXK_PAGEDOWN:
+				if not upDownKey:
 					core.callLater(
 						0, lambda: speakMessage(self.control.GetRange(page, page + 6))
 					)
