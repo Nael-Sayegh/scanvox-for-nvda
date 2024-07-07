@@ -361,9 +361,10 @@ class Text:
 		for page in self.start:
 			if pos < page:
 				self.control.SetInsertionPoint(page)
-				core.callLater(
-					0, lambda: speakMessage(self.control.GetRange(page, page + 6))
-				)
+				if not evt.keyEvent.pageUp:
+					core.callLater(
+						0, lambda: speakMessage(self.control.GetRange(page, page + 6))
+					)
 				moved = True
 				break
 			if not moved:
@@ -380,7 +381,8 @@ class Text:
 		for page in reversed(self.start):
 			if pos > page:
 				self.control.SetInsertionPoint(page)
-				core.callLater(
-					0, lambda: speakMessage(self.control.GetRange(page, page + 6))
-				)
+				if evt.keyEvent.pageDown:
+					core.callLater(
+						0, lambda: speakMessage(self.control.GetRange(page, page + 6))
+					)
 				break
