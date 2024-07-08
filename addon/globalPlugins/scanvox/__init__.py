@@ -377,7 +377,7 @@ class Text:
 
 	def deletePage(self):
 		self.control.remove(self.start[-1], self.end)
-		self.start.remove(self.start[-1])
+		self.start.Remove(self.start[-1])
 		self.page -= 1
 		ui.message(
 			# Translators: a message that is spoken when the last page is deleted
