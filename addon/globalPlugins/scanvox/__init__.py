@@ -126,7 +126,7 @@ class Scanvox(wx.Dialog):
 				label=_("Delete the last page scanned"),
 			)
 		)
-		self.deletePage.Bind(wx.EVT_BUTTON, lambda evt: self.manageText.deletePage)
+		self.deletePage.Bind(wx.EVT_BUTTON, self.on_deletePage)
 		self.deletePage.Enable(False)
 		self.save = sHelper.addItem(
 			wx.Button(
@@ -164,6 +164,9 @@ class Scanvox(wx.Dialog):
 			_("Scanning in progress, please wait...")
 		)
 		Thread(function='scan', ScanvoxClass=self, textInstance=self.manageText).start()
+
+	def on_deletePage(self, evt):
+		self.manageText.deletePage()
 
 	def on_save(self, evt):
 		saveDialog = wx.FileDialog(
@@ -372,10 +375,14 @@ class Text:
 		else:
 			self.control.SetInsertionPoint(self.start[-1])
 
-	def deletePage(self, n):
+	def deletePage(self):
 		self.control.remove(self.start[-1], self.end)
 		self.start.remove(self.start[-1])
 		self.page -= 1
+		ui.message(
+			# Translators: a message that is spoken when the last page is deleted
+			_("The last page has been deleted")
+		)
 
 	def nextPage(self, evt):
 		pos = self.control.GetInsertionPoint()
