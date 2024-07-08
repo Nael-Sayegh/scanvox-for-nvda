@@ -16,6 +16,7 @@ from .settings import ScanvoxPanel
 from . import update
 import globalVars
 import sys
+from speech import speakMessage
 
 if sys.version_info.major == 3 and sys.version_info.minor == 7:
 	lib = os.path.join(os.path.dirname(__file__), "lib", "3.7")
@@ -152,10 +153,10 @@ class Scanvox(wx.Dialog):
 		self.closeBtn.Bind(wx.EVT_BUTTON, self.on_close)
 		self.SetEscapeId(wx.ID_CLOSE)
 		self.SetDefaultItem(self.closeBtn)
-
 		mainSizer.Add(sHelper.sizer, border=10, flag=wx.ALL)
 		mainSizer.Fit(self)
 		self.SetSizer(mainSizer)
+		self.addShortcuts()
 
 	def on_scan(self, evt):
 		ui.message(
@@ -207,6 +208,40 @@ class Scanvox(wx.Dialog):
 			self.deletePage.Enable(True)
 			self.save.Enable(True)
 			self.delete.Enable(True)
+
+	def addEntry(self, accelEntries, modifiers, key, func):
+		id = wx.Window.NewControlId()
+		self.Bind(wx.EVT_MENU, func, id=id)
+		accelEntries.append((modifiers, key, id))
+
+	def addShortcuts(self):
+		accelEntries = []
+		self.addEntry(
+			accelEntries,
+			wx.ACCEL_CTRL + wx.ACCEL_SHIFT,
+			wx.WXK_UP,
+			self.manageText.previousPage,
+		)
+		self.addEntry(
+			accelEntries,
+			wx.ACCEL_CTRL + wx.ACCEL_SHIFT,
+			wx.WXK_DOWN,
+			self.manageText.nextPage,
+		)
+		self.addEntry(
+			accelEntries,
+			wx.ACCEL_NORMAL,
+			wx.WXK_PAGEUP,
+			self.manageText.previousPageWithUp,
+		)
+		self.addEntry(
+			accelEntries,
+			wx.ACCEL_NORMAL,
+			wx.WXK_PAGEDOWN,
+			self.manageText.nextPageWithDown,
+		)
+		accelTable = wx.AcceleratorTable(accelEntries)
+		self.contentText.SetAcceleratorTable(accelTable)
 
 
 class Thread(threading.Thread):
@@ -308,7 +343,7 @@ class Thread(threading.Thread):
 
 class Text:
 	start = []
-	end = []
+	end = 0
 	page = 1
 
 	def __init__(self, control, text=None):
@@ -322,7 +357,7 @@ class Text:
 		if self.text is None:
 			return
 		self.control.SetInsertionPointEnd()
-		self.start = self.control.GetInsertionPoint()
+		self.start.append(self.control.GetInsertionPoint())
 		self.control.AppendText(
 			# Translators: this is the text that is added to the scanned text
 			_("Page ") + str(self.page) + "\n" + self.text + separator
@@ -332,11 +367,65 @@ class Text:
 		self.page += 1
 
 	def getText(self):
-		if self.start == 0:
+		if not self.start:
 			self.control.SetInsertionPoint(0)
 		else:
-			self.control.SetInsertionPoint(self.start)
+			self.control.SetInsertionPoint(self.start[-1])
 
 	def deletePage(self, n):
-		self.control.remove(self.start, self.end)
+		self.control.remove(self.start[-1], self.end)
 		self.page -= 1
+
+	def nextPage(self, evt):
+		pos = self.control.GetInsertionPoint()
+		moved = False
+		for page in self.start:
+			if pos < page:
+				self.control.SetInsertionPoint(page)
+				core.callLater(
+					0, lambda: speakMessage(self.control.GetRange(page, page + 6))
+				)
+				moved = True
+				break
+		if not moved:
+			core.callLater(
+				0,
+				lambda: ui.message(
+					# Translators: a message that is spoken when the last page is reached
+					_("End")
+				),
+			)
+
+	def nextPageWithDown(self, evt):
+		pos = self.control.GetInsertionPoint()
+		moved = False
+		for page in self.start:
+			if pos < page:
+				self.control.SetInsertionPoint(page)
+				moved = True
+				break
+		if not moved:
+			core.callLater(
+				0,
+				lambda: ui.message(
+					# Translators: a message that is spoken when the last page is reached
+					_("End")
+				),
+			)
+
+	def previousPage(self, evt):
+		pos = self.control.GetInsertionPoint()
+		for page in reversed(self.start):
+			if pos > page:
+				self.control.SetInsertionPoint(page)
+				core.callLater(
+					0, lambda: speakMessage(self.control.GetRange(page, page + 6))
+				)
+				break
+
+	def previousPageWithUp(self, evt):
+		pos = self.control.GetInsertionPoint()
+		for page in reversed(self.start):
+			if pos > page:
+				self.control.SetInsertionPoint(page)
+				break
