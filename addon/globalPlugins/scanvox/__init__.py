@@ -376,13 +376,19 @@ class Text:
 			self.control.SetInsertionPoint(self.start[-1])
 
 	def deletePage(self):
-		self.control.Remove(self.start[-1], self.end)
-		self.start.remove(self.start[-1])
-		self.page -= 1
-		ui.message(
-			# Translators: a message that is spoken when the last page is deleted
-			_("The last page has been deleted")
-		)
+		if self.start:
+			self.control.Remove(self.start[-1], self.end)
+			self.start.remove(self.start[-1])
+			self.page -= 1
+			ui.message(
+				# Translators: a message that is spoken when the last page is deleted
+				_("The last page has been deleted")
+			)
+		else:
+			ui.message(
+				# Translators: a message that is spoken when there are no pages to delete
+				_("There are no pages to delete")
+			)
 
 	def nextPage(self, evt):
 		pos = self.control.GetInsertionPoint()
