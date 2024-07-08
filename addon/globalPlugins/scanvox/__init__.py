@@ -126,7 +126,7 @@ class Scanvox(wx.Dialog):
 				label=_("Delete the last page scanned"),
 			)
 		)
-		self.deletePage.Bind(wx.EVT_BUTTON, lambda evt: self.manageText.deletePage())
+		self.deletePage.Bind(wx.EVT_BUTTON, lambda evt: self.manageText.deletePage)
 		self.deletePage.Enable(False)
 		self.save = sHelper.addItem(
 			wx.Button(
@@ -374,6 +374,7 @@ class Text:
 
 	def deletePage(self, n):
 		self.control.remove(self.start[-1], self.end)
+		self.start.remove(self.start[-1])
 		self.page -= 1
 
 	def nextPage(self, evt):
