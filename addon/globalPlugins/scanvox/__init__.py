@@ -270,7 +270,7 @@ class Thread(threading.Thread):
 					),
 				)
 			with open(txtFile, 'a', encoding="utf-8") as writeFile:
-				writeFile.write("\n" + separator)
+				writeFile.write(separator)
 			with open(txtFile, 'r', encoding="utf-8") as file:
 				lines = file.readlines()
 			numberPages = 0
@@ -377,11 +377,10 @@ class Text:
 
 	def deletePage(self):
 		if self.start:
-			content = self.control.GetRange(self.start[-1] + 6, self.end)
 			self.control.Remove(self.start[-1], self.end)
 			with open(txtFile, 'r', encoding="utf-8") as file:
 				contentFile = file.read()
-			contentFile = contentFile.replace(content, "")
+			contentFile = contentFile[: self.start[-1]]
 			with open(txtFile, 'w', encoding="utf-8") as file:
 				file.write(contentFile)
 			self.start.remove(self.start[-1])
