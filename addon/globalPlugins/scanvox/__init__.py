@@ -390,7 +390,7 @@ class Text:
 				if linesSeparator:
 					# Si c'est la seule page, supprimer tout. Sinon, supprimer jusqu'à l'avant-dernier séparateur
 					if len(linesSeparator) == 1:
-						new_lines = lines[: linesSeparator[0]]
+						new_lines = ''
 					else:
 						new_lines = lines[: linesSeparator[-2] + 1]
 					with open(txtFile, 'w', encoding="utf-8") as file:
