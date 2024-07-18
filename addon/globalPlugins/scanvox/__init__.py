@@ -380,15 +380,12 @@ class Text:
 			self.control.Remove(self.start[-1], self.end)
 			with open(txtFile, 'r', encoding="utf-8") as file:
 				lines = file.readlines()
-				# Trouver les indices des séparateurs
 				linesSeparator = [
 					index
 					for index, line in enumerate(lines)
 					if line.strip() == separator.strip()
 				]
-				# Si il y a au moins une page
 				if linesSeparator:
-					# Si c'est la seule page, supprimer tout. Sinon, supprimer jusqu'à l'avant-dernier séparateur
 					if len(linesSeparator) == 1:
 						new_lines = ''
 					else:
