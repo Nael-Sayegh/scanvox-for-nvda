@@ -379,10 +379,22 @@ class Text:
 		if self.start:
 			self.control.Remove(self.start[-1], self.end)
 			with open(txtFile, 'r', encoding="utf-8") as file:
-				contentFile = file.read()
-			contentFile = contentFile[: self.start[-1]]
-			with open(txtFile, 'w', encoding="utf-8") as file:
-				file.write(contentFile)
+				lines = file.readlines()
+				# Trouver les indices des séparateurs
+				linesSeparator = [
+					index
+					for index, line in enumerate(lines)
+					if line.strip() == separator.strip()
+				]
+				# Si il y a au moins une page
+				if linesSeparator:
+					# Si c'est la seule page, supprimer tout. Sinon, supprimer jusqu'à l'avant-dernier séparateur
+					if len(linesSeparator) == 1:
+						new_lines = lines[: linesSeparator[0]]
+					else:
+						new_lines = lines[: linesSeparator[-2] + 1]
+					with open(txtFile, 'w', encoding="utf-8") as file:
+						file.writelines(new_lines)
 			self.start.remove(self.start[-1])
 			self.page -= 1
 			ui.message(
