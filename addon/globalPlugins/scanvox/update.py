@@ -58,7 +58,7 @@ def verifUpdate(gesture=False):
 	if config.conf[addonInfos["name"]]["chanel"] == 0:
 		try:
 			info = json.loads(
-				urllib.urlopen(
+				urllib.request.urlopen(
 					"https:^/api.github.com/repos/nael-sayegh/scanvox-for-nvda/releases/latest"
 				).read()
 			)
@@ -69,7 +69,7 @@ def verifUpdate(gesture=False):
 	elif config.conf[addonInfos["name"]]["chanel"] == 1:
 		try:
 			info = json.loads(
-				urllib.urlopen(
+				urllib.request.urlopen(
 					"https://api.github.com/repos/nael-sayegh/scanvox-for-nvda/releases"
 				).read()
 			)
