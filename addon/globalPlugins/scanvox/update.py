@@ -77,7 +77,6 @@ def verifUpdate(gesture=False):
 				if info["prerelease"]:
 					oversion = info[0]["name"]
 					downloadURL = info[0]["assets"][0]["browser_download_url"]
-					downloadURL = info[0]["assets"][0]["browser_download_url"]
 					break
 		except urllib.error.HTTPError:
 			return
