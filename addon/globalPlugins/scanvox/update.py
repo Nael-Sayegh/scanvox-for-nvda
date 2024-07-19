@@ -34,7 +34,7 @@ def installupdate():
 	if config.conf[addonInfos["name"]]["chanel"] == 0:
 		url = f"https://module.nael-accessvision.com/addons/addons/{addonInfos['name']}/{addonInfos['name']}.nvda-addon"
 	elif config.conf[addonInfos["name"]]["chanel"] == 1:
-		url = f"https://module.nael-accessvision.com/addons/addons/{addonInfos['name']}/dev/{addonInfos['name']}.nvda-addon"
+		url = f"https://module.nael-accessvision.com/addons/addons/{addonInfos['name']}/dev/{addonInfos['name']}-{oversion}.nvda-addon"
 	urllib.request.urlretrieve(url, file)
 	curAddons = []
 	for addon in addonHandler.getAvailableAddons():
