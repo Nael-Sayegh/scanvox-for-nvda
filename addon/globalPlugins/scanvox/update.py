@@ -73,10 +73,10 @@ def verifUpdate(gesture=False):
 					"https://api.github.com/repos/nael-sayegh/scanvox-for-nvda/releases"
 				).read()
 			)
-			for info in info:
-				if info["prerelease"]:
-					oversion = info[0]["name"]
-					downloadURL = info[0]["assets"][0]["browser_download_url"]
+			for data in info:
+				if data["prerelease"]:
+					oversion = data[0]["name"]
+					downloadURL = data["assets"][0]["browser_download_url"]
 					break
 		except urllib.error.HTTPError:
 			return
