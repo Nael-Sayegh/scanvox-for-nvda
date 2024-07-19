@@ -34,7 +34,7 @@ jobs:
       - name: Create a file with the version number
         run: |
           TAG=${{ steps.get-latest-tag.outputs.tag }}
-          touch version.txt && echo '${TAG%?}' >> version.txt
+          touch version.txt && echo ${TAG%?} >> version.txt
       - name: Upload the nvda add-on 
         uses: wlixcc/SFTP-Deploy-Action@v1.2.4
         with:
