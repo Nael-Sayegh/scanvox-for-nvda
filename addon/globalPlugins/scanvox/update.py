@@ -8,6 +8,7 @@ import core
 import ui
 import languageHandler
 import gui
+import json
 
 addonHandler.initTranslation()
 
@@ -31,11 +32,7 @@ def updateAvailable():
 
 def installupdate():
 	file = os.environ.get('TEMP') + "\\" + addonInfos["name"] + ".nvda-addon"
-	if config.conf[addonInfos["name"]]["chanel"] == 0:
-		url = f"https://module.nael-accessvision.com/addons/addons/{addonInfos['name']}/{addonInfos['name']}.nvda-addon"
-	elif config.conf[addonInfos["name"]]["chanel"] == 1:
-		url = f"https://module.nael-accessvision.com/addons/addons/{addonInfos['name']}/dev/{addonInfos['name']}-{oversion}.nvda-addon"
-	urllib.request.urlretrieve(url, file)
+	urllib.request.urlretrieve(downloadURL, file)
 	curAddons = []
 	for addon in addonHandler.getAvailableAddons():
 		curAddons.append(addon)
@@ -56,27 +53,34 @@ def installupdate():
 
 def verifUpdate(gesture=False):
 	global oversion
+	global downloadURL
 	version = addonInfos["version"]
 	if config.conf[addonInfos["name"]]["chanel"] == 0:
 		try:
-			rversion = urllib.request.urlopen(
-				"https://module.nael-accessvision.com/addons/addons/"
-				+ addonInfos["name"]
-				+ "/version.txt"
+			info = json.loads(
+				urllib.urlopen(
+					"https:^/api.github.com/repos/nael-sayegh/scanvox-for-nvda/releases/latest"
+				).read()
 			)
+			oversion = info["name"]
+			downloadURL = info["assets"][0]["browser_download_url"]
 		except urllib.error.HTTPError:
 			return
 	elif config.conf[addonInfos["name"]]["chanel"] == 1:
 		try:
-			rversion = urllib.request.urlopen(
-				"https://module.nael-accessvision.com/addons/addons/"
-				+ addonInfos["name"]
-				+ "/dev/version.txt"
+			info = json.loads(
+				urllib.urlopen(
+					"https://api.github.com/repos/nael-sayegh/scanvox-for-nvda/releases"
+				).read()
 			)
+			for info in info:
+				if info["prerelease"]:
+					oversion = info[0]["name"]
+					downloadURL = info[0]["assets"][0]["browser_download_url"]
+					downloadURL = info[0]["assets"][0]["browser_download_url"]
+					break
 		except urllib.error.HTTPError:
 			return
-	tversion = rversion.read().decode()
-	oversion = tversion.replace("\n", "")
 	if version != oversion:
 		wx.CallAfter(updateAvailable)
 	else:
@@ -143,5 +147,6 @@ class updateDialog(wx.Dialog):
 			else:
 				os.startfile(url + "en/readme.html")
 		elif config.conf[addonInfos["name"]]["chanel"] == 1:
-			url = f"https://module.nael-accessvision.com/addons/addons/{addonInfos['name']}/dev/doc/readme.html"
-			os.startfile(url)
+			os.startfile(
+				"https://github.com/Nael-Sayegh/scanvox-for-nvda/blob/dev/readme.md"
+			)
