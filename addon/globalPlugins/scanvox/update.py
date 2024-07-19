@@ -59,7 +59,7 @@ def verifUpdate(gesture=False):
 		try:
 			info = json.loads(
 				urllib.request.urlopen(
-					"https:^/api.github.com/repos/nael-sayegh/scanvox-for-nvda/releases/latest"
+					"https://api.github.com/repos/nael-sayegh/scanvox-for-nvda/releases/latest"
 				).read()
 			)
 			oversion = info["name"]
