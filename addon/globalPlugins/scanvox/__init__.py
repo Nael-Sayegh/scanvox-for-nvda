@@ -119,6 +119,15 @@ class Scanvox(wx.Dialog):
 		)
 		self.scan.SetFocus()
 		self.scan.Bind(wx.EVT_BUTTON, self.on_scan)
+		self.deletePage = sHelper.addItem(
+			wx.Button(
+				self,
+				# Translators: this is the label for a button that deletes the last page scanned
+				label=_("Delete the last page scanned"),
+			)
+		)
+		self.deletePage.Bind(wx.EVT_BUTTON, self.on_deletePage)
+		self.deletePage.Enable(False)
 		self.save = sHelper.addItem(
 			wx.Button(
 				self,
@@ -155,6 +164,9 @@ class Scanvox(wx.Dialog):
 			_("Scanning in progress, please wait...")
 		)
 		Thread(function='scan', ScanvoxClass=self, textInstance=self.manageText).start()
+
+	def on_deletePage(self, evt):
+		self.manageText.deletePage()
 
 	def on_save(self, evt):
 		saveDialog = wx.FileDialog(
@@ -196,6 +208,7 @@ class Scanvox(wx.Dialog):
 
 	def on_Enable_Button(self, evt):
 		if not self.save.IsEnabled():
+			self.deletePage.Enable(True)
 			self.save.Enable(True)
 			self.delete.Enable(True)
 
@@ -257,7 +270,7 @@ class Thread(threading.Thread):
 					),
 				)
 			with open(txtFile, 'a', encoding="utf-8") as writeFile:
-				writeFile.write("\n" + separator)
+				writeFile.write(separator)
 			with open(txtFile, 'r', encoding="utf-8") as file:
 				lines = file.readlines()
 			numberPages = 0
@@ -315,6 +328,7 @@ class Thread(threading.Thread):
 				),
 			)
 			self.ScanvoxClass.contentText.Clear()
+			self.ScanvoxClass.deletePage.Enable(False)
 			self.ScanvoxClass.save.Enable(False)
 			self.ScanvoxClass.delete.Enable(False)
 			self.textInstance.page = 1
@@ -360,6 +374,35 @@ class Text:
 			self.control.SetInsertionPoint(0)
 		else:
 			self.control.SetInsertionPoint(self.start[-1])
+
+	def deletePage(self):
+		if self.start:
+			self.control.Remove(self.start[-1], self.end)
+			with open(txtFile, 'r', encoding="utf-8") as file:
+				lines = file.readlines()
+				linesSeparator = [
+					index
+					for index, line in enumerate(lines)
+					if line.strip() == separator.strip()
+				]
+				if linesSeparator:
+					if len(linesSeparator) == 1:
+						new_lines = ''
+					else:
+						new_lines = lines[: linesSeparator[-2] + 1]
+					with open(txtFile, 'w', encoding="utf-8") as file:
+						file.writelines(new_lines)
+			self.start.remove(self.start[-1])
+			self.page -= 1
+			ui.message(
+				# Translators: a message that is spoken when the last page is deleted
+				_("The last page has been deleted")
+			)
+		else:
+			ui.message(
+				# Translators: a message that is spoken when there are no pages to delete
+				_("There are no pages to delete")
+			)
 
 	def nextPage(self, evt):
 		pos = self.control.GetInsertionPoint()
