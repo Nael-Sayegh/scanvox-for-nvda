@@ -174,13 +174,13 @@ class Scanvox(wx.Dialog):
 			# Translators: title of a file dialog
 			message=_("Select the location where you want to save the file"),
 			# Translators: filter for a file dialog
-			wildcard=_("Text file: *.txt|*.txt|Word document: *.docx|*.docx"),
+			wildcard=_("Word document: *.docx|*.docx|Text file: *.txt|*.txt"),
 			# Translators: label for a file dialog
 			name=_("Save the file"),
 			defaultDir=document,
 			style=wx.FD_SAVE | wx.FD_OVERWRITE_PROMPT,
 		)
-		saveDialog.SetFilename("Scanvox.txt")
+		saveDialog.SetFilename("Scanvox.docx")
 		if saveDialog.ShowModal() == wx.ID_OK:
 			path = saveDialog.GetPath()
 			name = saveDialog.GetFilename()
