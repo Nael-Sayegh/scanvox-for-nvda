@@ -27,7 +27,7 @@ addon_info = {
 		"""This add-on allows you to read paper documents using the Scanvox software. To use it, go to the NVDA menu and select Scanvox."""
 	),
 	# version
-	"addon_version": "2024.07.02",
+	"addon_version": "2024.08.15",
 	# Author(s)
 	"addon_author": "Nael Sayegh <infos@nael-accessvision.com>",
 	# URL for the add-on documentation support
@@ -43,7 +43,7 @@ addon_info = {
 	# Add-on update channel (default is None, denoting stable releases,
 	# and for development releases, use "dev".)
 	# Do not change unless you know what you are doing!
-	"addon_updateChannel": None,
+	"addon_updateChannel": "dev",
 	# Add-on license such as GPL 2
 	"addon_license": None,
 	# URL for the license document the ad-on is licensed under

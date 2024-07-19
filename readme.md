@@ -26,6 +26,12 @@ The add-on "Scanvox for NVDA" can be launched from anywhere on your computer by 
 
 ## Changes
 
+### Version 2024.08.15
+
+  * In the editing area, you can now use the previous and next page keys or ctrl+shift+up arrow and ctrl+shift+down arrow to quickly move from one page to another.
+  * Adding a button to delete the last scanned page
+  * Reversal of the file formats in the format list in the save file dialog. The default format is docx.
+
 ### Version 2024.07.02
 
   * Fixed an issue where page numbers continued to increase after clicking delete.
@@ -70,6 +76,6 @@ The add-on "Scanvox for NVDA" can be launched from anywhere on your computer by 
 
   * First version
 
-[1]: https://github.com/Nael-Sayegh/scanvox-for-nvda/releases/download/2024.07.02/scanvox-2024.07.02.nvda-addon
+[1]: https://github.com/Nael-Sayegh/scanvox-for-nvda/releases/download/2024.08.15/scanvox-2024.08.15.nvda-addon
 
 [2]: https://github.com/Nael-Sayegh/scanvox-for-nvda
