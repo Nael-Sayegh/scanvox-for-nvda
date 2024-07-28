@@ -64,7 +64,7 @@ def verifUpdate(gesture=False):
 			)
 			oversion = info["name"]
 			downloadURL = info["assets"][0]["browser_download_url"]
-		except urllib.error.HTTPError:
+		except Exception:
 			return
 	elif config.conf[addonInfos["name"]]["chanel"] == 1:
 		try:
@@ -78,7 +78,7 @@ def verifUpdate(gesture=False):
 					oversion = data["name"]
 					downloadURL = data["assets"][0]["browser_download_url"]
 					break
-		except urllib.error.HTTPError:
+		except Exception:
 			return
 	if version != oversion:
 		wx.CallAfter(updateAvailable)
