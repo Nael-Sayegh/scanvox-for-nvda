@@ -38,36 +38,36 @@ jobs:
         run: |
           TAG=${{ steps.get-latest-tag.outputs.tag }}
           touch version.txt && echo ${TAG} >> version.txt
-      #- name: Upload the nvda add-on 
-        #uses: wlixcc/SFTP-Deploy-Action@v1.2.4
-        #with:
-          #username: ${{ secrets.USER_SFTP }}
-          #server: ${{ secrets.HOST_SFTP }}
-          #port: ${{ secrets.PORT_SFTP }}
-          #local_path: './*.nvda-addon'
-          #remote_path: ${{ secrets.REMOTE_SFTP }}/dev
-          #sftp_only: true
-          #password: ${{ secrets.MDP_SFTP }}
-      #- name: Upload version's file
-        #uses: wlixcc/SFTP-Deploy-Action@v1.2.4
-        #with:
-          #username: ${{ secrets.USER_SFTP }}
-          #server: ${{ secrets.HOST_SFTP }}
-          #port: ${{ secrets.PORT_SFTP }}
-          #local_path: './version.txt'
-          #remote_path: ${{ secrets.REMOTE_SFTP }}/dev
-          #sftp_only: true
-          #password: ${{ secrets.MDP_SFTP }}
-      #- name: upload the english documentation
-        #uses: wlixcc/SFTP-Deploy-Action@v1.2.4
-        #with:
-          #username: ${{ secrets.USER_SFTP }}
-          #server: ${{ secrets.HOST_SFTP }}
-          #port: ${{ secrets.PORT_SFTP }}
-          #local_path: './addon/doc/en'
-          #remote_path: ${{ secrets.REMOTE_SFTP }}/dev/doc
-          #sftp_only: true
-#          password: ${{ secrets.MDP_SFTP }}
+      - name: Upload the nvda add-on 
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
+        with:
+          username: ${{ secrets.USER_SFTP }}
+          server: ${{ secrets.HOST_SFTP }}
+          port: ${{ secrets.PORT_SFTP }}
+          local_path: './*.nvda-addon'
+          remote_path: ${{ secrets.REMOTE_SFTP }}/dev
+          sftp_only: true
+          password: ${{ secrets.MDP_SFTP }}
+      - name: Upload version's file
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
+        with:
+          username: ${{ secrets.USER_SFTP }}
+          server: ${{ secrets.HOST_SFTP }}
+          port: ${{ secrets.PORT_SFTP }}
+          local_path: './version.txt'
+          remote_path: ${{ secrets.REMOTE_SFTP }}/dev
+          sftp_only: true
+          password: ${{ secrets.MDP_SFTP }}
+      - name: upload the english documentation
+        uses: wlixcc/SFTP-Deploy-Action@v1.2.4
+        with:
+          username: ${{ secrets.USER_SFTP }}
+          server: ${{ secrets.HOST_SFTP }}
+          port: ${{ secrets.PORT_SFTP }}
+          local_path: './addon/doc/en'
+          remote_path: ${{ secrets.REMOTE_SFTP }}/dev/doc
+          sftp_only: true
+          password: ${{ secrets.MDP_SFTP }}
       - name: add file in release
         uses: softprops/action-gh-release@v2
         env:
