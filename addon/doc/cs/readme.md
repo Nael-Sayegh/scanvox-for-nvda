@@ -23,7 +23,11 @@ Doplněk se používá jednoduše stiskněte nvdaklávesu +n, najděte položku 
 Doplněk lze spustit kdekoli klávesovou zkratkou inzert +alt +s.
 
 ## Změny
-
+# Verze 2024.08.01
+  * V editačním poli je nově možné použít klávesy  pro pohyb  na další, nebo předchozí stránku,  nebo pro rychlé listování ctrl+shift+up arrow a  ctrl+shift+down arrow
+  * Přidáno tlačítko pro odstranění naposledy naskenované stránky.
+  * Rozšířena možnost uložení skenovaného dokumentu  do více formátů, výchozí je docx
+  *Modernizovaný systém aktualizací s použitím Github api, opraven také problém při instalaci vývojových verzích.
 ### Verze 2024.07.02
 
   * Opraven problém, kdy čísla stránek pokračovala ve zvyšování po kliknutí na smazání
