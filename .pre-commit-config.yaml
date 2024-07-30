@@ -3,7 +3,7 @@ ci:
         style(pre-commit.ci): auto fixes from pre-commit hooks
 
         for more information, see https://pre-commit.ci
-    autoupdate_branch: ''
+    autoupdate_branch: 'dev'
     autoupdate_commit_msg: 'ci(deps): pre-commit autoupdate'
     autoupdate_schedule: weekly
     skip:
@@ -38,7 +38,7 @@ repos:
       - id: check-yaml
 
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: "v0.4.7"
+    rev: "v0.5.0"
     hooks:
       - id: ruff-format
       - id: ruff

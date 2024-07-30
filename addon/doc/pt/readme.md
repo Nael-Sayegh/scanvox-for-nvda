@@ -26,6 +26,10 @@ O extra "Scanvox for NVDA" pode ser iniciado de qualquer lugar do seu computador
 
 ## Alterações
 
+### Versão 2024.07.02
+
+  * Corrigido um problema onde os números das páginas continuavam a aumentar depois de clicar em deletar
+
 ### Versão 2024.05.04
 
   * Melhoria do sistema de atualização
@@ -50,6 +54,6 @@ O extra "Scanvox for NVDA" pode ser iniciado de qualquer lugar do seu computador
 
   * Primeira versão
 
-[1]: https://github.com/Nael-Sayegh/scanvox-for-nvda/releases/download/2024.05.04/scanvox-2024.05.04.nvda-addon
+[1]: https://github.com/Nael-Sayegh/scanvox-for-nvda/releases/download/2024.07.02/scanvox-2024.07.02.nvda-addon
 
 [2]: https://github.com/Nael-Sayegh/scanvox-for-nvda
