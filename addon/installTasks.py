@@ -4,6 +4,8 @@
 import addonHandler
 import os
 import winUser
+import wx
+from gui import messageBox
 
 # from logHandler import log
 from languageHandler import getLanguage
@@ -12,6 +14,12 @@ addonHandler.initTranslation()
 
 
 def onInstall():
+	messageBox(
+		_(
+			"""Scanvox collects information to create statistics.\nThe information gathered includes: the add-on name, the installed version, the new version, the system language, and the keyboard layout."""
+		),
+		_("Scanvox Statistics", wx.ICON_INFORMATION, wx.OK),
+	)
 	installPath = os.path.dirname(__file__)
 	addonName, addonNewVersion = getNewAddonInfo(installPath)
 	addonOldVersion = getOldVersion(addonName, installPath)
