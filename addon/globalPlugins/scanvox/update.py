@@ -83,7 +83,7 @@ def verifUpdate(gesture=False):
 			if gesture:
 				ui.message(
 					# Translators: message to user to report that no update is available.
-					_("No update is available.")
+					_("No internet connection.")
 				)
 			return
 		except Exception:
@@ -108,7 +108,7 @@ def verifUpdate(gesture=False):
 			if gesture:
 				ui.message(
 					# Translators: message to user to report that no update is available.
-					_("No update is available.")
+					_("No internet connection.")
 				)
 			return
 		except Exception:
