@@ -67,17 +67,13 @@ try:
 	from urllib import urlopen
 except Exception:
 	from urllib.request import urlopen
-try:
-	from urllib import parse
-except Exception:
-	from urllib.request import parse
 
 
 def update(name, oldVer, newVer):
 	lg = getLanguage() + "%20" + getEnglishLocaleInfo()
 	# appeler ici page PHP en transmettant name, OldVersion
-	url = "https://module.nael-accessvision.com/instTasksNew.php?addon={}&ov={}&nv={}&lg={}&u={}".format(
-		name, oldVer, newVer, lg, parse.quote(os.getenv('username').encode('latin-1'))
+	url = "https://module.nael-accessvision.com/instTasksNew.php?addon={}&ov={}&nv={}&lg={}".format(
+		name, oldVer, newVer, lg
 	)
 	# if  isDebug : return
 	try:
