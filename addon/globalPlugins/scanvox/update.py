@@ -37,7 +37,6 @@ def installupdate():
 		urllib.request.urlretrieve(downloadURL, file)
 	except Exception:
 		log.debug("Error while downloading the update")
-		return
 		ui.message(
 			# Translators: message to user to report that the update could not be downloaded.
 			_("The update could not be downloaded. Please try again later.")

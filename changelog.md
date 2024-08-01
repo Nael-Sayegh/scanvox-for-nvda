@@ -4,3 +4,4 @@
   * Adding a button to delete the last scanned page
   * Reversal of the file formats in the format list in the save file dialog. The default format is docx.
   * Modernization of the update system to use the GitHub API to check and install new versions. This also fixes the installation issue of dev versions.
+  * Fix for the module loading issue that would freeze when no internet connection was detected.
