@@ -9,6 +9,7 @@ import ui
 import languageHandler
 import gui
 import json
+from logHandler import log
 
 addonHandler.initTranslation()
 
@@ -32,7 +33,17 @@ def updateAvailable():
 
 def installupdate():
 	file = os.environ.get('TEMP') + "\\" + addonInfos["name"] + ".nvda-addon"
-	urllib.request.urlretrieve(downloadURL, file)
+	try:
+		urllib.request.urlretrieve(downloadURL, file)
+	except Exception:
+		log.debug("Error while downloading the update")
+		ui.message(
+			# Translators: message to user to report that the update could not be downloaded.
+			_("The update could not be downloaded. Please try again later.")
+		)
+		return
+	except Exception:
+		return
 	curAddons = []
 	for addon in addonHandler.getAvailableAddons():
 		curAddons.append(addon)
@@ -64,7 +75,18 @@ def verifUpdate(gesture=False):
 			)
 			oversion = info["name"]
 			downloadURL = info["assets"][0]["browser_download_url"]
-		except urllib.error.HTTPError:
+		except urllib.error.URLError:
+			log.debug(
+				"no internet connection for checking for updates in the stable channel"
+			)
+			if gesture:
+				ui.message(
+					# Translators: message to user to report that no update is available.
+					_("No internet connection.")
+				)
+			return
+		except Exception:
+			log.debug("Error while checking for updates in the stable channel")
 			return
 	elif config.conf[addonInfos["name"]]["chanel"] == 1:
 		try:
@@ -78,7 +100,18 @@ def verifUpdate(gesture=False):
 					oversion = data["name"]
 					downloadURL = data["assets"][0]["browser_download_url"]
 					break
-		except urllib.error.HTTPError:
+		except urllib.error.URLError:
+			log.debug(
+				"no internet connection for checking for updates in the dev channel"
+			)
+			if gesture:
+				ui.message(
+					# Translators: message to user to report that no update is available.
+					_("No internet connection.")
+				)
+			return
+		except Exception:
+			log.debug("Error while checking for updates in the dev channel")
 			return
 	if version != oversion:
 		wx.CallAfter(updateAvailable)
