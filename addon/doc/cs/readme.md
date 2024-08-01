@@ -16,14 +16,21 @@ Doplněk vyžaduje USB skener připojený k počítači  a nainstalované ovlada
 
 ## Použití doplňku
 
-Doplněk se používá jednoduše stiskněte nvdaklávesu +n, najděte položku ScanVox. Zde je tlačítko skenovat a editační pole jen pro čtení, do kterého přibývá naskenovaný text. po stisknutí enteru začne skenování a poté se začne automaticky číst text. Můžete naskenovat i více stránek a poté text uložit do formátu Word .docx nebo txt souboru. Pokud text neuložíte, text se po uzavření okna vymaže.
+Doplněk se používá jednoduše stiskněte nvdaklávesu +n, najděte položku ScanVox. Zde je tlačítko skenovat a editační pole jen pro čtení, do kterého přibývá naskenovaný text. po stisknutí enteru, nebo klávesové zkratky alt +s začne skenování a poté se začne automaticky číst text, pokud je to nastavené. 
+Naskenovanou stránku můžete vymazat klávesovou zkratkou alt +v. 
+Můžete se také pohybovat po stránkách klávesovou zkratkou page down a page up.
+Můžete naskenovat i více stránek a poté text uložit do formátu Word .docx nebo txt souboru. Pokud text neuložíte, text se po uzavření okna vymaže.
 
 ### Klávesové zkratky
 
 Doplněk lze spustit kdekoli klávesovou zkratkou inzert +alt +s.
 
 ## Změny
-
+### Verze 2024.08.15
+  * V editačním poli je nově možné použít klávesy  pro pohyb  na další, nebo předchozí stránku,  nebo pro rychlé listování ctrl+shift+up arrow a  ctrl+shift+down arrow
+  * Přidáno tlačítko pro odstranění naposledy naskenované stránky.
+  * Rozšířena možnost uložení skenovaného dokumentu  do více formátů, výchozí je docx
+  *Modernizovaný systém aktualizací s použitím Github api, opraven také problém při instalaci vývojových verzích.
 ### Verze 2024.07.02
 
   * Opraven problém, kdy čísla stránek pokračovala ve zvyšování po kliknutí na smazání
@@ -68,6 +75,6 @@ Nové funkce
 
   * První verze
 
-[1]: https://github.com/Nael-Sayegh/scanvox-for-nvda/releases/download/2024.07.02/scanvox-2024.07.02.nvda-addon
+[1]: https://github.com/Nael-Sayegh/scanvox-for-nvda/releases/download/2024.08.15/scanvox-2024.08.15.nvda-addon
 
 [2]: https://github.com/Nael-Sayegh/scanvox-for-nvda
