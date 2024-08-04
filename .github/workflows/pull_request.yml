@@ -5,8 +5,8 @@ permissions:
 
 
 on:
-  issue_comment:
-    types: [created]
+  pull_request:
+    types: [opened, synchronize, reopened]
 
 
 jobs:
