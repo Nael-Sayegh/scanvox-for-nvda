@@ -26,6 +26,14 @@ L'extension "Scanvox pour NVDA" peut être lancée de n'importe où sur votre or
 
 ## Changements
 
+### Version 2024.08.15
+
+  * Dans la zone d'édition, vous pouvez désormais utiliser les touches de page précédente et suivante ou ctrl+shift+flèche haut et ctrl+shift+flèche bas pour passer rapidement d'une page à l'autre
+  * Ajout d'un bouton pour supprimer la dernière page scannée
+  * Inversion des formats de fichiers dans la liste des formats de la boîte de dialogue d'enregistrement de fichier. Le format par défaut est docx.
+  * Modernisation du système de mise à jour pour utiliser l'API GitHub pour vérifier et installer les nouvelles versions. Cela corrige également le problème d'installation des versions de développement.
+  * Correction du problème de chargement du module qui se bloquait lorsqu'aucune connexion internet n'était détectée.
+
 ### Version 2024.07.02
 
   * Correction d'un problème où le numéro de page continuait à augmenter après avoir cliquer sur supprimer
@@ -73,6 +81,6 @@ Copyright ©: 2024 (Nael Sayegh et Nael-Accessvision
 
 <!-- links section -->
 
-[1]: https://github.com/Nael-Sayegh/scanvox-for-nvda/releases/download/2024.07.02/scanvox-2024.07.02.nvda-addon
+[1]: https://github.com/Nael-Sayegh/scanvox-for-nvda/releases/download/2024.08.15/scanvox-2024.08.15.nvda-addon
 
 [2]: https://github.com/Nael-Sayegh/scanvox-for-nvda
