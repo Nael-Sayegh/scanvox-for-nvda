@@ -16,14 +16,17 @@ Bu eklentiyi kullanmak için bilgisayarınıza bağlı, çoğu tarayıcıda oldu
 
 ## Nasıl çalışır
 
-Bu eklentiyi kullanmak için, NVDA menüsüne gidin ve ardından Scanvox seçeneğini seçin.  
+Bu eklentiyi kullanmak için NVDA menüsü VE ardından Scanvox'u seçin.  
 Bu iletişim kutusunda, Tara düğmesine tıklayarak bir tarama başlatabilirsiniz.  
 Taramanın başlaması birkaç saniye sürer ve tarama işleminin sonunda taranan metin otomatik olarak yüksek sesle okunur.  
-NVDA menüsü, ayarlar ardından NVDA için scanvox kategorisine giderek otomatik okumayı devre dışı bırakabilirsiniz.  
+NVDA menüsü Ayarlar ve ardından NVDA için scanvox kategorisine giderek otomatik oynatmayı devre dışı bırakabilirsiniz.  
 Tüm sayfalar taranana kadar bu düğmeye basın.  
-Bittiğinde, tara düğmesinden shift+tab yaparak, tüm sayfaların içeriğiyle bir düzenleme alanına erişmek için alt+t yaparak taranan farklı sayfaları okuyabilir veya ilgili düğmeleri kullanarak dosyayı kaydedebilir ya da doğrudan Not Defteri'nde açabilirsiniz.  
-Yeni bir belge taramak için taranan sayfaları silmek isterseniz, tüm taranan sayfaları iptal et düğmesine basabilirsiniz.  
-Scanvox'tan çıktığınızda, taranan tüm sayfalar silinir.
+Yeni taradığınız sayfayı silmek istiyorsanız, Sekme ile  taranan düğmesinin yanındaki “son taranan sayfayı sil” düğmesine basabilir veya alt+l kısayolunu kullanabilirsiniz.  
+İşiniz bittiğinde, taranan düğmesinden shift+tab yaparak veya tüm sayfaların içeriğini içeren bir düzenleme alanına erişmek için alt+t yaparak taranan farklı sayfaları okuyabilirsiniz.  
+Bu düzenleme alanında, sayfadan sayfaya hızlı bir şekilde geçmek istiyorsanız, önceki sayfa ve sonraki sayfa düğmelerini kullanabilir veya ctrl+shift+yukarı ok ve ctrl+shift+aşağı ok kısayollarını kullanabilirsiniz.  
+İlgili düğmeleri kullanarak dosyayı kaydedebilir veya doğrudan Not Defteri'nde açabilirsiniz.  
+Yeni bir belge taramak için taranan sayfaları silmek isterseniz, tüm taranan sayfaları iptal etmek için düğmesine basabilirsiniz.  
+Scanvox'tan çıktığınızda, taranan tüm sayfalar silinir.  
 
 ### Klavye kısayolları
 
@@ -32,15 +35,23 @@ Bu hareket, girdi hareketleri iletişim kutusunda değiştirilebilir.
 
 ## Değişiklikler
 
+### Sürüm 2024.08.15
+
+  * Düzenleme alanında, bir sayfadan diğerine hızlıca geçmek için artık önceki ve sonraki sayfa tuşlarını veya ctrl+shift+yukarı ok ve ctrl+shift+aşağı ok tuşlarını kullanabilirsiniz.
+  * Son taranan sayfayı silmek için düğme eklendi.
+  * Dosya kaydetme iletişim kutusundaki Biçim listesindeki dosya biçimlerinin tersine çevrilmesi. Varsayılan biçim docx'tir.
+
 ### Sürüm 2024.07.02
 
-  * Sayfa numaralarının sil'e tıkladıktan sonra artmaya devam ettiği bir sorun düzeltildi
+  * Sil'e tıkladıktan sonra sayfa numaralarının artmaya devam etmesi sorunu düzeltildi.
 
 ### Sürüm 2024.06.01
+
   * Yeni özelliklerin test edilebilmesi ve Çevirmenler için bir Geliştirici kanalı eklendi.
   * Türkçe dil desteği eklendi.
   * Bir Word belgesini kaydederken, her sayfa dosyaya yeni bir sayfa olarak eklenir.
   * Scanvox'un yüklendiğini belirtmek için NVDA günlüğüne bir mesaj eklendi.
+  * Yardım belgeleri güncellendi.
 
 ### Sürüm 2024.05.04
 
@@ -74,6 +85,6 @@ Bu hareket, girdi hareketleri iletişim kutusunda değiştirilebilir.
 
   * İlk sürüm.
 
-[1]: https://github.com/Nael-Sayegh/scanvox-for-nvda/releases/download/2024.07.02/scanvox-2024.07.02.nvda-addon
+[1]: https://github.com/Nael-Sayegh/scanvox-for-nvda/releases/download/2024.08.15/scanvox-2024.08.15.nvda-addon
 
 [2]: https://github.com/Nael-Sayegh/scanvox-for-nvda

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 'scanvox' '2023.12.14'\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
-"POT-Creation-Date: 2024-08-13 23:22+0200\n"
-"PO-Revision-Date: 2024-08-13 23:26+0200\n"
+"POT-Creation-Date: 2024-08-09 17:23+0200\n"
+"PO-Revision-Date: 2024-08-09 17:35+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -45,7 +45,7 @@ msgstr "&Numériser"
 #. Translators: this is the label for a button that deletes the last page scanned
 #: addon\globalPlugins\scanvox\__init__.py:126
 msgid "Delete the last page scanned"
-msgstr "Supprimer la dernière page numérisée"
+msgstr "Supprimer la &dernière page numérisée"
 
 #. Translators: this is the label for a button that saves the scanned text
 #: addon\globalPlugins\scanvox\__init__.py:135
@@ -115,12 +115,12 @@ msgstr "Page "
 #. Translators: a message that is spoken when the last page is deleted
 #: addon\globalPlugins\scanvox\__init__.py:399
 msgid "The last page has been deleted"
-msgstr "La dernière page numérisée a été effacée"
+msgstr "La dernière page a été supprimée"
 
 #. Translators: a message that is spoken when there are no pages to delete
 #: addon\globalPlugins\scanvox\__init__.py:404
 msgid "There are no pages to delete"
-msgstr "Il n'y a pas de page à supprimer"
+msgstr "Il n'y a pas de pages à supprimer"
 
 #. Translators: a message that is spoken when the last page is reached
 #: addon\globalPlugins\scanvox\__init__.py:423
@@ -194,7 +194,7 @@ msgstr ""
 #: addon\globalPlugins\scanvox\update.py:85
 #: addon\globalPlugins\scanvox\update.py:110
 msgid "No internet connection."
-msgstr "Pas de connexion internet."
+msgstr "Aucune connexion internet."
 
 #. Translators: message to user to report that no update is available.
 #: addon\globalPlugins\scanvox\update.py:122
@@ -221,5 +221,6 @@ msgid ""
 "This add-on allows you to read paper documents using the Scanvox software. "
 "To use it, go to the NVDA menu and select Scanvox."
 msgstr ""
-"Ce module permet de lire des documents papier grâce au logiciel Scanvox. "
-"Pour l’utiliser, allez dans le menu de NVDA puis sélectionnez Scanvox."
+"Ce module vous permet de lire des documents papiers en utilisant le "
+"logiciel Scanvox. Pour l'utiliser, allez dans le menu NVDA et sélectionnez "
+"Scanvox."
