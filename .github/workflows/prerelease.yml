@@ -24,17 +24,20 @@ jobs:
         run: sudo apt-get install gettext
       - name: get the last tag
         id: get-latest-tag
-        run: echo "tag=${GITHUB_REF#refs/*/}" >> $GITHUB_OUTPUT
+        run: |
+          TAG=${GITHUB_REF#refs/*/} 
+          TAG_WITHOUT_LAST_CHAR=${TAG%?}
+                    echo "tag=$TAG_WITHOUT_LAST_CHAR" >> $GITHUB_OUTPUT
       - name: Generating Addon
         run: |
           TAG=${{ steps.get-latest-tag.outputs.tag}}
-          scons version=${TAG%?}
+          scons version=${TAG}
       - name: generating pot file
         run: scons pot
       - name: Create a file with the version number
         run: |
           TAG=${{ steps.get-latest-tag.outputs.tag }}
-          touch version.txt && echo '${TAG%?}' >> version.txt
+          touch version.txt && echo ${TAG} >> version.txt
       - name: Upload the nvda add-on 
         uses: wlixcc/SFTP-Deploy-Action@v1.2.4
         with:
@@ -70,6 +73,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
+          name: ${{ steps.get-latest-tag.outputs.tag }}
           files: |
             *.nvda-addon
             *.pot

@@ -8,6 +8,8 @@ import core
 import ui
 import languageHandler
 import gui
+import json
+from logHandler import log
 
 addonHandler.initTranslation()
 
@@ -31,8 +33,17 @@ def updateAvailable():
 
 def installupdate():
 	file = os.environ.get('TEMP') + "\\" + addonInfos["name"] + ".nvda-addon"
-	url = f"https://module.nael-accessvision.com/addons/addons/{addonInfos['name']}/{addonInfos['name']}.nvda-addon"
-	urllib.request.urlretrieve(url, file)
+	try:
+		urllib.request.urlretrieve(downloadURL, file)
+	except Exception:
+		log.debug("Error while downloading the update")
+		ui.message(
+			# Translators: message to user to report that the update could not be downloaded.
+			_("The update could not be downloaded. Please try again later.")
+		)
+		return
+	except Exception:
+		return
 	curAddons = []
 	for addon in addonHandler.getAvailableAddons():
 		curAddons.append(addon)
@@ -53,27 +64,55 @@ def installupdate():
 
 def verifUpdate(gesture=False):
 	global oversion
+	global downloadURL
 	version = addonInfos["version"]
 	if config.conf[addonInfos["name"]]["chanel"] == 0:
 		try:
-			rversion = urllib.request.urlopen(
-				"https://module.nael-accessvision.com/addons/addons/"
-				+ addonInfos["name"]
-				+ "/version.txt"
+			info = json.loads(
+				urllib.request.urlopen(
+					"https://api.github.com/repos/nael-sayegh/scanvox-for-nvda/releases/latest"
+				).read()
 			)
-		except urllib.error.HTTPError:
+			oversion = info["name"]
+			downloadURL = info["assets"][0]["browser_download_url"]
+		except urllib.error.URLError:
+			log.debug(
+				"no internet connection for checking for updates in the stable channel"
+			)
+			if gesture:
+				ui.message(
+					# Translators: message to user to report that no update is available.
+					_("No internet connection.")
+				)
+			return
+		except Exception:
+			log.debug("Error while checking for updates in the stable channel")
 			return
 	elif config.conf[addonInfos["name"]]["chanel"] == 1:
 		try:
-			rversion = urllib.request.urlopen(
-				"https://module.nael-accessvision.com/addons/addons/"
-				+ addonInfos["name"]
-				+ "/dev/version.txt"
+			info = json.loads(
+				urllib.request.urlopen(
+					"https://api.github.com/repos/nael-sayegh/scanvox-for-nvda/releases"
+				).read()
 			)
-		except urllib.error.HTTPError:
+			for data in info:
+				if data["prerelease"]:
+					oversion = data["name"]
+					downloadURL = data["assets"][0]["browser_download_url"]
+					break
+		except urllib.error.URLError:
+			log.debug(
+				"no internet connection for checking for updates in the dev channel"
+			)
+			if gesture:
+				ui.message(
+					# Translators: message to user to report that no update is available.
+					_("No internet connection.")
+				)
 			return
-	tversion = rversion.read().decode()
-	oversion = tversion.replace("\n", "")
+		except Exception:
+			log.debug("Error while checking for updates in the dev channel")
+			return
 	if version != oversion:
 		wx.CallAfter(updateAvailable)
 	else:
@@ -140,5 +179,6 @@ class updateDialog(wx.Dialog):
 			else:
 				os.startfile(url + "en/readme.html")
 		elif config.conf[addonInfos["name"]]["chanel"] == 1:
-			url = f"https://module.nael-accessvision.com/addons/addons/{addonInfos['name']}/dev/doc/readme.html"
-			os.startfile(url)
+			os.startfile(
+				"https://github.com/Nael-Sayegh/scanvox-for-nvda/blob/dev/readme.md"
+			)

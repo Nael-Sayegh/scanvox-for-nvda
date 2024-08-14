@@ -16,7 +16,7 @@ Pour utiliser cette extension vous devez avoir un scaner USB connecté à votre 
 
 ## Comment ça marche
 
-Pour utiliser cette extension, allez dans le menu de NVDA, puis sélectionnez Scanvox. Dans cette boîte de dialogue, vous pouvez démarrer un scan en cliquant sur le bouton Numériser. Le scan prend quelques secondes pour démarrer, puis, à la fin de la numérisation, le texte scané est automatiquement lu. Vous pouvez désactivez la lecture automatique en allant dans les paramètres de NVDA puis dans la catégorie Scanvox pour NVDA. Appuyez sur ce bouton jusqu'à ce que toutes les pages soient scannées. Une fois terminé, vous pouvez faire maj+tab à partir du bouton numérisé ou alt+t pour accéder à une zone d'édition qui contient le contenu de toutes les pages scanées ou vous pouvez enregistrer le fichier ou l'ouvrir directement dans le Bloc-notes avec les boutons correspondants.
+Pour utiliser cette extension, allez dans le menu de NVDA, puis sélectionnez Scanvox. Dans cette boîte de dialogue, vous pouvez démarrer un scan en cliquant sur le bouton Numériser. Le scan prend quelques secondes pour démarrer, puis, à la fin de la numérisation, le texte scané est automatiquement lu. Vous pouvez désactivez la lecture automatique en allant dans les paramètres de NVDA puis dans la catégorie Scanvox pour NVDA. Appuyez sur ce bouton jusqu'à ce que toutes les pages soient scannées. Si vous souhaitez supprimer la page que vous venez de scanner, vous pouvez appuyer sur le bouton "supprimer la dernière page numérisée" à côté du bouton scanner avec la touche tabulation ou en utilisant le raccourci alt+d. Une fois terminé, vous pouvez faire maj+tab à partir du bouton numérisé ou alt+t pour accéder à une zone d'édition qui contient le contenu de toutes les pages scanées. Dans cette zone d'édition, si vous souhaitez passer rapidement d'une page à l'autre, vous pouvez utiliser les boutons page précédente et page suivante, ou utiliser les raccourcis ctrl+shift+flèche haut et ctrl+shift+flèche bas. Vous pouvez enregistrer le fichier avec le bouton correspondant.
 Si vous souhaitez supprimer les pages scannées pour scanner un nouveau document, vous pouvez appuyer sur le bouton pour annuler toutes les pages numérisées.
 Lorsque vous quittez Scanvox, toutes les pages scannées sont effacées.
 
@@ -25,6 +25,14 @@ Lorsque vous quittez Scanvox, toutes les pages scannées sont effacées.
 L'extension "Scanvox pour NVDA" peut être lancée de n'importe où sur votre ordinateur en appuyant sur nvda+alt+s. Ce geste peut être modifié dans la boîte de dialogue des gestes d'entrée.
 
 ## Changements
+
+### Version 2024.08.15
+
+  * Dans la zone d'édition, vous pouvez désormais utiliser les touches de page précédente et suivante ou ctrl+shift+flèche haut et ctrl+shift+flèche bas pour passer rapidement d'une page à l'autre
+  * Ajout d'un bouton pour supprimer la dernière page scannée
+  * Inversion des formats de fichiers dans la liste des formats de la boîte de dialogue d'enregistrement de fichier. Le format par défaut est docx.
+  * Modernisation du système de mise à jour pour utiliser l'API GitHub pour vérifier et installer les nouvelles versions. Cela corrige également le problème d'installation des versions de développement.
+  * Correction du problème de chargement du module qui se bloquait lorsqu'aucune connexion internet n'était détectée.
 
 ### Version 2024.07.02
 
@@ -73,6 +81,6 @@ Copyright ©: 2024 (Nael Sayegh et Nael-Accessvision
 
 <!-- links section -->
 
-[1]: https://github.com/Nael-Sayegh/scanvox-for-nvda/releases/download/2024.07.02/scanvox-2024.07.02.nvda-addon
+[1]: https://github.com/Nael-Sayegh/scanvox-for-nvda/releases/download/2024.08.15/scanvox-2024.08.15.nvda-addon
 
 [2]: https://github.com/Nael-Sayegh/scanvox-for-nvda
