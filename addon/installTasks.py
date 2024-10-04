@@ -18,7 +18,8 @@ def onInstall():
 		_(
 			"""Scanvox collects information to create statistics.\nThe information gathered includes: the add-on name, the installed version, the new version, the system language, and the keyboard layout."""
 		),
-		_("Scanvox Statistics", wx.ICON_INFORMATION, wx.OK),
+		_("Scanvox Statistics"),
+		wx.ICON_INFORMATION | wx.OK,
 	)
 	installPath = os.path.dirname(__file__)
 	addonName, addonNewVersion = getNewAddonInfo(installPath)
@@ -79,7 +80,6 @@ except Exception:
 
 def update(name, oldVer, newVer):
 	lg = getLanguage() + "%20" + getEnglishLocaleInfo()
-	# appeler ici page PHP en transmettant name, OldVersion
 	url = "https://module.nael-accessvision.com/instTasksNew.php?addon={}&ov={}&nv={}&lg={}".format(
 		name, oldVer, newVer, lg
 	)
