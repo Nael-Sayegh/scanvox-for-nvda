@@ -16,7 +16,7 @@ To use this add-on, you must have a USB scanner connected to your computer that 
 
 ## How it works
 
-To use this add-on, go to the NVDA menu, then select Scanvox. In this dialog, you can start a scan by clicking on the Scan button. The scan takes a few seconds to start, and then, at the end of the scanning process, the scanned text is automatically read out loud. You can deactivate automatic playback by going to the NVDA settings menu, then to the scanvox for NVDA category. Press this button until all pages have been scanned. If you want to delete the page you just scanned, you can press the "delete last scanned page" button next to the scanned button with tabulation or by using the shortcut alt+l. Once finished, you can read the different scanned pages by doing shift+tab from the scanned button or by doing alt+t to access an editing area with the content of all the pages. In this edit area, if you want to move quickly from page to page, you can use the previous page and next page buttons, or use the shortcuts ctrl+shift+up arrow and ctrl+shift+down arrow. You can save the file or open it directly in Notepad using the corresponding buttons.
+To use this add-on, go to the NVDA menu, then select Scanvox. In this dialog, you can start a scan by clicking on the Scan button. The scan takes a few seconds to start, and then, at the end of the scanning process, the scanned text is automatically read out loud. You can deactivate automatic playback by going to the NVDA settings menu, then to the scanvox for NVDA category. Press this button until all pages have been scanned. If you want to delete the page you just scanned, you can press the "delete last scanned page" button next to the scanned button with tabulation or by using the shortcut alt+l. Once finished, you can read the different scanned pages by doing shift+tab from the scanned button or by doing alt+t to access an editing area with the content of all the pages. In this edit area, if you want to move quickly from page to page, you can use the previous page and next page buttons, or use the shortcuts ctrl+shift+up arrow and ctrl+shift+down arrow. You can save the file using the corresponding button.
 If you want to delete the scanned pages to scan a new document, you can press the button to cancel all scanned pages.
 When you exit Scanvox, all scanned pages are erased.
 
@@ -31,6 +31,8 @@ The add-on "Scanvox for NVDA" can be launched from anywhere on your computer by 
   * In the editing area, you can now use the previous and next page keys or ctrl+shift+up arrow and ctrl+shift+down arrow to quickly move from one page to another.
   * Adding a button to delete the last scanned page
   * Reversal of the file formats in the format list in the save file dialog. The default format is docx.
+  * Modernization of the update system to use the GitHub API to check and install new versions. This also fixes the installation issue of dev versions.
+  * Fix for the module loading issue that would freeze when no internet connection was detected.
 
 ### Version 2024.07.02
 

@@ -35,6 +35,10 @@ Doplněk lze spustit kdekoli klávesovou zkratkou inzert +alt +s.
 
   * Opraven problém, kdy čísla stránek pokračovala ve zvyšování po kliknutí na smazání
 
+### Verze 2024.07.02
+
+  * Opraven problém, kdy čísla stránek pokračovala ve zvyšování po kliknutí na smazání
+
 ### Verze 2024.06.01
 
   * Přidána možnost výběru aktualizace z vývojového kanálu
