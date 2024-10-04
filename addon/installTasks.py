@@ -18,7 +18,7 @@ def onInstall():
 		_(
 			"""Scanvox collects information to create statistics.\nThe information gathered includes: the add-on name, the installed version, the new version, the system language, and the keyboard layout."""
 		),
-		_("Scanvox Statistics"),
+		_("Information"),
 		wx.ICON_INFORMATION | wx.OK,
 	)
 	installPath = os.path.dirname(__file__)
