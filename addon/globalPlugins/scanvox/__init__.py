@@ -18,9 +18,7 @@ import globalVars
 import sys
 from speech import speakMessage
 
-if sys.version_info.major == 3 and sys.version_info.minor == 7:
-	lib = os.path.join(os.path.dirname(__file__), "lib", "3.7")
-elif sys.version_info.major == 3 and sys.version_info.minor == 11:
+if sys.version_info.major == 3 and sys.version_info.minor == 11:
 	lib = os.path.join(os.path.dirname(__file__), "lib", "3.11")
 else:
 	log.error("Unsupported python version")
