@@ -5,11 +5,15 @@ permissions:
 
 
 on:
-  issue_comment:
-    types: [created]
+  pull_request:
+    types: [opened, synchronize]
 
 
 jobs:
-  scons:
-    uses: Nael-Sayegh/github-action/.github/workflows/pull_request.yml@main
+  build:
+    uses: Nael-Sayegh/github-action/.github/workflows/build.yml@create-action
+    secrets: inherit
+
+  generate_pot:
+    uses: nael-sayegh/github-action/.github/workflows/generate_pot.yml@create-action
     secrets: inherit
