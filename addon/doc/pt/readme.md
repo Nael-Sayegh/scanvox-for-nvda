@@ -3,7 +3,7 @@
 * Autor: Nael Sayegh
 * URL: [infos@nael-accessvision.com](mailto:infos@nael-accessvision.com)
 * Baixe a [versão estável][1];
-* Compatibilidade com NVDA: 2021.3 até 2025.1;
+* Compatibilidade com NVDA: 2021.3 e superior;
 * [Código fonte no GitHub][2];
 
 # Apresentação
@@ -25,6 +25,10 @@ Ao sair do Scanvox, todas as páginas digitalizadas serão apagadas.
 O extra "Scanvox for NVDA" pode ser iniciado de qualquer lugar do seu computador pressionando nvda+alt+s. Este comando pode ser modificado na caixa de diálogo de "definir comandos".
 
 ## Alterações
+
+### Versão 2025.07.01
+
+  * Compatibilidade testada com NVDA 2025.1
 
 ### Versão 2024.07.02
 

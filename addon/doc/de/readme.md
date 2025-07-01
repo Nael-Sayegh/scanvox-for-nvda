@@ -3,7 +3,7 @@
 * Autor: Nael Sayegh
 * URL: [infos@nael-accessvision.com](mailto:infos@nael-accessvision.com)
 * Laden Sie die [stabile Version][1] herunter;
-* NVDA-Kompatibilität: 2021.3 bis 2025.1;
+* NVDA-Kompatibilität: 2021.3 und höher;
 * [Quellcode auf GitHub][2];
 
 # Funktionalität
@@ -31,6 +31,10 @@ Wenn Sie Scanvox beenden, werden alle gescannten Seiten verworfen.
 Das Add-on „Scanvox for NVDA“ kann von überall auf Ihrem Computer durch Drücken von nvda+alt+s gestartet werden. Diese Geste kann im Eingabegestendialog geändert werden.
 
 ## Änderungen
+
+### Version 2025.07.01
+
+  * Kompatibilität mit NVDA 2025.1 getestet
 
 ### Version 2024.08.15
 

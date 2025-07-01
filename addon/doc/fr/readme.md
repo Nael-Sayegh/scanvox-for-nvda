@@ -3,7 +3,7 @@
 * Auteur : Nael Sayegh
 * URL : [infos@nael-accessvision.com](mailto:infos@nael-accessvision.com)
 * Téléchargez la [version stable][1];
-* Compatibilité avec NVDA : 2021.3 à 2025.1;
+* Compatibilité avec NVDA : 2021.3 et plus récente;
 * [Code source sur GitHub][2];
 
 # Présentation
@@ -25,6 +25,10 @@ Lorsque vous quittez Scanvox, toutes les pages scannées sont effacées.
 L'extension "Scanvox pour NVDA" peut être lancée de n'importe où sur votre ordinateur en appuyant sur nvda+alt+s. Ce geste peut être modifié dans la boîte de dialogue des gestes d'entrée.
 
 ## Changements
+
+### Version 2025.07.01
+
+  * Compatibilité testée avec NVDA 2025.1
 
 ### Version 2024.08.15
 

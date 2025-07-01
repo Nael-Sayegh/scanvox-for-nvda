@@ -3,7 +3,7 @@
 * Yazar: Nael Sayegh
 * İletişim: [infos@nael-accessvision.com](mailto:infos@nael-accessvision.com)
 * [Kararlı sürümü indirin][1];
-* NVDA Uyumluluğu: 2021.3 - 2025.1;
+* NVDA Uyumluluğu: 2021.3 ve sonrası;
 * [GitHub'daki kaynak kodu][2];
 
 # Sunum
@@ -34,6 +34,10 @@ Scanvox'tan çıktığınızda, taranan tüm sayfalar silinir.
 Bu hareket, girdi hareketleri iletişim kutusunda değiştirilebilir.
 
 ## Değişiklikler
+
+### Sürüm 2025.07.01
+
+  * NVDA 2025.1 ile uyumluluk test edildi
 
 ### Sürüm 2024.08.15
 

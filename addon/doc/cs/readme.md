@@ -3,7 +3,7 @@
 * Autor: Nael Sayegh
 * e-mailová adresa: [infos@nael-accessvision.com](mailto:infos@nael-accessvision.com)
 * Stáhnout [Stabilní verzi][1];
-*Kompatibilní verze NVDA : 2021.3 až 2025.1;
+*Kompatibilní verze NVDA : 2021.3 a novější;
 * [Zdrojový kód na GitHubU][2];
 
 # Popis
@@ -26,6 +26,10 @@ Můžete naskenovat i více stránek a poté text uložit do formátu Word .docx
 Doplněk lze spustit kdekoli klávesovou zkratkou inzert +alt +s.
 
 ## Změny
+### Verze 2025.07.01
+
+  * Kompatibilita testována s NVDA 2025.1
+
 ### Verze 2024.08.15
   * V editačním poli je nově možné použít klávesy  pro pohyb  na další, nebo předchozí stránku,  nebo pro rychlé listování ctrl+shift+up arrow a  ctrl+shift+down arrow
   * Přidáno tlačítko pro odstranění naposledy naskenované stránky.

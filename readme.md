@@ -3,7 +3,7 @@
 * Author: Nael Sayegh
 * URL: [infos@nael-accessvision.com](mailto:infos@nael-accessvision.com)
 * Download the [stable version][1];
-* NVDA Compatibility: 2021.3 to 2025.1;
+* NVDA Compatibility: 2021.3 and above;
 * [Source code on GitHub][2];
 
 # Presentation
@@ -25,6 +25,10 @@ When you exit Scanvox, all scanned pages are erased.
 The add-on "Scanvox for NVDA" can be launched from anywhere on your computer by pressing nvda+alt+s. This gesture can be modified in the input gestures dialog.
 
 ## Changes
+
+### Version 2025.07.01
+
+  * Compatibility tested with NVDA 2025.1
 
 ### Version 2024.08.15
 
