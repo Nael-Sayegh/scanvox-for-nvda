@@ -58,6 +58,6 @@ O extra "Scanvox for NVDA" pode ser iniciado de qualquer lugar do seu computador
 
   * Primeira versão
 
-[1]: https://github.com/Nael-Sayegh/scanvox-for-nvda/releases/download/2024.07.02/scanvox-2024.07.02.nvda-addon
+[1]: https://github.com/Nael-Sayegh/scanvox-for-nvda/releases/download/2025.07.01/scanvox-2025.07.01.nvda-addon
 
 [2]: https://github.com/Nael-Sayegh/scanvox-for-nvda
