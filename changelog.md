@@ -1,5 +1,11 @@
 ## What's new?
 
+### Version 2025.07.01
+
+  * Compatibility tested with NVDA 2025.1
+
+### Version 2024.08.15
+
   * In the editing area, you can now use the previous and next page keys or ctrl+shift+up arrow and ctrl+shift+down arrow to quickly move from one page to another.
   * Adding a button to delete the last scanned page
   * Reversal of the file formats in the format list in the save file dialog. The default format is docx.

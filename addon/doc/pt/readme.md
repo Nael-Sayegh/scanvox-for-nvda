@@ -3,7 +3,7 @@
 * Autor: Nael Sayegh
 * URL: [infos@nael-accessvision.com](mailto:infos@nael-accessvision.com)
 * Baixe a [versão estável][1];
-* Compatibilidade com NVDA: 2021.3 e superior;
+* Compatibilidade com NVDA: 2021.3 até 2025.1;
 * [Código fonte no GitHub][2];
 
 # Apresentação

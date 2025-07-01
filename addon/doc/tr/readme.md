@@ -3,7 +3,7 @@
 * Yazar: Nael Sayegh
 * İletişim: [infos@nael-accessvision.com](mailto:infos@nael-accessvision.com)
 * [Kararlı sürümü indirin][1];
-* NVDA Uyumluluğu: 2021.3 ve sonrası;
+* NVDA Uyumluluğu: 2021.3 - 2025.1;
 * [GitHub'daki kaynak kodu][2];
 
 # Sunum

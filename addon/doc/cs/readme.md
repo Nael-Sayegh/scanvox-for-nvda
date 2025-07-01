@@ -3,7 +3,7 @@
 * Autor: Nael Sayegh
 * e-mailová adresa: [infos@nael-accessvision.com](mailto:infos@nael-accessvision.com)
 * Stáhnout [Stabilní verzi][1];
-*Kompatibilní verze NVDA : 2021.3 a novější;
+*Kompatibilní verze NVDA : 2021.3 až 2025.1;
 * [Zdrojový kód na GitHubU][2];
 
 # Popis
