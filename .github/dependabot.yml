@@ -1,0 +1,18 @@
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    target-branch: "dev"
+    labels:
+      - "notforaddon"
+    assignees:
+      - "nael-sayegh"
+    groups:
+      github-actions:
+        patterns:
+          - "*"
+    open-pull-requests-limit: 10
+    commit-message:
+      include: "scope"
