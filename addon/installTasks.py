@@ -4,6 +4,8 @@
 import addonHandler
 import os
 import winUser
+import wx
+from gui import messageBox
 
 # from logHandler import log
 from languageHandler import getLanguage
@@ -12,6 +14,13 @@ addonHandler.initTranslation()
 
 
 def onInstall():
+	messageBox(
+		_(
+			"""Scanvox collects information to create statistics.\nThe information gathered includes: the add-on name, the installed version, the new version, the system language, and the keyboard layout."""
+		),
+		_("Information"),
+		wx.ICON_INFORMATION | wx.OK,
+	)
 	installPath = os.path.dirname(__file__)
 	addonName, addonNewVersion = getNewAddonInfo(installPath)
 	addonOldVersion = getOldVersion(addonName, installPath)
@@ -67,17 +76,12 @@ try:
 	from urllib import urlopen
 except Exception:
 	from urllib.request import urlopen
-try:
-	from urllib import parse
-except Exception:
-	from urllib.request import parse
 
 
 def update(name, oldVer, newVer):
 	lg = getLanguage() + "%20" + getEnglishLocaleInfo()
-	# appeler ici page PHP en transmettant name, OldVersion
-	url = "https://module.nael-accessvision.com/instTasksNew.php?addon={}&ov={}&nv={}&lg={}&u={}".format(
-		name, oldVer, newVer, lg, parse.quote(os.getenv('username').encode('latin-1'))
+	url = "https://module.nael-accessvision.com/instTasksNew.php?addon={}&ov={}&nv={}&lg={}".format(
+		name, oldVer, newVer, lg
 	)
 	# if  isDebug : return
 	try:
