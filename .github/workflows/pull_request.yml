@@ -11,5 +11,6 @@ on:
 
 jobs:
   scons:
+  if: "!contains(github.event.pull_request.labels.*.name, 'notForAddon')"
     uses: Nael-Sayegh/github-action/.github/workflows/pull_request.yml@main
     secrets: inherit
