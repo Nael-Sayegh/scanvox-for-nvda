@@ -9,7 +9,7 @@ ci:
     skip:
       - "ruff"
 default_language_version:
-  python: python3.11
+  python: python3.13
 default_stages:
   - "pre-commit"
 default_install_hook_types:
