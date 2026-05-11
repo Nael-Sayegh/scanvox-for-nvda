@@ -1,4 +1,4 @@
 ## What's new?
 
-  * Compatibility tested with NVDA 2025.1
+  * Compatibility tested with NVDA 2026.1
 
