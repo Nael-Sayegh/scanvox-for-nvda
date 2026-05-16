@@ -35,6 +35,11 @@ Bu hareket, girdi hareketleri iletişim kutusunda değiştirilebilir.
 
 ## Değişiklikler
 
+### Sürüm 2026.05.16
+
+  * NVDA 2026.1 ile uyumluluk test edildi
+
+
 ### Sürüm 2025.07.01
 
   * NVDA 2025.1 ile uyumluluk test edildi
@@ -89,6 +94,6 @@ Bu hareket, girdi hareketleri iletişim kutusunda değiştirilebilir.
 
   * İlk sürüm.
 
-[1]: https://github.com/Nael-Sayegh/scanvox-for-nvda/releases/download/2025.07.01/scanvox-2025.07.01.nvda-addon
+[1]: https://www.blog.nael-accessvision.com/r.php?m&p=scanvoxfornvda
 
 [2]: https://github.com/Nael-Sayegh/scanvox-for-nvda
