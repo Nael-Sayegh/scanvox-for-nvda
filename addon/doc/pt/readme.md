@@ -26,6 +26,11 @@ O extra "Scanvox for NVDA" pode ser iniciado de qualquer lugar do seu computador
 
 ## Alterações
 
+### Versão 2026.05.16
+
+  * Compatibilidade testada com NVDA 2026.1
+
+
 ### Versão 2025.07.01
 
   * Compatibilidade testada com NVDA 2025.1
@@ -58,6 +63,6 @@ O extra "Scanvox for NVDA" pode ser iniciado de qualquer lugar do seu computador
 
   * Primeira versão
 
-[1]: https://github.com/Nael-Sayegh/scanvox-for-nvda/releases/download/2025.07.01/scanvox-2025.07.01.nvda-addon
+[1]: https://www.blog.nael-accessvision.com/r.php?m&p=scanvoxfornvda
 
 [2]: https://github.com/Nael-Sayegh/scanvox-for-nvda

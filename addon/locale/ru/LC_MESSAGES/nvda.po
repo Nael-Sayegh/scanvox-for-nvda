@@ -1,175 +1,201 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: 'scanvox' '2024.01.10'\n"
+"Project-Id-Version: 'scanvox' '2025.07.01'\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
-"POT-Creation-Date: 2024-05-04 11:46+0200\n"
-"PO-Revision-Date: 2024-05-04 11:50+0200\n"
+"POT-Creation-Date: 2026-01-11 20:05+0300\n"
+"PO-Revision-Date: 2026-01-11 20:17+0300\n"
 "Last-Translator: \n"
-"Language-Team: Danil Kostenkov <danilkostenkov38@gmail.com>\n"
-"Language: ru\n"
+"Language-Team: Russian translation team <nvda.ru>, Danil Kostenkov "
+"<danilkostenkov38@gmail.com>\n"
+"Language: ru_RU\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.4.2\n"
-"X-Poedit-Basepath: ../globalPlugins/scanvox\n"
+"X-Generator: Poedit 3.8\n"
+"X-Poedit-Basepath: ../../../..\n"
 "X-Poedit-SearchPath-0: .\n"
-"X-Poedit-SearchPathExcluded-0: ../../../../globalPlugins/scanvox\n"
+"X-Poedit-SearchPath-1: addon\n"
+"X-Poedit-SearchPath-2: addon/globalPlugins/scanvox\n"
 
-#. Translators: this is the description of a command that opens the Scanvox dialog
-#: addon\globalPlugins\scanvox\__init__.py:81
+#: addon/globalPlugins/scanvox/__init__.py:86
 msgid "Open the Scanvox dialog"
 msgstr "Открыть диалог Scanvox"
 
-#. Translators: this is the category for the Scanvox dialog command in the input gestures dialog
-#. Translators: title of the settings panel
-#. Add-on summary, usually the user visible name of the addon.
-#. Translators: Summary for this add-on
-#. to be shown on installation and add-on information found in Add-ons Manager.
-#: addon\globalPlugins\scanvox\__init__.py:83
-#: addon\globalPlugins\scanvox\settings.py:20 buildVars.py:23
+#: addon/globalPlugins/scanvox/__init__.py:88
+#: addon/globalPlugins/scanvox/settings.py:18 buildVars.py:23
 msgid "Scanvox for NVDA"
 msgstr "Scanvox для NVDA"
 
-#. Translators: this is a label for a text control that displays the scanned text
-#: addon\globalPlugins\scanvox\__init__.py:102
+#: addon/globalPlugins/scanvox/__init__.py:107
 msgid "Text:"
 msgstr "Распознанный текст:"
 
-#. Translators: this is the label for a button that starts the scanning process
-#: addon\globalPlugins\scanvox\__init__.py:112
+#: addon/globalPlugins/scanvox/__init__.py:117
 msgid "&Scan"
 msgstr "&Сканировать"
 
-#. Translators: this is the label for a button that saves the scanned text
-#: addon\globalPlugins\scanvox\__init__.py:121
+#: addon/globalPlugins/scanvox/__init__.py:126
+msgid "Delete the last page scanned"
+msgstr "Удалить последнюю отсканированную страницу"
+
+#: addon/globalPlugins/scanvox/__init__.py:135
 msgid "&Save the scanned pages"
 msgstr "&Сохранить отсканированные страницы"
 
-#. Translators: label for a button
-#: addon\globalPlugins\scanvox\__init__.py:130
+#: addon/globalPlugins/scanvox/__init__.py:144
 msgid "&Delete the scanned pages"
 msgstr "&Удалить отсканированные страницы"
 
-#. Translators: a message that is spoken when the scanning process starts
-#: addon\globalPlugins\scanvox\__init__.py:150
+#: addon/globalPlugins/scanvox/__init__.py:164
 msgid "Scanning in progress, please wait..."
 msgstr "Выполняется сканирование, пожалуйста, подождите..."
 
-#. Translators: title of a file dialog
-#: addon\globalPlugins\scanvox\__init__.py:158
+#: addon/globalPlugins/scanvox/__init__.py:175
 msgid "Select the location where you want to save the file"
 msgstr "Выберите место, где вы хотите сохранить файл"
 
-#. Translators: filter for a file dialog
-#: addon\globalPlugins\scanvox\__init__.py:160
-msgid "Text file: *.txt|*.txt|Word document: *.docx|*.docx"
-msgstr "Текстовый файл: *.txt|*.txt|Документ Word: *.docx|*.docx"
+#: addon/globalPlugins/scanvox/__init__.py:177
+msgid "Word document: *.docx|*.docx|Text file: *.txt|*.txt"
+msgstr "Документ Word: *.docx|*.docx|Текстовый документ: *.txt|*.txt"
 
-#. Translators: label for a file dialog
-#: addon\globalPlugins\scanvox\__init__.py:162
+#: addon/globalPlugins/scanvox/__init__.py:179
 msgid "Save the file"
 msgstr "Сохранить файл"
 
-#. Translators: a message that the scan is complete
-#: addon\globalPlugins\scanvox\__init__.py:212
+#: addon/globalPlugins/scanvox/__init__.py:269
 msgid "Scan complete"
 msgstr "Сканирование завершено"
 
-#. Translators: a message that is spoken when the OCR is not available
-#: addon\globalPlugins\scanvox\__init__.py:242
+#: addon/globalPlugins/scanvox/__init__.py:299
 msgid "No OCR matching the language of your system is available"
 msgstr "Распознавание текста, соответствующее языку вашей системы, недоступно"
 
-#. Translators: a message that is spoken when no scanner is detected
-#: addon\globalPlugins\scanvox\__init__.py:250
+#: addon/globalPlugins/scanvox/__init__.py:307
 msgid "No compatible scanner detected"
 msgstr "Совместимый сканер не обнаружен"
 
-#. Translators: a message that is spoken when the page is empty
-#: addon\globalPlugins\scanvox\__init__.py:258
+#: addon/globalPlugins/scanvox/__init__.py:315
 msgid "The page seems empty"
 msgstr "Похоже, это чистый лист"
 
-#. Translators: a message that is spoken when the scanned pages are deleted
-#: addon\globalPlugins\scanvox\__init__.py:270
+#: addon/globalPlugins/scanvox/__init__.py:327
 msgid "All the pages have been erased"
 msgstr "Все отсканированные страницы были удалены"
 
-#. Translators: a message that is spoken when the scanned pages cannot be deleted
-#: addon\globalPlugins\scanvox\__init__.py:281
+#: addon/globalPlugins/scanvox/__init__.py:342
 msgid "It's impossible to delete the scanned pages"
 msgstr "Невозможно удалить отсканированные страницы"
 
-#. Translators: this is the text that is added to the scanned text
-#: addon\globalPlugins\scanvox\__init__.py:305
+#: addon/globalPlugins/scanvox/__init__.py:366
 msgid "Page "
 msgstr "Страница "
 
-#. Translators: A group of settings in the settings panel
-#: addon\globalPlugins\scanvox\settings.py:25
+#: addon/globalPlugins/scanvox/__init__.py:399
+msgid "The last page has been deleted"
+msgstr "Последняя страница была удалена"
+
+#: addon/globalPlugins/scanvox/__init__.py:404
+msgid "There are no pages to delete"
+msgstr "Нет страниц для удаления"
+
+#: addon/globalPlugins/scanvox/__init__.py:423
+#: addon/globalPlugins/scanvox/__init__.py:440
+msgid "End"
+msgstr "Конец"
+
+#: addon/globalPlugins/scanvox/settings.py:23
 msgid "General"
 msgstr "Общее"
 
-#. Translators: Checkbox label in parameter panel
-#: addon\globalPlugins\scanvox\settings.py:34
+#: addon/globalPlugins/scanvox/settings.py:32
 msgid "&Automatically read the text when the scan is completed"
 msgstr "&Автоматически читать текст по завершении сканирования"
 
-#. Translators: A group of settings in the settings panel
-#: addon\globalPlugins\scanvox\settings.py:42
+#: addon/globalPlugins/scanvox/settings.py:40
 msgid "Update"
 msgstr "Обновление"
 
-#. Translators: A checkbox label in the settings interface
-#: addon\globalPlugins\scanvox\settings.py:50
+#: addon/globalPlugins/scanvox/settings.py:46
+msgid "Stable"
+msgstr "Стабильный"
+
+#: addon/globalPlugins/scanvox/settings.py:48
+msgid "Dev"
+msgstr "В разработке"
+
+#: addon/globalPlugins/scanvox/settings.py:54
+msgid "&Chanel:"
+msgstr "&Канал:"
+
+#: addon/globalPlugins/scanvox/settings.py:68
 msgid "Automatically search for updates"
 msgstr "Автоматический поиск обновлений"
 
-#. Translators: A button label in the settings panel
-#: addon\globalPlugins\scanvox\settings.py:59
+#: addon/globalPlugins/scanvox/settings.py:77
 msgid "Search for an update now"
 msgstr "Проверить наличие обновлений"
 
-#. Translators: title of a dialog box
-#: addon\globalPlugins\scanvox\update.py:24
+#: addon/globalPlugins/scanvox/update.py:26
 #, python-format
 msgid "Update of %s version %s"
 msgstr "Обновление %s версия %s"
 
-#: addon\globalPlugins\scanvox\update.py:27
+#: addon/globalPlugins/scanvox/update.py:29
 #, python-format
 msgid ""
 "%s version %s is available. Would you like to update now? You can view the "
 "changes by clicking on the What's New button and scrolling down to Changes."
 msgstr ""
-"Доступно %s версия %s. Хотели бы вы обновиться сейчас? Вы сможете увидеть "
+"Доступно %s версия %s. Хотите обновить дополнение сейчас? Вы сможете увидеть "
 "новые функции, нажав \"справка\" в магазине дополнений."
 
-#. Translators: message to user to report that no update is available.
-#: addon\globalPlugins\scanvox\update.py:70
+#: addon/globalPlugins/scanvox/update.py:42
+msgid "The update could not be downloaded. Please try again later."
+msgstr "Не удалось загрузить обновление. Пожалуйста, повторите попытку позже."
+
+#: addon/globalPlugins/scanvox/update.py:85
+#: addon/globalPlugins/scanvox/update.py:110
+msgid "No internet connection."
+msgstr "Нет подключения к Интернету."
+
+#: addon/globalPlugins/scanvox/update.py:122
 msgid "No update is available."
 msgstr "Обновление недоступно."
 
-#. Translators: label of a button
-#: addon\globalPlugins\scanvox\update.py:88
+#: addon/globalPlugins/scanvox/update.py:140
 msgid "&Yes"
 msgstr "&Да"
 
-#. Translators: label of a button
-#: addon\globalPlugins\scanvox\update.py:97
+#: addon/globalPlugins/scanvox/update.py:149
 msgid "&No"
 msgstr "&Нет"
 
-#. Translators: label of a button
-#: addon\globalPlugins\scanvox\update.py:103
+#: addon/globalPlugins/scanvox/update.py:155
 msgid "Wha&t's new"
 msgstr "&Что нового"
 
+#: addon/installTasks.py:19
+msgid ""
+"Scanvox collects information to create statistics.\n"
+"The information gathered includes: the add-on name, the installed version, "
+"the new version, the system language, and the keyboard layout."
+msgstr ""
+"Scanvox собирает информацию для создания статистики использования.\n"
+"Собранная информация включает в себя: название дополнения, установленную "
+"версию, обновлённую версию, язык системы и раскладку клавиатуры."
+
+#: addon/installTasks.py:21
+msgid "Information"
+msgstr "Информация"
+
 #: buildVars.py:27
 msgid ""
-"This extension allows you to read paper documents using the Scanvox "
-"software. To use it, go to the NVDA tool menu and select Scanvox."
+"This add-on allows you to read paper documents using the Scanvox software. "
+"To use it, go to the NVDA menu and select Scanvox."
 msgstr ""
 "Это дополнение позволяет вам читать бумажные документы с помощью "
-"программного обеспечения Scanvox. Чтобы использовать его, перейдите по пути  "
-"NVDA меню, сервис подменю и выберите Scanvox."
+"программного обеспечения Scanvox. Чтобы использовать его, перейдите в меню "
+"NVDA и выберите Scanvox."
+
+#~ msgid "Text file: *.txt|*.txt|Word document: *.docx|*.docx"
+#~ msgstr "Текстовый файл: *.txt|*.txt|Документ Word: *.docx|*.docx"

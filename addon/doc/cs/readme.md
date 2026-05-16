@@ -26,6 +26,12 @@ Můžete naskenovat i více stránek a poté text uložit do formátu Word .docx
 Doplněk lze spustit kdekoli klávesovou zkratkou inzert +alt +s.
 
 ## Změny
+
+### Verze 2026.05.16
+
+  * Kompatibilita testována s NVDA 2026.1
+
+
 ### Verze 2025.07.01
 
   * Kompatibilita testována s NVDA 2025.1
@@ -83,6 +89,6 @@ Nové funkce
 
   * První verze
 
-[1]: https://github.com/Nael-Sayegh/scanvox-for-nvda/releases/download/2025.07.01/scanvox-2025.07.01.nvda-addon
+[1]: https://www.blog.nael-accessvision.com/r.php?m&p=scanvoxfornvda
 
 [2]: https://github.com/Nael-Sayegh/scanvox-for-nvda
